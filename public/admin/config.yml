@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Local backend for development - uncomment for local testing
+# local_backend: true
+
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Updated Date", name: "updated", widget: "datetime", format: "YYYY-MM-DD", required: false }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "QuizKen Team" }
+      - { label: "Body", name: "body", widget: "markdown" }

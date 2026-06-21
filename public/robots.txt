@@ -1,0 +1,30 @@
+# QuizKen Robots.txt
+# Allow all search engines to crawl public content
+
+User-agent: *
+Allow: /
+Allow: /english
+Allow: /about
+Allow: /pricing
+Disallow: /api/*
+Disallow: /admin/*
+Disallow: /*.json$
+Disallow: /preview/*
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Slower crawlers
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.quizken.com/sitemap.xml

@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Class-based dark mode: use .dark on <html> instead of OS prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  QuizKen brand tokens.
+  Primary = emerald hsl(142 71% 45%) inherited from the main app.
+  Pastel accents (pink/amber/sky/violet/rose) reused from the original Features section.
+*/
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 13%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
+
+  --primary: 142 71% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 45 35% 96%;
+  --secondary-foreground: 0 0% 13%;
+
+  --muted: 142 20% 96%;
+  --muted-foreground: 0 0% 42%;
+
+  --accent: 142 71% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  --border: 142 25% 90%;
+  --input: 142 25% 90%;
+  --ring: 142 71% 45%;
+
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 150 18% 7%;
+  --foreground: 0 0% 98%;
+
+  --card: 150 14% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 150 14% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 142 71% 45%;
+  --primary-foreground: 0 0% 8%;
+
+  --secondary: 150 10% 16%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 150 10% 16%;
+  --muted-foreground: 0 0% 68%;
+
+  --accent: 142 71% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  --border: 150 10% 20%;
+  --input: 150 10% 20%;
+  --ring: 142 71% 45%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --font-sans: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-fredoka), var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+
+  --radius: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-sm: calc(var(--radius) - 0.5rem);
+
+  --animate-blob: blob 9s infinite ease-in-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -40px) scale(1.08);
+  }
+  66% {
+    transform: translate(-18px, 18px) scale(0.94);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-fredoka), var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.25);
+  }
+}
+
+@layer components {
+  /* Gradient text helper for emphasis words in headings */
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--primary)),
+      hsl(168 80% 42%)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Frosted glass surface used on floating cards over gradients */
+  .glass {
+    background-color: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+
+  /* Subtle dot-grid texture for section backgrounds */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      hsl(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Section eyebrow chip */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--primary) / 0.2);
+    background-color: hsl(var(--primary) / 0.08);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
