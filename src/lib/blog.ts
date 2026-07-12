@@ -12,8 +12,10 @@ export type PostFrontmatter = {
   updated?: string;
   slug: string;
   tags: string[];
+  category?: string;
   cover?: string;
   author?: string;
+  featured?: boolean;
 };
 
 export type Post = {
@@ -59,8 +61,10 @@ export function getPost(slug: string): Post | null {
       updated: data.updated || undefined,
       slug,
       tags: data.tags || [],
+      category: data.category || undefined,
       cover: data.cover || undefined,
       author: data.author || "QuizKen Team",
+      featured: data.featured || false,
     },
     content,
     readingTime: rt,
@@ -82,6 +86,76 @@ export function getAllSlugs(): string[] {
     .readdirSync(CONTENT_DIR)
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""));
+}
+
+/** Get posts filtered by category slug. */
+export function getPostsByCategory(category: string): Post[] {
+  return getAllPosts().filter((p) => p.frontmatter.category === category);
+}
+
+/** Get posts filtered by tag. */
+export function getPostsByTag(tag: string): Post[] {
+  return getAllPosts().filter((p) =>
+    p.frontmatter.tags.some((t) => t.toLowerCase() === tag.toLowerCase()),
+  );
+}
+
+/**
+ * Get related posts for a given slug, ordered by number of shared tags.
+ * Excludes the current post. Returns at most `limit` results.
+ */
+export function getRelatedPosts(slug: string, limit = 3): Post[] {
+  const current = getPost(slug);
+  if (!current) return [];
+
+  const currentTags = new Set(current.frontmatter.tags.map((t) => t.toLowerCase()));
+  const allPosts = getAllPosts().filter((p) => p.frontmatter.slug !== slug);
+
+  const scored = allPosts.map((post) => {
+    const shared = post.frontmatter.tags.filter((t) =>
+      currentTags.has(t.toLowerCase()),
+    ).length;
+    // Bonus if same category
+    const categoryBonus =
+      post.frontmatter.category && post.frontmatter.category === current.frontmatter.category
+        ? 2
+        : 0;
+    return { post, score: shared + categoryBonus };
+  });
+
+  return scored
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.post);
+}
+
+/**
+ * Get paginated posts. Returns { posts, totalPages, currentPage }.
+ */
+export function getPaginatedPosts(
+  page = 1,
+  pageSize = 9,
+  category?: string,
+): { posts: Post[]; totalPages: number; currentPage: number; totalPosts: number } {
+  let allPosts = getAllPosts();
+  if (category) {
+    allPosts = allPosts.filter((p) => p.frontmatter.category === category);
+  }
+
+  const totalPosts = allPosts.length;
+  const totalPages = Math.max(1, Math.ceil(totalPosts / pageSize));
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const start = (currentPage - 1) * pageSize;
+  const posts = allPosts.slice(start, start + pageSize);
+
+  return { posts, totalPages, currentPage, totalPosts };
+}
+
+/** Get the featured post (first post with featured: true, or newest post). */
+export function getFeaturedPost(): Post | null {
+  const posts = getAllPosts();
+  return posts.find((p) => p.frontmatter.featured) || posts[0] || null;
 }
 
 /**

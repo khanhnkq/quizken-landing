@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { getAllSlugs, getPost, extractHeadings } from "@/lib/blog";
+import { getAllSlugs, getPost, extractHeadings, getRelatedPosts } from "@/lib/blog";
 import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
+import { buildAbsoluteUrl } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
+import { ShareButtons } from "@/components/blog/ShareButtons";
+import { AuthorCard } from "@/components/blog/AuthorCard";
+import { BlogCta } from "@/components/blog/BlogCta";
 import { JsonLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
@@ -44,6 +49,8 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const headings = extractHeadings(post.content);
+  const relatedPosts = getRelatedPosts(slug, 3);
+  const postUrl = buildAbsoluteUrl(`/blog/${slug}`);
 
   return (
     <>
@@ -112,11 +119,40 @@ export default async function BlogPostPage({
                 {post.readingTime}
               </span>
             </div>
+
+            {/* Share buttons below header */}
+            <div className="mt-6">
+              <ShareButtons
+                url={postUrl}
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+              />
+            </div>
           </header>
 
           <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_260px]">
             <div className="min-w-0">
               <MarkdownRenderer content={post.content} />
+
+              {/* CTA banner after content */}
+              <BlogCta />
+
+              {/* Author card */}
+              <div className="mt-8">
+                <AuthorCard name={post.frontmatter.author || "QuizKen Team"} />
+              </div>
+
+              {/* Share buttons bottom */}
+              <div className="mt-8 flex items-center justify-between border-t border-border/50 pt-8">
+                <ShareButtons
+                  url={postUrl}
+                  title={post.frontmatter.title}
+                  description={post.frontmatter.description}
+                />
+              </div>
+
+              {/* Related posts */}
+              <RelatedPosts posts={relatedPosts} />
             </div>
             {headings.length > 2 && (
               <aside className="hidden lg:block">
@@ -131,3 +167,4 @@ export default async function BlogPostPage({
     </>
   );
 }
+

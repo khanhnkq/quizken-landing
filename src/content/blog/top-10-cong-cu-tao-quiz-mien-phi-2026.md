@@ -3,6 +3,7 @@ title: "Top 10 công cụ tạo quiz miễn phí tốt nhất 2026"
 description: "Tổng hợp và đánh giá 10 nền tảng tạo bài kiểm tra trực tuyến miễn phí tốt nhất 2026: từ AI quiz generator đến game show trực tuyến."
 date: 2026-03-11
 slug: top-10-cong-cu-tao-quiz-mien-phi-2026
+category: so-sanh
 tags:
   - công cụ tạo quiz
   - quiz maker

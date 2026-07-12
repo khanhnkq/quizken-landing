@@ -3,6 +3,7 @@ title: "So sánh QuizKen vs Quizlet vs Kahoot: Công cụ nào phù hợp nhất
 description: "So sánh chi tiết 3 nền tảng quiz hàng đầu: QuizKen, Quizlet và Kahoot. Tính năng, giá cả, ưu nhược điểm để chọn công cụ phù hợp nhất."
 date: 2026-03-11
 slug: so-sanh-quizken-vs-quizlet-vs-kahoot
+category: so-sanh
 tags:
   - so sánh
   - QuizKen

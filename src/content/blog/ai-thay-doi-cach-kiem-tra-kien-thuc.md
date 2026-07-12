@@ -3,6 +3,8 @@ title: "AI sẽ thay đổi cách chúng ta kiểm tra kiến thức như thế 
 description: "Phân tích xu hướng ứng dụng AI trong đánh giá giáo dục: tự động tạo đề, cá nhân hóa bài kiểm tra, chấm điểm thông minh, và tương lai của kiểm tra kiến thức."
 date: 2026-03-11
 slug: ai-thay-doi-cach-kiem-tra-kien-thuc
+category: ai-giao-duc
+featured: true
 tags:
   - AI giáo dục
   - kiểm tra kiến thức

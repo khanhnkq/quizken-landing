@@ -199,3 +199,90 @@ export function articleSchema(opts: {
 
 /** Inline <script type="application/ld+json"> renderer for use in Server Components. */
 
+/** BlogPosting schema — more specific than Article, preferred by Google for blog posts. */
+export function blogPostingSchema(opts: {
+  title: string;
+  description: string;
+  image?: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  wordCount?: number;
+  tags?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: opts.title,
+    description: opts.description,
+    image: buildAbsoluteUrl(opts.image || SITE.defaultOgImage),
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified || opts.datePublished,
+    inLanguage: "vi-VN",
+    ...(opts.wordCount ? { wordCount: opts.wordCount } : {}),
+    ...(opts.tags ? { keywords: opts.tags.join(", ") } : {}),
+    author: {
+      "@type": "Organization",
+      name: opts.author || SITE.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: {
+        "@type": "ImageObject",
+        url: buildAbsoluteUrl(SITE.defaultOgImage),
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": buildAbsoluteUrl(opts.path),
+    },
+    isPartOf: {
+      "@type": "Blog",
+      name: `${SITE.name} Blog`,
+      url: buildAbsoluteUrl("/blog"),
+    },
+  };
+}
+
+/** CollectionPage schema for category/tag listing pages. */
+export function collectionPageSchema(opts: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: opts.name,
+    description: opts.description,
+    url: buildAbsoluteUrl(opts.path),
+    inLanguage: "vi-VN",
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE.name,
+      url: SITE.url,
+    },
+  };
+}
+
+/** WebSite schema with SearchAction for Google sitelinks searchbox. */
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.defaultDescription,
+    inLanguage: "vi-VN",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE.url}/blog?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}

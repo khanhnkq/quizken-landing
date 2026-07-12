@@ -3,6 +3,7 @@ title: "Hướng dẫn học tiếng Anh hiệu quả với AI năm 2026"
 description: "Cách tận dụng AI để học tiếng Anh hiệu quả: từ vựng CEFR A1-C2, ngữ pháp, phát âm, flashcard thông minh, và luyện thi IELTS/TOEIC."
 date: 2026-03-11
 slug: huong-dan-hoc-tieng-anh-hieu-qua-voi-ai
+category: tieng-anh
 tags:
   - học tiếng Anh
   - AI

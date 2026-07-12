@@ -3,6 +3,7 @@ title: "Cách tạo đề kiểm tra trắc nghiệm bằng AI trong 30 giây"
 description: "Hướng dẫn chi tiết cách sử dụng QuizKen AI để tạo đề kiểm tra trắc nghiệm chất lượng cao chỉ trong 30 giây. Tiết kiệm thời gian cho giáo viên."
 date: 2026-03-11
 slug: cach-tao-de-kiem-tra-trac-nghiem-bang-ai
+category: huong-dan
 tags:
   - tạo đề kiểm tra
   - AI quiz
