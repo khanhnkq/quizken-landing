@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizKen Blog Publisher (Free Tool)</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #111827;
+      --border: #e5e7eb;
+      --muted: #6b7280;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 200px;
+    }
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background-color 0.2s;
+      width: 100%;
+    }
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+      font-weight: 500;
+    }
+    .success {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      display: block;
+    }
+    .error {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      display: block;
+    }
+    .helper {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>QuizKen Blog Publisher (Công cụ đăng bài miễn phí)</h1>
+    <p style="color: var(--muted); font-size: 14px; margin-bottom: 25px;">
+      Cách dùng: Hãy yêu cầu ChatGPT (bản miễn phí) viết bài viết theo cấu trúc Markdown. Sau đó dán nội dung vào công cụ này để đăng bài trực tiếp lên GitHub chỉ với 1 click.
+    </p>
+
+    <div class="form-group">
+      <label for="githubToken">GitHub Personal Access Token (PAT)</label>
+      <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+      <div class="helper">Token này được lưu an toàn cục bộ trên trình duyệt của bạn (LocalStorage).</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <div class="form-group">
+        <label for="postTitle">Tiêu đề bài viết</label>
+        <input type="text" id="postTitle" placeholder="Ví dụ: Cách học tiếng Anh hiệu quả" oninput="generateSlug()">
+      </div>
+      <div class="form-group">
+        <label for="postSlug">Slug (Đường dẫn bài viết)</label>
+        <input type="text" id="postSlug" placeholder="cach-hoc-tieng-anh-hieu-qua">
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <div class="form-group">
+        <label for="postCategory">Chuyên mục (Category)</label>
+        <select id="postCategory">
+          <option value="huong-dan">Hướng dẫn</option>
+          <option value="meo-hoc-tap">Mẹo học tập</option>
+          <option value="ai-giao-duc">AI giáo dục</option>
+          <option value="tieng-anh">Tiếng Anh</option>
+          <option value="so-sanh">So sánh</option>
+          <option value="tin-tuc">Tin tức</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="postTags">Thẻ (Tags) - Phân tách bằng dấu phẩy</label>
+        <input type="text" id="postTags" placeholder="Ví dụ: học tập, tiếng anh, ai">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="postDesc">Mô tả ngắn (SEO Description)</label>
+      <input type="text" id="postDesc" placeholder="Mô tả tóm tắt nội dung bài viết dưới 150 chữ...">
+    </div>
+
+    <div class="form-group">
+      <label for="postContent">Nội dung bài viết (Chỉ dán phần nội dung chính bằng Markdown)</label>
+      <textarea id="postContent" placeholder="Nhập hoặc dán nội dung bài viết dạng Markdown từ ChatGPT ở đây (Không cần dán phần Frontmatter ---)"></textarea>
+    </div>
+
+    <button class="btn" id="btnPublish" onclick="publishPost()">Đăng bài lên Blog</button>
+
+    <div id="statusBox" class="status"></div>
+  </div>
+
+  <script>
+    // Load token from localStorage if exists
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedToken = localStorage.getItem("quizken_github_token");
+      if (savedToken) {
+        document.getElementById("githubToken").value = savedToken;
+      }
+    });
+
+    // Auto generate slug from title
+    function generateSlug() {
+      const title = document.getElementById("postTitle").value;
+      const slug = title
+        .toLowerCase()
+        .replace(/á|à|ả|ã|ạ|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/g, "a")
+        .replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/g, "e")
+        .replace(/í|ì|ỉ|ĩ|ị/g, "i")
+        .replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/g, "o")
+        .replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/g, "u")
+        .replace(/ý|ỳ|ỷ|ỹ|ỵ/g, "y")
+        .replace(/đ/g, "d")
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .trim();
+      document.getElementById("postSlug").value = slug;
+    }
+
+    async function publishPost() {
+      const token = document.getElementById("githubToken").value.trim();
+      const title = document.getElementById("postTitle").value.trim();
+      const slug = document.getElementById("postSlug").value.trim();
+      const category = document.getElementById("postCategory").value;
+      const tagsRaw = document.getElementById("postTags").value;
+      const desc = document.getElementById("postDesc").value.trim();
+      const content = document.getElementById("postContent").value.trim();
+      const statusBox = document.getElementById("statusBox");
+
+      if (!token || !title || !slug || !content) {
+        showStatus("Vui lòng điền đầy đủ các thông tin bắt buộc (Token, Tiêu đề, Slug, Nội dung).", "error");
+        return;
+      }
+
+      // Save token for next time
+      localStorage.setItem("quizken_github_token", token);
+
+      showStatus("Đang đăng bài viết lên GitHub...", "");
+      document.getElementById("btnPublish").disabled = true;
+
+      // Format tags
+      const tags = tagsRaw
+        .split(",")
+        .map(t => t.trim())
+        .filter(t => t.length > 0);
+
+      const tagsYaml = tags.map(t => `  - "${t}"`).join("\n");
+
+      // Generate cover image path based on category
+      const coverMap = {
+        "huong-dan": "/images/blog/cover_quizken_guide.png",
+        "meo-hoc-tap": "/images/blog/cover_study_tips.png",
+        "ai-giao-duc": "/images/blog/cover_ai_edu.png",
+        "tieng-anh": "/images/blog/cover_english.png",
+        "so-sanh": "/images/blog/cover_comparison.png",
+        "tin-tuc": "/images/blog/cover_quizken_guide.png"
+      };
+      const cover = coverMap[category] || "/images/blog/cover_quiz_creator.png";
+
+      // 1. Build Markdown File with Frontmatter
+      const today = new Date().toISOString().split("T")[0];
+      const fileContent = `---
+title: "${title}"
+description: "${desc}"
+date: ${today}
+slug: ${slug}
+category: ${category}
+cover: ${cover}
+tags:
+${tagsYaml}
+author: QuizKen Team
+---
+
+${content}`;
+
+      // 2. Encode to Base64
+      // Use btoa with encodeURIComponent to support Vietnamese characters safely
+      const utf8Bytes = new TextEncoder().encode(fileContent);
+      let binary = "";
+      for (let i = 0; i < utf8Bytes.byteLength; i++) {
+        binary += String.fromCharCode(utf8Bytes[i]);
+      }
+      const base64Content = btoa(binary);
+
+      // Repo Configuration
+      const owner = "khanhnkq";
+      const repo = "quizken";
+      const path = `landing/src/content/blog/${slug}.md`;
+      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+      try {
+        const response = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Feat: publish blog post ${slug} via publisher tool`,
+            content: base64Content,
+            branch: "main"
+          })
+        });
+
+        const resData = await response.json();
+        document.getElementById("btnPublish").disabled = false;
+
+        if (response.ok) {
+          showStatus(`🎉 Đăng bài viết thành công!<br>File đã tạo: <strong>${path}</strong>.<br>Vercel đang tiến hành build và deploy bài viết mới lên web trong 1-2 phút nữa!`, "success");
+          // Clear form
+          document.getElementById("postTitle").value = "";
+          document.getElementById("postSlug").value = "";
+          document.getElementById("postTags").value = "";
+          document.getElementById("postDesc").value = "";
+          document.getElementById("postContent").value = "";
+        } else {
+          showStatus(`Lỗi từ GitHub: ${resData.message || response.statusText}`, "error");
+        }
+      } catch (err) {
+        document.getElementById("btnPublish").disabled = false;
+        showStatus(`Có lỗi xảy ra: ${err.message}`, "error");
+      }
+    }
+
+    function showStatus(message, type) {
+      const statusBox = document.getElementById("statusBox");
+      statusBox.innerHTML = message;
+      statusBox.className = "status";
+      if (type) {
+        statusBox.classList.add(type);
+      } else {
+        statusBox.style.display = "block";
+        statusBox.style.backgroundColor = "#eff6ff";
+        statusBox.style.color = "#1e40af";
+        statusBox.style.border = "1px solid #bfdbfe";
+      }
+    }
+  </script>
+</body>
+</html>

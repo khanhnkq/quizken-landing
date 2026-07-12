@@ -1,22 +1,36 @@
 import type { Metadata } from "next";
-import { Fredoka, Ubuntu } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE } from "@/lib/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeScript } from "@/components/layout/ThemeScript";
 
-const fredoka = Fredoka({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
+const fredoka = localFont({
+  src: "../../public/fonts/vn/DVN-Fredoka-Bold.ttf",
   variable: "--font-fredoka",
   display: "swap",
 });
 
-const ubuntu = Ubuntu({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
-  variable: "--font-ubuntu",
+const roboto = localFont({
+  src: [
+    {
+      path: "../../public/fonts/vn/Roboto-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/vn/Roboto-Light.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/vn/Roboto-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -99,7 +113,7 @@ export default function RootLayout({
     <html
       lang={SITE.language}
       suppressHydrationWarning
-      className={`${fredoka.variable} ${ubuntu.variable} h-full antialiased`}
+      className={`${fredoka.variable} ${roboto.variable} h-full antialiased`}
     >
       <head>
         <ThemeScript />

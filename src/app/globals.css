@@ -84,8 +84,8 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  --font-sans: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-fredoka), var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-fredoka), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 
   --radius: var(--radius);
   --radius-lg: var(--radius);
@@ -135,13 +135,13 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-fredoka), var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-fredoka), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
     font-weight: 600;
     letter-spacing: -0.015em;
     text-wrap: balance;
