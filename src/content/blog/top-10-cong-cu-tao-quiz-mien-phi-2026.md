@@ -4,6 +4,7 @@ description: "Tổng hợp và đánh giá 10 nền tảng tạo bài kiểm tra
 date: 2026-03-11
 slug: top-10-cong-cu-tao-quiz-mien-phi-2026
 category: so-sanh
+cover: /images/blog/cover_comparison.png
 tags:
   - công cụ tạo quiz
   - quiz maker

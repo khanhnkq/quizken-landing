@@ -4,6 +4,7 @@ description: "Tổng hợp 10 cách AI đang thay đổi giáo dục Việt Nam 
 date: 2026-04-20
 slug: ung-dung-ai-trong-giao-duc
 category: ai-giao-duc
+cover: /images/blog/cover_ai_edu.png
 tags:
   - AI giáo dục
   - EdTech

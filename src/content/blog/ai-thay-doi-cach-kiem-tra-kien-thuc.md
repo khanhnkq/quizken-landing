@@ -5,6 +5,7 @@ date: 2026-03-11
 slug: ai-thay-doi-cach-kiem-tra-kien-thuc
 category: ai-giao-duc
 featured: true
+cover: /images/blog/cover_ai_edu.png
 tags:
   - AI giáo dục
   - kiểm tra kiến thức

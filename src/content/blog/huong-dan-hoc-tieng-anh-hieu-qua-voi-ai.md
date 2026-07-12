@@ -4,6 +4,7 @@ description: "Cách tận dụng AI để học tiếng Anh hiệu quả: từ v
 date: 2026-03-11
 slug: huong-dan-hoc-tieng-anh-hieu-qua-voi-ai
 category: tieng-anh
+cover: /images/blog/cover_english.png
 tags:
   - học tiếng Anh
   - AI

@@ -4,6 +4,7 @@ description: "Tìm hiểu Spaced Repetition là gì, tại sao nó hiệu quả 
 date: 2026-04-10
 slug: phuong-phap-hoc-spaced-repetition
 category: meo-hoc-tap
+cover: /images/blog/cover_study_tips.png
 tags:
   - spaced repetition
   - phương pháp học

@@ -4,6 +4,7 @@ description: "So sánh chi tiết 3 nền tảng quiz hàng đầu: QuizKen, Qui
 date: 2026-03-11
 slug: so-sanh-quizken-vs-quizlet-vs-kahoot
 category: so-sanh
+cover: /images/blog/cover_comparison.png
 tags:
   - so sánh
   - QuizKen
