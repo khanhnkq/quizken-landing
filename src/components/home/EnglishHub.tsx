@@ -31,8 +31,8 @@ export function EnglishHub() {
               {/* Mascot image with glass frame */}
               <div className="glass relative overflow-hidden rounded-2xl p-2 ring-1 ring-border/30">
                 <Image
-                  src="/images/mascot-3d.png"
-                  alt="QuizKen mascot studying English"
+                  src="/images/english_hub_path.png"
+                  alt="QuizKen English Hub Learning Path Preview"
                   width={1024}
                   height={1024}
                   className="block h-auto w-full rounded-xl"

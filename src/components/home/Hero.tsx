@@ -85,12 +85,12 @@ export function Hero() {
             {/* Mascot */}
             <div className="absolute left-1/2 top-1/2 w-[62%] -translate-x-1/2 -translate-y-1/2 animate-float">
               <Image
-                src="/images/mascot-3d.png"
-                alt="Linh vật QuizKen"
+                src="/images/hero_mockup.png"
+                alt="QuizKen AI Quiz Dashboard Preview"
                 width={640}
                 height={640}
                 priority
-                className="h-auto w-full drop-shadow-2xl"
+                className="h-auto w-full drop-shadow-2xl rounded-2xl"
               />
             </div>
 
