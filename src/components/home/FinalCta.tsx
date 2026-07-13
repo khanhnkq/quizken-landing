@@ -26,11 +26,11 @@ export function FinalCta() {
                 <div className="relative mx-auto h-36 w-36 lg:h-44 lg:w-44">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/15 to-sky-200/15 blur-2xl" />
                   <Image
-                    src="/images/final_cta_trophy.png"
-                    alt="QuizKen Graduation Cap and Trophy Preview"
+                    src="/images/mascot-happy.png"
+                    alt="QuizKen mascot"
                     width={320}
                     height={320}
-                    className="relative h-full w-full drop-shadow-lg rounded-full"
+                    className="relative h-full w-full object-contain drop-shadow-md scale-95"
                     loading="lazy"
                   />
                 </div>
