@@ -19,6 +19,7 @@ const footerNav: { title: string; links: { label: string; href: string; external
     links: [
       { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
+      { label: "Số liệu", href: "/stats" },
       { label: "Tính năng", href: "/#features" },
       { label: "Cách hoạt động", href: "/#how-it-works" },
     ],

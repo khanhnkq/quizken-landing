@@ -60,7 +60,7 @@ export function getPost(slug: string): Post | null {
       date: data.date || "2026-01-01",
       updated: data.updated || undefined,
       slug,
-      tags: data.tags || [],
+      tags: (data.tags || []).map(String),
       category: data.category || undefined,
       cover: data.cover || undefined,
       author: data.author || "QuizKen Team",
