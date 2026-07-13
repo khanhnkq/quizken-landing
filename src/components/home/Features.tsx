@@ -31,11 +31,8 @@ export function Features() {
             const style = accentStyles[f.accent];
 
             // Make first card span 2 cols on lg for hero feature
-            const isHero = i === 0;
-            const spanClass = isHero ? "sm:col-span-2 lg:col-span-2" : "";
-
             return (
-              <StaggerItem key={f.title} className={spanClass}>
+              <StaggerItem key={f.title}>
                 <div
                   className={`group relative h-full overflow-hidden rounded-2xl border border-border/40 p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 sm:p-8 ${style.bg}`}
                 >

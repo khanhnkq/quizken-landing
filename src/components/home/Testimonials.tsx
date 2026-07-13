@@ -25,14 +25,13 @@ export function Testimonials() {
           </h2>
         </ScrollReveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Testimonial cards: first card spans 2 cols */}
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* Testimonial cards */}
           {testimonials.map((t, i) => (
             <ScrollReveal
               key={t.name}
               delay={i * 0.1}
               direction={i === 0 ? "up" : i === 1 ? "right" : "left"}
-              className={i === 0 ? "lg:col-span-2" : ""}
             >
               <div
                 className={`group relative h-full rounded-2xl border border-border/40 p-6 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 sm:p-8 ${cardAccents[i]}`}
