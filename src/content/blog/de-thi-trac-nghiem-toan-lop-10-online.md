@@ -4,7 +4,7 @@ description: "Hướng dẫn chi tiết cách tạo đề thi trắc nghiệm To
 date: 2026-07-01
 slug: de-thi-trac-nghiem-toan-lop-10-online
 category: huong-dan
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_math_quiz.png
 tags:
   - toán lớp 10
   - đề thi trắc nghiệm

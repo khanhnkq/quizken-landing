@@ -4,7 +4,7 @@ description: "Hướng dẫn chi tiết cách đặt câu hỏi (prompt) cho Cha
 date: 2026-07-12
 slug: ung-dung-chat-gpt-gemini-hoc-tap-hieu-qua
 category: ai-giao-duc
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_ai_comparison.png
 tags:
   - cách dùng ChatGPT
   - dùng Gemini học tập

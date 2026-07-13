@@ -4,7 +4,7 @@ description: "Cách biến giờ học trực tuyến thành trò chơi thú v�
 date: 2026-07-08
 slug: huong-dan-tao-game-quiz-lop-hoc-online
 category: huong-dan
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_quizken_guide.png
 tags:
   - game quiz online
   - lớp học trực tuyến

@@ -4,7 +4,7 @@ description: "So sánh chi tiết QuizKen và Google Forms về tính năng tạ
 date: 2026-07-07
 slug: so-sanh-quizken-vs-google-forms-giao-vien
 category: so-sanh
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_ai_comparison.png
 tags:
   - so sánh
   - QuizKen

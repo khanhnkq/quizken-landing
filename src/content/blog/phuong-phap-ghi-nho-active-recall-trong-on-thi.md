@@ -4,7 +4,7 @@ description: "Khám phá phương pháp học tập chủ động gợi nhớ (A
 date: 2026-07-11
 slug: phuong-phap-ghi-nho-active-recall-trong-on-thi
 category: meo-hoc-tap
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_study_desk.png
 tags:
   - active recall
   - phương pháp học tập

@@ -4,7 +4,7 @@ description: "Chiến lược ôn thi THPT quốc gia 2026 hiệu quả nhất k
 date: 2026-07-05
 slug: on-thi-thpt-quoc-gia-2026-chien-luoc
 category: meo-hoc-tap
-cover: /images/blog/cover_quiz_creator.png
+cover: /images/blog/cover_study_desk.png
 tags:
   - ôn thi THPT
   - 2026
