@@ -3,7 +3,9 @@ import Script from "next/script";
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 /**
- * Google Analytics 4 — loads asynchronously via next/script (afterInteractive).
+ * Google Analytics 4 — loads via next/script (beforeInteractive).
+ * Uses beforeInteractive so the script appears in the initial HTML,
+ * which is required for Google's tag verification checker.
  * Set NEXT_PUBLIC_GA_MEASUREMENT_ID in .env to enable tracking.
  */
 export function GoogleAnalytics() {
@@ -13,17 +15,14 @@ export function GoogleAnalytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
       />
-      <Script id="ga4-init" strategy="afterInteractive">
+      <Script id="ga4-init" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            page_path: window.location.pathname,
-            send_page_view: true
-          });
+          gtag('config', '${GA_ID}');
         `}
       </Script>
     </>

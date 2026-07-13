@@ -117,6 +117,7 @@ export default function RootLayout({
       className={`${fredoka.variable} ${roboto.variable} h-full antialiased`}
     >
       <head>
+        <GoogleAnalytics />
         <ThemeScript />
         <link
           rel="alternate"
@@ -129,7 +130,6 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <GoogleAnalytics />
         <MicrosoftClarity />
       </body>
     </html>
