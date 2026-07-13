@@ -11,6 +11,7 @@ import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { AuthorCard } from "@/components/blog/AuthorCard";
 import { BlogCta } from "@/components/blog/BlogCta";
+import { NewsletterCta } from "@/components/blog/NewsletterCta";
 import { JsonLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
@@ -136,6 +137,9 @@ export default async function BlogPostPage({
 
               {/* CTA banner after content */}
               <BlogCta />
+
+              {/* Newsletter email capture */}
+              <NewsletterCta />
 
               {/* Author card */}
               <div className="mt-8">

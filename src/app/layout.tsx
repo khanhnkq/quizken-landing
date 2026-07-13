@@ -5,6 +5,7 @@ import { SITE } from "@/lib/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeScript } from "@/components/layout/ThemeScript";
+import { GoogleAnalytics, MicrosoftClarity } from "@/components/layout/Analytics";
 
 const fredoka = localFont({
   src: "../../public/fonts/vn/DVN-Fredoka-Bold.ttf",
@@ -128,6 +129,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   );
