@@ -21,7 +21,7 @@ export const SITE = {
   foundingDate: "2024",
   email: "khanhnguyenkim30825@gmail.com",
   social: {
-    facebook: "https://facebook.com/quizken",
+    facebook: "https://www.facebook.com/quizkenvn/",
     youtube: "https://youtube.com/quizken",
     github: "https://github.com/khanhnkq/quizken",
   },
