@@ -27,7 +27,7 @@ export function Hero() {
             <h1 className="mt-5 font-heading text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.2rem]">
               Tạo{" "}
               <span className="relative whitespace-nowrap">
-                <span className="text-gradient">Bài Kiểm Tra</span>
+                <span className="text-gradient">Đề Trắc Nghiệm</span>
                 <svg
                   className="absolute -bottom-2 left-0 w-full text-primary/40"
                   viewBox="0 0 200 12"
@@ -43,12 +43,12 @@ export function Hero() {
                   />
                 </svg>
               </span>{" "}
-              với <span className="text-gradient">AI</span>
+              bằng <span className="text-gradient">AI</span>
             </h1>
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              QuizKen giúp giáo viên và học sinh tạo bài kiểm tra trắc nghiệm
-              với AI trong vài giây. Hỗ trợ 100+ chủ đề, tự động chấm điểm, xuất
+              QuizKen giúp giáo viên và học sinh tạo đề thi trắc nghiệm
+              bằng AI trong vài giây. Hỗ trợ 100+ chủ đề, tự động chấm điểm, xuất
               PDF miễn phí.
             </p>
 

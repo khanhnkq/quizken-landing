@@ -13,8 +13,16 @@ import {
   softwareApplicationSchema,
   webPageSchema,
   faqSchema,
+  buildMetadata,
 } from "@/lib/seo";
 import { faqs } from "@/lib/content/faq";
+
+export const metadata = buildMetadata({
+  title: "Tạo Đề Trắc Nghiệm Bằng AI Miễn Phí | Phần Mềm Soạn Đề Thi",
+  description:
+    "QuizKen giúp giáo viên và học sinh tạo đề thi trắc nghiệm bằng AI trong 30 giây. Hỗ trợ 100+ môn học, tự động chấm điểm, xuất đề PDF tiếng Việt miễn phí.",
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -24,8 +32,8 @@ export default function HomePage() {
           organizationSchema(),
           softwareApplicationSchema(),
           webPageSchema(
-            "Tạo Bài Kiểm Tra AI Miễn Phí | QuizKen",
-            "QuizKen giúp giáo viên và học sinh tạo bài kiểm tra trắc nghiệm với AI trong vài giây.",
+            "Tạo Đề Trắc Nghiệm Bằng AI Miễn Phí | QuizKen",
+            "QuizKen giúp giáo viên và học sinh tạo đề thi trắc nghiệm bằng AI trong 30 giây.",
             "/",
           ),
           faqSchema(faqs),
