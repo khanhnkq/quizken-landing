@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/categories";
+import { SUBJECTS, GRADES } from "@/lib/pSEO";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
@@ -33,6 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Programmatic SEO pages
+  const pseoPages: MetadataRoute.Sitemap = [];
+  for (const sub of SUBJECTS) {
+    for (const gr of GRADES) {
+      pseoPages.push({
+        url: `${SITE.url}/de-thi/${sub.slug}/${gr.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      });
+    }
+  }
+
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = CATEGORIES.map((cat) => ({
     url: `${SITE.url}/blog/category/${cat.slug}`,
@@ -58,6 +72,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : {}),
   }));
 
-  return [...staticPages, ...categoryPages, ...blogPages];
+  return [...staticPages, ...pseoPages, ...categoryPages, ...blogPages];
 }
 
