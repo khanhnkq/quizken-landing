@@ -189,3 +189,63 @@ export function extractHeadings(content: string): { id: string; text: string; le
 
   return headings;
 }
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+/** Extract FAQ Q&A from blog markdown content. */
+export function extractFaqs(content: string): FaqItem[] {
+  const faqs: FaqItem[] = [];
+  const lines = content.split("\n");
+  let inFaqSection = false;
+  let currentQuestion = "";
+  let currentAnswerLines: string[] = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (
+      trimmed.startsWith("## ") &&
+      (trimmed.toLowerCase().includes("câu hỏi thường gặp") || trimmed.toLowerCase().includes("faq"))
+    ) {
+      inFaqSection = true;
+      continue;
+    }
+
+    if (inFaqSection) {
+      // Exit FAQ section if another H1 or H2 is found
+      if (
+        trimmed.startsWith("# ") ||
+        (trimmed.startsWith("## ") &&
+          !trimmed.toLowerCase().includes("câu hỏi thường gặp") &&
+          !trimmed.toLowerCase().includes("faq"))
+      ) {
+        break;
+      }
+
+      if (trimmed.startsWith("### ")) {
+        if (currentQuestion && currentAnswerLines.length > 0) {
+          faqs.push({
+            question: currentQuestion,
+            answer: currentAnswerLines.join("\n").trim(),
+          });
+        }
+        currentQuestion = trimmed.slice(4).replace(/^\d+\.\s*/, "").trim();
+        currentAnswerLines = [];
+      } else if (currentQuestion) {
+        currentAnswerLines.push(line);
+      }
+    }
+  }
+
+  if (currentQuestion && currentAnswerLines.length > 0) {
+    faqs.push({
+      question: currentQuestion,
+      answer: currentAnswerLines.join("\n").trim(),
+    });
+  }
+
+  return faqs;
+}
+

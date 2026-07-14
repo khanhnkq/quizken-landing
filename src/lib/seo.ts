@@ -160,6 +160,21 @@ export function breadcrumbSchema(items: Array<{ name: string; path: string }>) {
   };
 }
 
+export function personSchema(name: string, title?: string, sameAs?: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle: title || "Expert Writer",
+    worksFor: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    sameAs: sameAs || [SITE.social.facebook],
+  };
+}
+
 export function articleSchema(opts: {
   title: string;
   description: string;
@@ -179,8 +194,8 @@ export function articleSchema(opts: {
     dateModified: opts.dateModified || opts.datePublished,
     inLanguage: "vi-VN",
     author: {
-      "@type": "Organization",
-      name: opts.author || SITE.name,
+      "@type": "Person",
+      name: opts.author || "QuizKen Team",
     },
     publisher: {
       "@type": "Organization",

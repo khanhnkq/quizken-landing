@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { appLink } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/categories";
+import { StatsCharts } from "@/components/stats/StatsCharts";
 import {
   BookOpen,
   Users,
@@ -172,6 +173,9 @@ export default function StatsPage() {
               </div>
             ))}
           </div>
+
+          {/* Interactive Comparison Charts for SEO/GEO */}
+          <StatsCharts />
         </Container>
       </section>
 

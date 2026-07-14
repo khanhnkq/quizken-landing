@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { getAllSlugs, getPost, extractHeadings, getRelatedPosts } from "@/lib/blog";
-import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
+import { getAllSlugs, getPost, extractHeadings, getRelatedPosts, extractFaqs } from "@/lib/blog";
+import { buildMetadata, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { buildAbsoluteUrl } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
@@ -52,27 +52,32 @@ export default async function BlogPostPage({
   const headings = extractHeadings(post.content);
   const relatedPosts = getRelatedPosts(slug, 3);
   const postUrl = buildAbsoluteUrl(`/blog/${slug}`);
+  const faqs = extractFaqs(post.content);
+
+  const schemas: any[] = [
+    articleSchema({
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      path: `/blog/${slug}`,
+      image: post.frontmatter.cover,
+      datePublished: post.frontmatter.date,
+      dateModified: post.frontmatter.updated,
+      author: post.frontmatter.author,
+    }),
+    breadcrumbSchema([
+      { name: "Trang chủ", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.frontmatter.title, path: `/blog/${slug}` },
+    ]),
+  ];
+
+  if (faqs.length > 0) {
+    schemas.push(faqSchema(faqs));
+  }
 
   return (
     <>
-      <JsonLd
-        data={[
-          articleSchema({
-            title: post.frontmatter.title,
-            description: post.frontmatter.description,
-            path: `/blog/${slug}`,
-            image: post.frontmatter.cover,
-            datePublished: post.frontmatter.date,
-            dateModified: post.frontmatter.updated,
-            author: post.frontmatter.author,
-          }),
-          breadcrumbSchema([
-            { name: "Trang chủ", path: "/" },
-            { name: "Blog", path: "/blog" },
-            { name: post.frontmatter.title, path: `/blog/${slug}` },
-          ]),
-        ]}
-      />
+      <JsonLd data={schemas} />
       <article className="py-14 sm:py-20">
         <Container>
           <Link
