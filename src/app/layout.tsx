@@ -47,6 +47,8 @@ export const metadata: Metadata = {
   keywords: [
     "tạo bài kiểm tra AI",
     "quiz generator",
+    "ai làm ppt",
+    "làm slide bằng AI",
     "tạo đề kiểm tra trắc nghiệm",
     "trắc nghiệm online",
     "AI giáo dục",
