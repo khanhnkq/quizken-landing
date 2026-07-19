@@ -1,113 +1,104 @@
 "use client";
 
 import Image from "next/image";
-import { BookOpen, Flame, Gem, Target, Trophy, ChevronRight, Sparkles } from "lucide-react";
+import { BookOpen, Flame, Gem, Target, Trophy, Sparkles, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { appLink } from "@/lib/site";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 
 const HIGHLIGHTS = [
-  { icon: BookOpen, label: "Lộ trình CEFR & TOEIC", desc: "Từ A1 đến C2, bài học có cấu trúc rõ ràng." },
-  { icon: Flame, label: "Streak & XP", desc: "Giữ chuỗi ngày học, tích điểm kinh nghiệm mỗi ngày." },
-  { icon: Gem, label: "Thu thập đá quý", desc: "Hoàn thành bài học để nhận phần thưởng vật lý." },
-  { icon: Target, label: "Sổ tay từ vựng", desc: "Lưu từ khó, ôn tập spaced repetition." },
+  { icon: BookOpen, label: "Lộ trình CEFR & TOEIC", desc: "Từ A1 đến C2, bài học chuẩn hóa quốc tế." },
+  { icon: Flame, label: "Streak & Tích XP", desc: "Duy trì chuỗi ngày học để thăng hạng." },
+  { icon: Gem, label: "Hệ thống phần thưởng", desc: "Tích đá quý mở khóa giao diện & huy hiệu." },
+  { icon: Target, label: "Sổ tay từ vựng AI", desc: "Lưu từ khó, ôn tập phản xạ Spaced Repetition." },
 ];
 
 export function EnglishHub() {
   return (
-    <section id="english-hub" className="relative overflow-hidden bg-secondary/20 py-20 sm:py-28">
-      {/* Dot grid texture */}
+    <section id="english-hub" className="relative overflow-hidden bg-gradient-to-b from-sky-50/50 via-background to-emerald-50/30 dark:from-sky-950/20 dark:via-slate-950 dark:to-emerald-950/20 py-20 sm:py-28">
       <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-30" />
 
-      <Container className="relative">
+      <Container className="relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Visual side: mascot with floating badge cards */}
-          <ScrollReveal direction="right" delay={0.1}>
-            <div className="relative mx-auto w-full max-w-md lg:mx-0">
-              {/* Glow backdrop */}
-              <div className="absolute inset-0 -m-8 rounded-3xl bg-gradient-to-br from-sky-200/20 via-emerald-100/10 to-rose-100/10 blur-3xl" />
+          
+          {/* Visual side */}
+          <div className="relative mx-auto w-full max-w-md lg:mx-0">
+            <div className="absolute inset-0 -m-8 rounded-full bg-gradient-to-br from-sky-300/30 via-emerald-200/20 to-transparent blur-3xl -z-10" />
 
-              {/* Mascot image with glass frame */}
-              <div className="glass relative overflow-hidden rounded-2xl p-2 ring-1 ring-border/30">
-                <Image
-                  src="/images/english_hub_path.png"
-                  alt="QuizKen English Hub Learning Path Preview"
-                  width={1024}
-                  height={1024}
-                  className="block h-auto w-full rounded-xl"
-                  loading="lazy"
-                />
-              </div>
+            <div className="rounded-3xl border-4 border-sky-200 dark:border-sky-900 bg-white/90 dark:bg-slate-900/90 p-3 shadow-2xl overflow-hidden">
+              <Image
+                src="/images/english_hub_path.png"
+                alt="QuizKen English Hub Learning Path Preview"
+                width={1024}
+                height={1024}
+                className="block h-auto w-full rounded-2xl"
+                loading="lazy"
+              />
+            </div>
 
-              {/* Floating badge: XP */}
-              <div className="glass absolute -left-4 top-8 flex items-center gap-2 rounded-xl px-3 py-2 ring-1 ring-border/30 shadow-lg sm:-left-6">
-                <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400">
-                  <Sparkles className="h-4 w-4" />
-                </span>
-                <div>
-                  <p className="text-xs font-600 leading-tight">XP hôm nay</p>
-                  <p className="text-sm font-700 text-primary">+240</p>
-                </div>
-              </div>
-
-              {/* Floating badge: Streak */}
-              <div className="glass absolute -right-2 bottom-20 flex items-center gap-2 rounded-xl px-3 py-2 ring-1 ring-border/30 shadow-lg sm:-right-4">
-                <span className="grid h-8 w-8 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/60 dark:text-rose-400">
-                  <Flame className="h-4 w-4" />
-                </span>
-                <div>
-                  <p className="text-xs font-600 leading-tight">Streak</p>
-                  <p className="text-sm font-700 text-primary">47 ngày</p>
-                </div>
+            {/* Floating badges */}
+            <div className="glass absolute -left-4 top-8 flex items-center gap-3 rounded-2xl p-3 border border-border shadow-xl">
+              <span className="p-2.5 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/60 dark:text-amber-300">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-xs font-bold text-muted-foreground">XP Hôm Nay</p>
+                <p className="font-heading text-base font-bold text-emerald-600">+240 XP</p>
               </div>
             </div>
-          </ScrollReveal>
+
+            <div className="glass absolute -right-2 bottom-16 flex items-center gap-3 rounded-2xl p-3 border border-border shadow-xl">
+              <span className="p-2.5 rounded-xl bg-rose-100 text-rose-600 dark:bg-rose-950/60 dark:text-rose-300">
+                <Flame className="h-5 w-5 animate-bounce" />
+              </span>
+              <div>
+                <p className="text-xs font-bold text-muted-foreground">Streak Chuỗi Ngược</p>
+                <p className="font-heading text-base font-bold text-rose-500">47 Ngày</p>
+              </div>
+            </div>
+          </div>
 
           {/* Text side */}
-          <div>
-            <ScrollReveal>
-              <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-sky-100 px-3 py-1 text-xs font-600 text-sky-700 dark:bg-sky-950/40 dark:text-sky-400">
-                <Trophy className="h-3.5 w-3.5" />
-                English Hub
-              </span>
-              <h2 className="font-heading text-3xl tracking-tight sm:text-4xl">
-                Hành trình tiếng Anh{" "}
-                <span className="text-gradient">Zero to Hero</span>
-              </h2>
-              <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-                Hệ thống bài học từ vựng, ngữ pháp, luyện nghe nói theo lộ trình
-                cá nhân hóa. Kết hợp gamification để việc học trở nên thú vị như
-                chơi game.
-              </p>
-            </ScrollReveal>
+          <div className="space-y-6">
+            <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 dark:bg-sky-950/60 px-4 py-1.5 text-xs font-bold text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+              <Trophy className="h-4 w-4" />
+              English Hub - Góc Học Tiếng Anh
+            </span>
 
-            <StaggerContainer className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2" stagger={0.08}>
-              {HIGHLIGHTS.map((h) => {
+            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-foreground leading-snug">
+              Hành Trình Học Tiếng Anh <br className="hidden sm:block" />
+              <span className="text-gradient">Zero to Hero Với AI</span>
+            </h2>
+
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+              Hệ thống bài học từ vựng, ngữ pháp, luyện phản xạ theo lộ trình cá nhân hóa. Tự động chuyển giao bài tập thành dạng game hấp dẫn giúp bạn học không bao giờ chán.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              {HIGHLIGHTS.map((h, i) => {
                 const Icon = h.icon;
                 return (
-                  <StaggerItem key={h.label} direction="left">
-                    <div className="flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 hover:bg-card">
-                      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-sky-50 text-sky-600 ring-1 ring-sky-200/60 dark:bg-sky-950/40 dark:text-sky-400 dark:ring-sky-800/40">
-                        <Icon className="h-4 w-4" />
-                      </span>
-                      <div>
-                        <p className="text-sm font-600">{h.label}</p>
-                        <p className="mt-0.5 text-xs text-muted-foreground">{h.desc}</p>
-                      </div>
+                  <div key={i} className="flex items-start gap-3.5 p-4 rounded-2xl bg-card border border-border/80 shadow-sm hover:border-sky-300 transition-all">
+                    <span className="p-2.5 rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950/60 dark:text-sky-300 shrink-0">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <p className="font-heading font-bold text-sm text-foreground">{h.label}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{h.desc}</p>
                     </div>
-                  </StaggerItem>
+                  </div>
                 );
               })}
-            </StaggerContainer>
+            </div>
 
-            <ScrollReveal delay={0.4}>
-              <Button href={appLink("/english")} className="mt-8" size="lg">
-                Vào English Hub
-                <ChevronRight className="h-4 w-4" />
+            <div className="pt-4">
+              <Button href={appLink("/english")} size="lg" className="rounded-[2rem] px-8 py-4 font-heading font-bold text-base shadow-xl">
+                Khám Phá English Hub
+                <ArrowRight className="h-5 w-5 ml-1" />
               </Button>
-            </ScrollReveal>
+            </div>
           </div>
+
         </div>
       </Container>
     </section>

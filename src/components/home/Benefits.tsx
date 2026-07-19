@@ -2,102 +2,87 @@
 
 import { CheckCircle2, GraduationCap, BookOpen } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { benefits } from "@/lib/content/benefits";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
-import { cn } from "@/lib/utils";
 
-const audienceIcons = [GraduationCap, BookOpen];
-const audienceAccents = [
-  "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400",
-  "bg-sky-50 text-sky-600 dark:bg-sky-950/40 dark:text-sky-400",
+const audienceList = [
+  {
+    audience: "Dành Cho Giáo Viên & Giảng Viên",
+    title: "Tiết Kiệm 95% Thời Gian Soạn Đề Thi Trắc Nghiệm",
+    description: "Không còn cảnh mất hàng giờ đồng hồ tìm kiếm câu hỏi hoặc gõ lại đề từ sách giáo khoa.",
+    icon: GraduationCap,
+    accentBg: "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-300",
+    border: "border-emerald-300 dark:border-emerald-800",
+    gradient: "from-emerald-50/80 via-white to-emerald-50/30 dark:from-emerald-950/30 dark:via-slate-900 dark:to-slate-900",
+    checkColor: "text-emerald-500",
+    items: [
+      "Tự động tạo bộ đề kiểm tra 15 phút, 1 tiết, học kỳ chỉ với 1 cú click.",
+      "Xuất file PDF & Word sắc nét có kèm ma trận đề thi & lời giải chi tiết.",
+      "Tổ chức thi trắc nghiệm online hoặc chiếu đề lên bảng tương tác trên lớp.",
+      "Đa dạng hình thức: Nhiều lựa chọn, Đúng/Sai, Điền từ vào chỗ trống.",
+    ],
+  },
+  {
+    audience: "Dành Cho Học Sinh & Sinh Viên",
+    title: "Học Tập Gamified - Ôn Thi Không Còn Nhàn Chán",
+    description: "Biến lý thuyết khô khan thành bài trắc nghiệm tương tác giúp ghi nhớ lâu gấp 3 lần.",
+    icon: BookOpen,
+    accentBg: "bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-300",
+    border: "border-sky-300 dark:border-sky-800",
+    gradient: "from-sky-50/80 via-white to-sky-50/30 dark:from-sky-950/30 dark:via-slate-900 dark:to-slate-900",
+    checkColor: "text-sky-500",
+    items: [
+      "Tạo đề ôn tập tức thì theo từng chương sách giáo khoa hoặc đề thi thử.",
+      "Chế độ Streak tích điểm XP, duy trì thói quen học tập hàng ngày.",
+      "Thách đấu kiến thức trực tuyến với bạn bè trong Game Lobby.",
+      "Xem ngay giải thích chi tiết vì sao đúng/sai để rút kinh nghiệm nhanh.",
+    ],
+  },
 ];
 
 export function Benefits() {
   return (
-    <section id="benefits" className="py-20 sm:py-28">
+    <section id="benefits" className="py-20 sm:py-28 relative">
       <Container>
-        <ScrollReveal>
-          <span className="eyebrow">Dành cho ai</span>
-          <h2 className="mt-4 max-w-lg font-heading text-3xl tracking-tight sm:text-4xl">
-            Thiết kế cho từng đối tượng
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <span className="eyebrow mb-4">Đối tượng sử dụng</span>
+          <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight mt-3">
+            Giải Pháp Hoàn Hảo Cho <span className="text-gradient">Mọi Nhu Cầu</span>
           </h2>
-        </ScrollReveal>
+        </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          {benefits.map(({ audience, data }, idx) => {
-            const Icon = audienceIcons[idx];
-            const accent = audienceAccents[idx];
+        <div className="grid gap-8 lg:grid-cols-2">
+          {audienceList.map((item, idx) => {
+            const Icon = item.icon;
 
             return (
-              <ScrollReveal
-                key={audience}
-                delay={idx * 0.15}
-                direction={idx === 0 ? "left" : "right"}
+              <div
+                key={idx}
+                className={`group relative rounded-3xl border-4 ${item.border} bg-gradient-to-br ${item.gradient} p-8 sm:p-10 shadow-xl transition-all duration-300 hover:-translate-y-2 space-y-6 overflow-hidden`}
               >
-                <div
-                  className={cn(
-                    "group relative h-full overflow-hidden rounded-2xl border border-border/40 p-7 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 sm:p-8",
-                    idx === 0
-                      ? "bg-gradient-to-br from-emerald-50/60 via-card to-card dark:from-emerald-950/20 dark:via-card dark:to-card"
-                      : "bg-gradient-to-br from-sky-50/60 via-card to-card dark:from-sky-950/20 dark:via-card dark:to-card"
-                  )}
-                >
-                  {/* Decorative blob */}
-                  <div
-                    className={cn(
-                      "pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-3xl transition-opacity duration-500 opacity-20 group-hover:opacity-30",
-                      idx === 0
-                        ? "bg-emerald-400"
-                        : "bg-sky-400"
-                    )}
-                  />
-
-                  <div className="relative">
-                    <div className="flex items-center gap-3">
-                      <span
-                        className={`inline-flex items-center justify-center rounded-xl p-2.5 ring-1 ring-inset ring-current/15 ${accent}`}
-                      >
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <span
-                        className={cn(
-                          "rounded-full px-3 py-1 text-xs font-600",
-                          idx === 0
-                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300"
-                            : "bg-sky-100 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300"
-                        )}
-                      >
-                        {audience}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-5 font-heading text-xl font-600 leading-snug">
-                      {data.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {data.description}
-                    </p>
-
-                    <StaggerContainer className="mt-6 space-y-3" stagger={0.06}>
-                      {data.items.map((item) => (
-                        <StaggerItem key={item}>
-                          <div className="flex items-start gap-3 text-sm">
-                            <CheckCircle2
-                              className={cn(
-                                "mt-0.5 h-4 w-4 shrink-0",
-                                idx === 0
-                                  ? "text-emerald-500"
-                                  : "text-sky-500"
-                              )}
-                            />
-                            <span className="text-foreground/85">{item}</span>
-                          </div>
-                        </StaggerItem>
-                      ))}
-                    </StaggerContainer>
-                  </div>
+                <div className="flex items-center gap-3">
+                  <span className={`p-3.5 rounded-2xl ${item.accentBg} shadow-inner`}>
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <span className="font-heading font-bold text-sm px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 border border-border shadow-sm">
+                    {item.audience}
+                  </span>
                 </div>
-              </ScrollReveal>
+
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {item.description}
+                </p>
+
+                <ul className="space-y-3.5 pt-2">
+                  {item.items.map((bullet, bIdx) => (
+                    <li key={bIdx} className="flex items-start gap-3 text-sm font-medium">
+                      <CheckCircle2 className={`h-5 w-5 shrink-0 mt-0.5 ${item.checkColor}`} />
+                      <span className="text-foreground/90">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             );
           })}
         </div>

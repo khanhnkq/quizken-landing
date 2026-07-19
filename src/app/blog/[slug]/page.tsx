@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, Calendar, Clock, Sparkles } from "lucide-react";
 import { getAllSlugs, getPost, extractHeadings, getRelatedPosts, extractFaqs } from "@/lib/blog";
 import { buildMetadata, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { buildAbsoluteUrl } from "@/lib/site";
@@ -13,6 +14,7 @@ import { AuthorCard } from "@/components/blog/AuthorCard";
 import { BlogCta } from "@/components/blog/BlogCta";
 import { NewsletterCta } from "@/components/blog/NewsletterCta";
 import { JsonLd } from "@/components/JsonLd";
+import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -78,40 +80,46 @@ export default async function BlogPostPage({
   return (
     <>
       <JsonLd data={schemas} />
-      <article className="py-14 sm:py-20">
-        <Container>
+      <article className="py-12 sm:py-20 relative">
+        <BackgroundDecorations density="low" />
+
+        <Container className="relative z-10">
           <Link
             href="/blog"
-            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+            className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-heading font-bold text-muted-foreground transition-all hover:border-emerald-500 hover:text-emerald-600 shadow-sm"
           >
             <ArrowLeft className="h-4 w-4" />
-            Quay lại Blog
+            Quay lại tất cả bài viết
           </Link>
 
-          <header className="max-w-2xl">
+          {/* Article Hero Header */}
+          <header className="max-w-3xl space-y-6">
             {post.frontmatter.tags.length > 0 && (
-              <div className="mb-4 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                 {post.frontmatter.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-primary/8 px-2.5 py-0.5 text-xs font-medium text-primary"
+                    className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             )}
-            <h1 className="font-heading text-3xl leading-tight tracking-tight sm:text-4xl">
+
+            <h1 className="font-heading text-3xl sm:text-5xl font-bold leading-tight tracking-tight text-foreground">
               {post.frontmatter.title}
             </h1>
+
             {post.frontmatter.description && (
-              <p className="mt-4 text-lg text-muted-foreground">
+              <p className="text-base sm:text-lg text-muted-foreground font-medium leading-relaxed">
                 {post.frontmatter.description}
               </p>
             )}
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+
+            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-muted-foreground font-semibold pt-2 border-t border-border/60">
               <span className="inline-flex items-center gap-1.5">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-4 w-4 text-emerald-500" />
                 <time dateTime={post.frontmatter.date}>
                   {new Date(post.frontmatter.date).toLocaleDateString("vi-VN", {
                     year: "numeric",
@@ -121,13 +129,27 @@ export default async function BlogPostPage({
                 </time>
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-4 w-4" />
+                <Clock className="h-4 w-4 text-amber-500" />
                 {post.readingTime}
               </span>
             </div>
 
-            {/* Share buttons below header */}
-            <div className="mt-6">
+            {/* Cover Image Frame */}
+            {post.frontmatter.cover && (
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border-4 border-emerald-200 dark:border-emerald-900 shadow-xl mt-6">
+                <Image
+                  src={post.frontmatter.cover}
+                  alt={post.frontmatter.title}
+                  fill
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
+              </div>
+            )}
+
+            {/* Share buttons */}
+            <div className="pt-2">
               <ShareButtons
                 url={postUrl}
                 title={post.frontmatter.title}
@@ -136,23 +158,19 @@ export default async function BlogPostPage({
             </div>
           </header>
 
-          <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_260px]">
-            <div className="min-w-0">
+          {/* Article Body & Sidebar */}
+          <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_280px]">
+            <div className="min-w-0 space-y-10">
               <MarkdownRenderer content={post.content} />
 
-              {/* CTA banner after content */}
               <BlogCta />
-
-              {/* Newsletter email capture */}
               <NewsletterCta />
 
-              {/* Author card */}
-              <div className="mt-8">
+              <div className="pt-4">
                 <AuthorCard name={post.frontmatter.author || "QuizKen Team"} />
               </div>
 
-              {/* Share buttons bottom */}
-              <div className="mt-8 flex items-center justify-between border-t border-border/50 pt-8">
+              <div className="flex items-center justify-between border-t border-border/60 pt-8">
                 <ShareButtons
                   url={postUrl}
                   title={post.frontmatter.title}
@@ -160,12 +178,12 @@ export default async function BlogPostPage({
                 />
               </div>
 
-              {/* Related posts */}
               <RelatedPosts posts={relatedPosts} />
             </div>
+
             {headings.length > 2 && (
               <aside className="hidden lg:block">
-                <div className="sticky top-24">
+                <div className="sticky top-28 space-y-6">
                   <TableOfContents headings={headings} />
                 </div>
               </aside>
@@ -176,4 +194,3 @@ export default async function BlogPostPage({
     </>
   );
 }
-

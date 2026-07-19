@@ -94,6 +94,8 @@
 
   --animate-blob: blob 9s infinite ease-in-out;
   --animate-float: float 6s ease-in-out infinite;
+  --animate-bounce-slow: bounceSlow 4s infinite ease-in-out;
+  --animate-pulse-slow: pulseSlow 3s infinite ease-in-out;
 }
 
 @keyframes blob {
@@ -113,13 +115,33 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   50% {
     transform: translateY(-10px);
   }
   100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
     transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
   }
 }
 
@@ -142,7 +164,7 @@
 
   h1, h2, h3, h4, h5 {
     font-family: var(--font-fredoka), var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.015em;
     text-wrap: balance;
   }
@@ -171,7 +193,7 @@
 
   /* Frosted glass surface used on floating cards over gradients */
   .glass {
-    background-color: hsl(var(--card) / 0.7);
+    background-color: hsl(var(--card) / 0.75);
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
   }
@@ -193,10 +215,11 @@
     border-radius: 9999px;
     border: 1px solid hsl(var(--primary) / 0.2);
     background-color: hsl(var(--primary) / 0.08);
-    padding: 0.3rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 700;
     color: hsl(var(--primary));
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
   }
 }
 
@@ -210,3 +233,4 @@
     scroll-behavior: auto !important;
   }
 }
+

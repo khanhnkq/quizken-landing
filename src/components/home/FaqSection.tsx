@@ -1,79 +1,78 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { faqs } from "@/lib/content/faq";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const reduce = useReducedMotion();
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-secondary/20 py-20 sm:py-28">
-      {/* Dot grid texture */}
-      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-30" />
+    <section id="faq" className="relative overflow-hidden bg-secondary/30 py-20 sm:py-28">
+      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-40" />
 
-      <Container className="relative max-w-3xl">
-        <ScrollReveal>
-          <span className="eyebrow">FAQ</span>
-          <h2 className="mt-4 font-heading text-3xl tracking-tight sm:text-4xl">
-            Câu hỏi thường gặp
+      <Container className="relative z-10 max-w-4xl">
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <span className="eyebrow mb-4">Giải đáp thắc mắc</span>
+          <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight mt-3">
+            Câu Hỏi <span className="text-gradient">Thường Gặp</span>
           </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Những thắc mắc phổ biến nhất về QuizKen.
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Mọi thông tin bạn cần biết về tính năng, độ chính xác và cách sử dụng QuizKen.
           </p>
-        </ScrollReveal>
+        </div>
 
-        <StaggerContainer className="mt-10 space-y-3" stagger={0.04}>
+        <div className="space-y-4">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <StaggerItem key={i}>
-                <div
-                  className={`group rounded-xl border transition-all duration-300 ${
-                    isOpen
-                      ? "border-primary/20 bg-primary/[0.03] shadow-sm shadow-primary/5"
-                      : "border-border/50 bg-card hover:border-primary/10"
-                  }`}
+              <div
+                key={i}
+                className={`rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? "border-emerald-500 bg-white dark:bg-slate-900 shadow-lg"
+                    : "border-border/80 bg-card hover:border-emerald-300"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-4 p-5 sm:p-6 text-left font-heading text-base sm:text-lg font-bold text-foreground cursor-pointer"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? null : i)}
-                    aria-expanded={isOpen}
-                    className="flex w-full items-center gap-3 px-5 py-4 text-left text-sm font-600 transition-colors hover:text-primary sm:text-base"
+                  <div className="flex items-center gap-3">
+                    <HelpCircle className={`h-5 w-5 shrink-0 transition-colors ${isOpen ? "text-emerald-500" : "text-muted-foreground"}`} />
+                    <span>{faq.question}</span>
+                  </div>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    <HelpCircle className={`h-4.5 w-4.5 shrink-0 transition-colors duration-200 ${isOpen ? "text-primary" : "text-muted-foreground"}`} />
-                    <span className="flex-1">{faq.question}</span>
-                    <motion.span
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: reduce ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] }}
+                    <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground" />
+                  </motion.span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
                     >
-                      <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground" />
-                    </motion.span>
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={reduce ? {} : { height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <p className="px-5 pb-5 pl-12 text-sm leading-relaxed text-muted-foreground">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </StaggerItem>
+                      <p className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base leading-relaxed text-muted-foreground border-t border-border/40 font-medium">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             );
           })}
-        </StaggerContainer>
+        </div>
       </Container>
     </section>
   );
