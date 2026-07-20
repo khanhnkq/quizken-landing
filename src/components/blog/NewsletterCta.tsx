@@ -5,9 +5,7 @@ import { Mail, CheckCircle, ArrowRight } from "lucide-react";
 
 /**
  * Newsletter signup banner for blog pages.
- * Stores subscriber emails in localStorage until a real email service is connected.
- * 
- * TODO: Connect to Brevo/Resend/EmailOctopus API endpoint.
+ * Integrates with Supabase Edge Function to store subscribers.
  */
 export function NewsletterCta() {
   const [email, setEmail] = useState("");
@@ -29,16 +27,27 @@ export function NewsletterCta() {
     setStatus("loading");
 
     try {
-      // TODO: Replace with real API call to email service
-      // For now, store in localStorage as a proof of concept
-      const existing = JSON.parse(localStorage.getItem("quizken_subscribers") || "[]");
-      if (!existing.includes(email)) {
-        existing.push(email);
-        localStorage.setItem("quizken_subscribers", JSON.stringify(existing));
+      const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+        console.warn("Supabase credentials missing, falling back to mock");
+        // Fallback for development if env vars are missing
+        await new Promise((r) => setTimeout(r, 500));
+      } else {
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/subscribe-newsletter`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({ email, source: "landing_blog" }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to subscribe");
+        }
       }
-      
-      // Simulate a small delay
-      await new Promise((r) => setTimeout(r, 500));
 
       setStatus("success");
       setEmail("");
