@@ -36,6 +36,7 @@ export type NavItem = {
 export const NAV_LINKS: NavItem[] = [
   { label: "Tính năng", href: "/#features" },
   { label: "Cách hoạt động", href: "/#how-it-works" },
+  { label: "Hướng dẫn", href: "/howtouse" },
   { label: "Học tiếng Anh", href: "/#english-hub" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
