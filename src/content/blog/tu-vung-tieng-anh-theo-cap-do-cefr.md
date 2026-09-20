@@ -1,61 +1,88 @@
 ---
-title: "Phân loại từ vựng tiếng Anh theo cấp độ CEFR từ A1 đến C2"
-description: "Tìm hiểu khung tham chiếu CEFR là gì và danh sách từ vựng tiếng Anh cần thiết cho từng cấp độ từ cơ bản (A1) đến nâng cao (C2)."
+title: "Các Cấp Độ Từ Vựng Tiếng Anh Chuẩn CEFR Từ A1 Đến C2 [2026] - Test Miễn Phí"
+description: "Bảng phân loại các cấp độ từ vựng tiếng Anh chuẩn CEFR & VSTEP từ A1 đến C2 mới nhất 2026. Hướng dẫn test trình độ và lộ trình học từ vựng AI miễn phí (free)."
 date: 2026-06-25
+updated: 2026-09-20
 slug: tu-vung-tieng-anh-theo-cap-do-cefr
 category: tieng-anh
 cover: /images/blog/cover_english.png
 tags:
+  - các cấp độ từ vựng tiếng anh
+  - cấp độ từ vựng tiếng anh
+  - mức độ từ vựng tiếng anh
   - từ vựng tiếng Anh CEFR
-  - khung tham chiếu CEFR
-  - học tiếng Anh
-  - QuizKen English Hub
+  - khung tham chiếu CEFR 2026
+  - học từ vựng tiếng Anh AI miễn phí
 author: QuizKen Team
 ---
 
-**CEFR** (Common European Framework of Reference for Languages) hay Khung tham chiếu trình độ ngôn ngữ chung của Châu Âu là tiêu chuẩn quốc tế được dùng để đánh giá năng lực ngoại ngữ. Hiểu rõ sự phân loại **từ vựng tiếng Anh theo cấp độ CEFR** sẽ giúp bạn định hình lộ trình học tập khoa học và hiệu quả nhất.
+> **Tóm tắt nhanh (TL;DR):** Hiểu rõ **các cấp độ từ vựng tiếng Anh** theo khung tham chiếu châu Âu (CEFR) và khung 6 bậc Việt Nam (VSTEP) là chìa khóa để định hình lộ trình học tập khoa học. Bài viết này tổng hợp chi tiết số lượng từ vựng cần thiết cho từng **cấp độ từ vựng tiếng Anh** từ cơ bản (A1) đến thành thạo (C2), kèm công cụ làm bài test chẩn đoán trình độ bằng **AI hoàn toàn miễn phí (free)**.
 
-## 6 Cấp độ năng lực CEFR và số lượng từ vựng cần thiết
+---
 
-Khung CEFR phân chia người học thành 3 nhóm lớn với 6 cấp độ:
+## 1. Khung CEFR Là Gì? Vì Sao Cần Phân Biệt Các Cấp Độ Từ Vựng Tiếng Anh?
 
-### 1. Nhóm Cơ bản (Basic User)
+**CEFR** (Common European Framework of Reference for Languages) hay Khung tham chiếu trình độ ngôn ngữ chung Châu Âu là tiêu chuẩn toàn cầu được sử dụng để đánh giá năng lực ngoại ngữ. Tại Việt Nam, Bộ GD&ĐT đã cụ thể hóa khung này thành **Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam (VSTEP)** theo Thông tư 01/2014/TT-BGDĐT.
 
-- **Cấp độ A1 (Sơ cấp):** Bạn cần khoảng **500 - 700 từ vựng**. Ở trình độ này, bạn có thể hiểu và sử dụng các câu đơn giản hàng ngày (chào hỏi, giới thiệu bản thân, mua sắm cơ bản).
-- **Cấp độ A2 (Cận trung cấp):** Bạn cần khoảng **1.000 - 1.500 từ vựng**. Bạn có thể trao đổi các thông tin đơn giản về gia đình, công việc, môi trường sống xung quanh.
+Việc xác định chính xác **mức độ từ vựng tiếng Anh** hiện tại của bạn mang lại 3 lợi ích vượt trội:
+1. **Tránh học lan man:** Không lãng phí thời gian học những từ vựng quá khó (C1, C2) khi nền tảng cơ bản (A2, B1) chưa vững.
+2. **Chuẩn hóa mục tiêu thi cử:** Biết rõ mình cần bao nhiêu từ vựng để đạt điểm chuẩn đầu ra tốt nghiệp THPT, VSTEP B1, TOEIC 650 hay IELTS 6.5.
+3. **Ứng dụng phương pháp Spaced Repetition hiệu quả:** Tối ưu hóa chu kỳ lặp lại ngắt quãng theo từng cấp độ từ vựng.
 
-### 2. Nhóm Độc lập (Independent User)
+---
 
-- **Cấp độ B1 (Trung cấp):** Bạn cần khoảng **2.000 - 3.000 từ vựng**. Bạn có thể đối phó với hầu hết các tình huống khi đi du lịch, viết các đoạn văn đơn giản về chủ đề quen thuộc, bày tỏ ý kiến cá nhân sơ bộ.
-- **Cấp độ B2 (Trên trung cấp):** Bạn cần khoảng **4.000 - 5.000 từ vựng**. Bạn có thể hiểu các ý chính của văn bản phức tạp, giao tiếp trôi chảy với người bản xứ và viết luận báo cáo rõ ràng.
+## 2. Bảng Phân Loại Chi Tiết 6 Cấp Độ Từ Vựng Tiếng Anh (Từ A1 Đến C2)
 
-### 3. Nhóm Thành thạo (Proficient User)
+Khung CEFR phân chia người học thành 3 nhóm lớn tương ứng với 6 **cấp độ từ vựng tiếng Anh**:
 
-- **Cấp độ C1 (Cao cấp):** Bạn cần khoảng **7.000 - 8.000 từ vựng**. Bạn hiểu được các văn bản dài và có chiều sâu, diễn đạt ý kiến tự nhiên, linh hoạt sử dụng ngôn ngữ cho mục đích học thuật và chuyên môn.
-- **Cấp độ C2 (Thành thạo):** Bạn cần khoảng **10.000+ từ vựng**. Bạn có thể dễ dàng hiểu hầu hết mọi thứ nghe hoặc đọc được, tóm tắt thông tin phức tạp và diễn đạt cực kỳ tinh tế.
+| Cấp độ CEFR | Khung VSTEP Việt Nam | Số lượng từ vựng cần thiết | Khả năng ứng dụng thực tế | Ví dụ từ vựng đặc trưng |
+| :--- | :--- | :--- | :--- | :--- |
+| **A1 (Sơ cấp)** | Bậc 1 | **500 – 700 từ** | Giao tiếp nhu cầu cơ bản: chào hỏi, giới thiệu, mua sắm | *apple, house, school, happy, cheap* |
+| **A2 (Cận trung cấp)** | Bậc 2 | **1.000 – 1.500 từ** | Trao đổi thông tin thường nhật: gia đình, công việc, thời tiết | *describe, journey, modern, prepare* |
+| **B1 (Trung cấp)** | Bậc 3 | **2.000 – 3.000 từ** | Đủ điều kiện tốt nghiệp THPT & đại học; diễn đạt ý kiến cá nhân | *evaluate, challenge, flexible, massive* |
+| **B2 (Trên trung cấp)** | Bậc 4 | **4.000 – 5.000 từ** | Tự tin làm việc văn phòng đa quốc gia; đọc hiểu văn bản phức tạp | *sustainable, predominant, accommodate* |
+| **C1 (Cao cấp)** | Bậc 5 | **7.000 – 8.000 từ** | Viết luận báo cáo chuyên sâu, nghiên cứu khoa học học thuật | *exacerbate, paradigm, ubiquitous, advocate* |
+| **C2 (Thành thạo)** | Bậc 6 | **10.000+ từ** | Năng lực tương đương người bản xứ; diễn đạt tinh tế, sắc sảo | *serendipity, esoteric, ephemeral, idiosyncratic* |
 
-## Bảng so sánh từ vựng qua các cấp độ CEFR
+---
 
-| Cấp độ | Ví dụ từ vựng | Khả năng ứng dụng |
-|---|---|---|
-| **A1 - A2** | apple, house, run, happy, cheap | Giao tiếp nhu cầu cơ bản nhất |
-| **B1 - B2** | evaluate, challenge, flexible, massive | Làm việc trong môi trường văn phòng |
-| **C1 - C2** | exacerbate, paradigm, ubiquitous, advocate | Đọc hiểu nghiên cứu khoa học, viết luận cao cấp |
+## 3. Cách Tự Kiểm Tra Mức Độ Từ Vựng Tiếng Anh Bằng AI Miễn Phí (Free)
 
-## Cách xác định và nâng cấp từ vựng CEFR của bạn
+Thay vì phải làm những bài thi giấy dài hàng tiếng đồng hồ, bạn có thể kiểm tra nhanh **cấp độ từ vựng tiếng Anh** của mình bằng công nghệ AI của QuizKen:
 
-Để nhanh chóng mở rộng vốn từ vựng theo đúng chuẩn CEFR, bạn nên tận dụng các tính năng thông minh của công nghệ:
+1. **Làm bài Test chẩn đoán trình độ 5 phút:** Hệ thống AI tự động đưa ra các câu hỏi trắc nghiệm ngữ cảnh ngắn từ A1 đến C1 để định vị chính xác vốn từ vựng hiện có của bạn.
+2. **Nhận biểu đồ Radar phân tích:** QuizKen sẽ chỉ ra tỉ lệ từ vựng bạn nắm vững ở từng thang bậc và đề xuất danh sách các từ bạn đang bị nhầm lẫn.
+3. **Học từ vựng qua Flashcard Spaced Repetition Free:** Mỗi ngày hệ thống sẽ nhắc nhở bạn ôn tập đúng các từ vựng thuộc cấp độ mục tiêu thông qua thuật toán lặp lại thông minh.
 
-1. **Học theo nhóm từ được phân loại sẵn:** Thay vì học từ vựng ngẫu nhiên, hãy học các bộ từ vựng đã được các chuyên gia tuyển chọn theo đúng cấp độ của bạn.
-2. **Sử dụng thuật toán lặp lại ngắt quãng:** Giúp tối ưu hóa thời gian học, tập trung ôn các từ khó.
-3. **Luyện tập qua các ngữ cảnh thực tế:** Luôn học từ đi kèm câu ví dụ để biết cách dùng từ chính xác.
+👉 **Khám phá thêm:** Đọc ngay bài viết [Kho Flashcard AI Ôn Từ Vựng VSTEP B1 B2 Miễn Phí](/blog/kho-flashcard-ai-tu-vung-vstep-b1-b2-mien-phi) để bắt đầu lộ trình học bài bản!
 
-## Trải nghiệm học từ vựng CEFR tại QuizKen English Hub
+---
 
-QuizKen đã xây dựng phân hệ **English Hub** hoàn toàn miễn phí, hỗ trợ người học chinh phục từ vựng CEFR một cách khoa học:
+## 4. Lộ Trình 3 Bước Nâng Cấp Vốn Từ Vựng Nhanh Chóng
 
-- **Bộ thẻ flashcard phân chia từ A1 đến C2:** Rõ ràng, dễ tiếp cận.
-- **Tích hợp âm thanh & hình ảnh trực quan:** Giúp bạn ghi nhớ sâu và phát âm chuẩn.
-- **Làm bài kiểm tra tương tác nhanh:** Giúp đánh giá ngay mức độ thuộc từ vựng của bạn.
+```mermaid
+graph LR
+    A["Kiểm tra Cấp độ Từ vựng hiện tại (Test Free)"] --> B["Xác định mục tiêu (VD: Đạt chuẩn B1/B2)"]
+    B --> C["Học theo cụm từ (Collocations) qua Flashcard AI"]
+    C --> D["Luyện đề trắc nghiệm đọc hiểu phản xạ"]
+    D --> E["Tự động tăng bậc CEFR sau 30-60 ngày"]
+```
 
-Truy cập [app.quizken.com](https://app.quizken.com) và chọn cấp độ phù hợp để nâng cấp vốn từ vựng của bạn ngay hôm nay!
+* **Bước 1: Không học từ riêng lẻ:** Luôn học từ vựng trong câu hoàn chỉnh để nắm vững ngữ cảnh sử dụng (Collocations).
+* **Bước 2: Gợi nhớ chủ động (Active Recall):** Khi nhìn thấy từ tiếng Anh trên Flashcard, hãy cố gắng tự nhớ lại nghĩa tiếng Việt và đặt 1 câu ví dụ trước khi lật thẻ.
+* **Bước 3: Luyện tập tương tác thường xuyên:** Tham gia phòng thi đấu trắc nghiệm trực tuyến cùng bạn bè trên QuizKen để kích thích phản xạ từ vựng dưới áp lực thời gian.
+
+👉 **Trải nghiệm ngay:** [Học và kiểm tra các cấp độ từ vựng tiếng Anh miễn phí trên QuizKen](https://quizken.com) ngay hôm nay!
+
+---
+
+## Câu hỏi thường gặp (FAQ)
+
+### 1. Người mất gốc tiếng Anh nên bắt đầu học từ cấp độ từ vựng nào?
+Người mất gốc nên bắt đầu xây dựng lại 500 từ vựng cốt lõi cấp độ A1 và 1.000 từ cấp độ A2 trước khi chuyển sang học các từ vựng học thuật B1.
+
+### 2. Cần đạt cấp độ từ vựng tiếng Anh nào để được miễn thi tốt nghiệp THPT?
+Học sinh cần đạt trình độ tương đương B1 (VSTEP Bậc 3, IELTS 4.0 - 4.5 trở lên) theo quy chế tuyển sinh của Bộ GD&ĐT để được quy đổi điểm 10 môn Ngoại ngữ.
+
+### 3. Học từ vựng trên QuizKen có mất phí không?
+Hoàn toàn **miễn phí (free)**. Bạn có thể tự do học các bộ flashcard từ vựng từ A1 đến C2 và làm bài kiểm tra trắc nghiệm AI mỗi ngày.
