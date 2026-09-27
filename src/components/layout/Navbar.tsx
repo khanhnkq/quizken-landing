@@ -45,9 +45,14 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-heading font-bold text-foreground/80 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-emerald-950/40 dark:hover:text-emerald-300"
+              className="inline-flex items-center rounded-full px-4 py-2 text-sm font-heading font-bold text-foreground/80 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-emerald-950/40 dark:hover:text-emerald-300"
             >
               {item.label}
+              {item.href === "/meo" && (
+                <span className="ml-1.5 inline-flex items-center rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400">
+                  Hot
+                </span>
+              )}
             </Link>
           ))}
         </nav>
@@ -83,9 +88,14 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-3 text-base font-heading font-bold text-foreground/90 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
+                className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-heading font-bold text-foreground/90 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
               >
-                {item.label}
+                <span>{item.label}</span>
+                {item.href === "/meo" && (
+                  <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-extrabold text-emerald-600 dark:text-emerald-400">
+                    Hot
+                  </span>
+                )}
               </Link>
             ))}
             <Button

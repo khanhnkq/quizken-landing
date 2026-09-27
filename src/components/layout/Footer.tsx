@@ -20,6 +20,7 @@ const footerNav: { title: string; links: { label: string; href: string; external
   {
     title: "Tài nguyên",
     links: [
+      { label: "Mẹo & Tool học tập", href: "/meo" },
       { label: "Hướng dẫn sử dụng", href: "/howtouse" },
       { label: "Bài viết Blog", href: "/blog" },
       { label: "Câu hỏi FAQ", href: "/faq" },

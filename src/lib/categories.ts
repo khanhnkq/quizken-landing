@@ -55,6 +55,14 @@ export const CATEGORIES: BlogCategory[] = [
     icon: "GitCompare",
   },
   {
+    slug: "cong-cu-meo",
+    label: "Công cụ & Mẹo",
+    description: "Tổng hợp các công cụ tải tài liệu, tiện ích mở rộng và mẹo học tập thông minh",
+    metaDescription:
+      "Khám phá các công cụ tải tài liệu Studocu, Scribd miễn phí, tiện ích mở rộng Chrome hữu ích và mẹo công nghệ học tập đỉnh cao cho sinh viên.",
+    icon: "Wrench",
+  },
+  {
     slug: "tin-tuc",
     label: "Tin tức",
     description: "Cập nhật tính năng mới và tin tức từ QuizKen",
