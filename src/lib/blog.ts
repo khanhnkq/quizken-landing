@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { cache } from "react";
 import matter from "gray-matter";
 import type readingTimeType from "reading-time";
 
@@ -29,7 +30,7 @@ const CONTENT_DIR = path.join(process.cwd(), "src/content/blog");
 /**
  * Read all markdown files from src/content/blog, parse frontmatter, sort by date desc.
  */
-export function getAllPosts(): Post[] {
+export const getAllPosts = cache((): Post[] => {
   if (!fs.existsSync(CONTENT_DIR)) return [];
 
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
@@ -40,7 +41,7 @@ export function getAllPosts(): Post[] {
       new Date(b.frontmatter.date).getTime() -
       new Date(a.frontmatter.date).getTime(),
   );
-}
+});
 
 /**
  * Read a single post by slug. Returns null if not found.
@@ -72,12 +73,12 @@ export function getPost(slug: string): Post | null {
 }
 
 /** Get all unique tags across all posts. */
-export function getAllTags(): string[] {
+export const getAllTags = cache((): string[] => {
   const posts = getAllPosts();
   const tagSet = new Set<string>();
   posts.forEach((p) => p.frontmatter.tags.forEach((t) => tagSet.add(t)));
   return Array.from(tagSet).sort();
-}
+});
 
 /** Get all slugs for generateStaticParams. */
 export function getAllSlugs(): string[] {
