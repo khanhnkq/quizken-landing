@@ -35,7 +35,7 @@ Theo phân tích tổng hợp của *John Hattie & Helen Timperley (Review of Ed
 
 ## 2. Phương Pháp Đối Thoại Socratic: Không Cho Ngay Đáp Án, Dẫn Dắt Từng Bước
 
-Khác với các công cụ giải bài thụ động (cho luôn lời giải hoàn chỉnh để học sinh chép), trợ lý AI trên [QuizKen](https://www.quizken.com) (như bot **@quitquit** trong phòng Chat) áp dụng **phương pháp gợi mở Socratic**:
+Khác với các công cụ giải bài thụ động (cho luôn lời giải hoàn chỉnh để học sinh chép), trợ lý AI trên [QuizKen](https://www.quizken.com) (như trợ lý **Quít Quít** / **@quitquit** tự động đồng hành trong phòng Chat) áp dụng **phương pháp gợi mở Socratic**:
 
 ```
 [Học sinh chọn Sai: Câu 15 môn Hóa học]
@@ -59,10 +59,10 @@ Khác với các công cụ giải bài thụ động (cho luôn lời giải ho
 
 * **Giải thích phương án bẫy:** Phân tích chi tiết tại sao phương án $B$ là bẫy phổ biến và các bạn học sinh thường nhầm lẫn ở bước nào.
 * **Tự động tạo câu hỏi biến thể (Remix Quiz):** Sau khi học sinh hiểu lỗi sai, AI sẽ tạo ngay 1 câu hỏi tương tự với số liệu mới để học sinh thực hành kiểm tra lại mức độ hiểu bài.
-* **Hỗ trợ đa phòng Chat:** Người dùng có thể chat riêng với bot `@quitquit` hoặc tag `@quitquit` trong phòng học nhóm công cộng để cùng thảo luận bài tập khó.
+* **Hỗ trợ đa phòng Chat:** Người dùng có thể chat riêng với Quít Quít (`@quitquit`) hoặc nhắn trực tiếp trong Phòng Chat Chung công cộng để trợ lý AI tự động trả lời và cùng cả nhóm thảo luận bài tập khó mà không cần tag `@quitquit` (vẫn hỗ trợ `@` nếu muốn).
 
 ---
 
 ## 4. Kết Luận
 
-Trí tuệ nhân tạo không sinh ra để làm hộ bài tập cho học sinh, mà để trở thành người đồng hành thông minh giúp người học tự khai mở tư duy. Trải nghiệm ngay [Phòng Chat Cùng Bot Trợ Lý @quitquit Trên QuizKen](https://www.quizken.com/chat) hoàn toàn miễn phí!
+Trí tuệ nhân tạo không sinh ra để làm hộ bài tập cho học sinh, mà để trở thành người đồng hành thông minh giúp người học tự khai mở tư duy. Trải nghiệm ngay [Phòng Chat Chung & Trợ Lý Quít Quít (@quitquit) Trên QuizKen](https://www.quizken.com/chat) hoàn toàn miễn phí!

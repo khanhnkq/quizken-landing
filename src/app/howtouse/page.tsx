@@ -228,26 +228,26 @@ const steps = [
     id: "ai-tutor",
     number: "07",
     badge: "Bot Trợ Lý Chat",
-    title: "Tương Tác Với Bot @quitquit Trong Phòng Chat",
+    title: "Tương Tác Với Trợ Lý AI Quít Quít Trong Phòng Chat",
     description:
-      "Trò chuyện, hỏi bài tập, giải thích kiến thức và tương tác vui vẻ cùng bot thông minh @quitquit (Quít Quít) trong phòng chat cộng đồng QuizKen.",
+      "Trò chuyện trực tiếp, hỏi bài tập, giải thích kiến thức và tạo quiz tức thì cùng trợ lý AI Quít Quít trong Phòng Chat Chung cộng đồng và phòng riêng 'Chat với Quít Quít' mà không cần tag.",
     icon: Bot,
     color: "from-rose-500/20 to-red-500/10 border-rose-500/30 text-rose-600 dark:text-rose-400",
     actions: [
       {
         title: "Bước 1: Vào mục Chat trên thanh điều hướng",
         content:
-          "Truy cập trang Chat (/chat), chọn phòng 'Chat Chung' hoặc phòng riêng 'Chat với Quít Quít' để bắt đầu trò chuyện.",
+          "Truy cập trang Chat (/chat), chọn 'Phòng Chat Chung' hoặc phòng riêng 'Chat với Quít Quít' để bắt đầu trò chuyện.",
       },
       {
-        title: "Bước 2: Tag @quitquit trong tin nhắn",
+        title: "Bước 2: Nhắn tin trực tiếp (không cần tag @)",
         content:
-          "Trong phòng chat chung, gõ @quitquit (hoặc @quít quít) kèm câu hỏi, yêu cầu giải thích bài tập hoặc tạo quiz nhanh để bot trả lời tức thì.",
+          "Trong Phòng Chat Chung hoặc phòng riêng, chỉ cần gõ trực tiếp câu hỏi, yêu cầu giải thích bài tập hay tạo quiz nhanh để Quít Quít tự động trả lời tức thì (vẫn hỗ trợ tag @quitquit hoặc @quít quít khi muốn).",
       },
       {
         title: "Bước 3: Nhận phản hồi & Thảo luận cùng cộng đồng",
         content:
-          "Quít Quít sẽ phân tích câu hỏi, đưa ra hướng giải và phản hồi trực tiếp ngay trong luồng chat để mọi thành viên cùng học hỏi.",
+          "Quít Quít sẽ phân tích câu hỏi, gợi ý hướng giải và trò chuyện tiếp nối tự nhiên ngay trong luồng chat để mọi thành viên cùng thảo luận và học hỏi.",
       },
     ],
     ctaText: "Vào phòng Chat Quít Quít",
