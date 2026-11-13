@@ -32,7 +32,7 @@ const DEFAULT_IMAGE = '/images/mascot/happy.png'
 
 export function MascotFallback({
   emotion = 'happy',
-  size = 280,
+  size,
   className = '',
 }: MascotFallbackProps) {
   const targetSrc = EMOTION_MAP[emotion] || `/images/mascot/${emotion}.png`
@@ -41,15 +41,15 @@ export function MascotFallback({
   return (
     <div
       className={`relative flex items-center justify-center select-none ${className}`}
-      style={{ width: size, height: size }}
+      style={size ? { width: size, height: size } : undefined}
     >
       <Image
         src={currentSrc}
         alt={`Quizken Green Cat Mascot (${emotion})`}
-        width={size}
-        height={size}
+        width={size || 320}
+        height={size || 320}
         priority
-        className="w-full h-full object-contain filter drop-shadow-lg transition-transform duration-300 hover:scale-105"
+        className="w-full h-full max-w-full max-h-full object-contain filter drop-shadow-lg transition-transform duration-300 hover:scale-105"
         onError={() => {
           if (currentSrc !== DEFAULT_IMAGE) {
             setCurrentSrc(DEFAULT_IMAGE)

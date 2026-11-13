@@ -1,12 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import { Zap, Sparkles, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { appLink } from "@/lib/site";
+import MascotCard from "@/components/mascot-3d/MascotCard";
 
 export function FinalCta() {
+  const [pokeKey, setPokeKey] = useState(0);
+
   return (
     <section className="py-20 sm:py-28 relative">
       <Container>
@@ -17,17 +20,19 @@ export function FinalCta() {
           <div className="pointer-events-none absolute inset-0 opacity-15 bg-dot-grid" />
 
           <div className="relative z-10 flex flex-col items-center gap-8 text-center lg:flex-row lg:text-left lg:gap-12">
-            {/* Mascot / Visual */}
+            {/* Mascot 3D Visual */}
             <div className="shrink-0">
-              <div className="relative mx-auto h-40 w-40 lg:h-52 lg:w-52 animate-bounce-slow">
-                <div className="absolute inset-0 rounded-full bg-white/20 blur-2xl" />
-                <Image
-                  src="/images/mascot-happy.png"
-                  alt="QuizKen Mascot"
-                  width={320}
-                  height={320}
-                  className="relative h-full w-full object-contain drop-shadow-2xl"
-                  loading="lazy"
+              <div
+                onClick={() => setPokeKey((k) => k + 1)}
+                className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64 cursor-pointer select-none group"
+                title="Chạm vào tớ để chơi đùa!"
+              >
+                <div className="absolute inset-4 rounded-full bg-white/20 blur-2xl group-hover:bg-yellow-300/30 transition-colors duration-500" />
+                <MascotCard
+                  emotion="happy"
+                  cameraPosition={[0, 0.05, 5.2]}
+                  pokeKey={pokeKey}
+                  className="w-full h-full relative z-10"
                 />
               </div>
             </div>

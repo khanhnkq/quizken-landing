@@ -13,8 +13,12 @@ export interface MascotSceneProps {
   outline?: boolean
   pokeKey?: number
   pointerRef?: React.RefObject<{ x: number; y: number; inside: boolean } | null>
+  cameraPosition?: [number, number, number]
+  autoPoke?: boolean
+  autoPokeInterval?: number
   className?: string
   onPoke?: () => void
+  onReady?: () => void
 }
 
 export function MascotScene({
@@ -23,8 +27,12 @@ export function MascotScene({
   outline = true,
   pokeKey = 0,
   pointerRef,
+  cameraPosition = [0, 0.1, 7.8],
+  autoPoke = true,
+  autoPokeInterval = 5000,
   className = '',
   onPoke,
+  onReady,
 }: MascotSceneProps) {
   const [cursor, setCursor] = useState<'default' | 'pointer'>('default')
 
@@ -36,11 +44,12 @@ export function MascotScene({
       <Canvas
         flat
         dpr={[1, 1.75]}
+        onCreated={() => onReady?.()}
         camera={{
           fov: 30,
           near: 0.1,
           far: 50,
-          position: [0, 0.1, 7.8],
+          position: cameraPosition,
         }}
         gl={{
           antialias: true,
@@ -66,6 +75,8 @@ export function MascotScene({
           outline={outline}
           pokeKey={pokeKey}
           pointerRef={pointerRef}
+          autoPoke={autoPoke}
+          autoPokeInterval={autoPokeInterval}
           onPoke={onPoke}
           onHoverChange={(hovered) => setCursor(hovered ? 'pointer' : 'default')}
         />

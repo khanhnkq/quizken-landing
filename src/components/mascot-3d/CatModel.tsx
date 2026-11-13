@@ -20,6 +20,8 @@ export interface CatModelProps {
   outline?: boolean
   pokeKey?: number
   pointerRef?: React.RefObject<{ x: number; y: number; inside: boolean } | null>
+  autoPoke?: boolean
+  autoPokeInterval?: number
   onPoke?: () => void
   onHoverChange?: (hovered: boolean) => void
 }
@@ -38,6 +40,8 @@ export function CatModel({
   outline = true,
   pokeKey = 0,
   pointerRef,
+  autoPoke = true,
+  autoPokeInterval = 5000,
   onPoke,
   onHoverChange,
 }: CatModelProps) {
@@ -99,6 +103,15 @@ export function CatModel({
       animator.react(expression, get().clock.getElapsedTime(), materials, outline)
     }
   }, [pokeKey, expression, reduceMotion, materials, outline, animator, get])
+
+  // Auto-poke timer (default every 5s)
+  useEffect(() => {
+    if (!autoPoke || reduceMotion) return
+    const interval = window.setInterval(() => {
+      animator.react(expression, get().clock.getElapsedTime(), materials, outline)
+    }, autoPokeInterval)
+    return () => window.clearInterval(interval)
+  }, [autoPoke, autoPokeInterval, reduceMotion, expression, materials, outline, animator, get])
 
   // Canvas hover detection for local fallback
   const pointerInside = useRef(false)

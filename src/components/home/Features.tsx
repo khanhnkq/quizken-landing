@@ -1,77 +1,69 @@
 "use client";
 
-import {
-  Sparkles,
-  Zap,
-  BookOpen,
-  Target,
-  Users,
-  Award,
-  Star,
-} from "lucide-react";
+import { Star } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import MascotCard from "@/components/mascot-3d/MascotCard";
+import type { ExpressionId } from "@/components/mascot-3d/cat/expressions";
 
 const pastelColors = [
   {
     bg: "bg-gradient-to-br from-pink-100 to-pink-50 dark:from-pink-900/50 dark:to-pink-950/30",
     border: "border-pink-200 dark:border-pink-900",
-    iconColor: "text-pink-600 dark:text-pink-300",
   },
   {
     bg: "bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/50 dark:to-amber-950/30",
     border: "border-amber-200 dark:border-amber-900",
-    iconColor: "text-amber-600 dark:text-amber-300",
   },
   {
     bg: "bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/50 dark:to-emerald-950/30",
     border: "border-emerald-200 dark:border-emerald-900",
-    iconColor: "text-emerald-600 dark:text-emerald-300",
   },
   {
     bg: "bg-gradient-to-br from-sky-100 to-sky-50 dark:from-sky-900/50 dark:to-sky-950/30",
     border: "border-sky-200 dark:border-sky-900",
-    iconColor: "text-sky-600 dark:text-sky-300",
   },
   {
     bg: "bg-gradient-to-br from-violet-100 to-violet-50 dark:from-violet-900/50 dark:to-violet-950/30",
     border: "border-violet-200 dark:border-violet-900",
-    iconColor: "text-violet-600 dark:text-violet-300",
   },
   {
     bg: "bg-gradient-to-br from-rose-100 to-rose-50 dark:from-rose-900/50 dark:to-rose-950/30",
     border: "border-rose-200 dark:border-rose-900",
-    iconColor: "text-rose-600 dark:text-rose-300",
   },
 ];
 
-const featuresList = [
+const featuresList: {
+  emotion: ExpressionId;
+  title: string;
+  description: string;
+}[] = [
   {
-    icon: Sparkles,
+    emotion: "surprised",
     title: "AI Soạn Đề Tự Động",
     description: "Nhập bài học, văn bản hoặc tài liệu bất kỳ. AI sẽ tự động phân tích và tạo bộ trắc nghiệm đầy đủ đáp án & giải thích.",
   },
   {
-    icon: Zap,
+    emotion: "cool",
     title: "Tốc Độ Nhanh Tức Thì",
     description: "Chỉ mất chưa tới 3 giây để AI hoàn thành bộ 50 câu hỏi trắc nghiệm, tiết kiệm 95% thời gian cho giáo viên.",
   },
   {
-    icon: BookOpen,
+    emotion: "happy",
     title: "Đa Dạng 100+ Môn Học",
     description: "Hỗ trợ đầy đủ các môn Toán, Lịch sử, Địa lý, Sinh học, Vật lý và đặc biệt chuyên sâu cho luyện thi Tiếng Anh.",
   },
   {
-    icon: Target,
+    emotion: "laughing",
     title: "Chấm Điểm & Giải Thích",
     description: "Hệ thống tự động chấm điểm bài làm và cung cấp lời giải thích chi tiết cho từng đáp án giúp người học hiểu sâu.",
   },
   {
-    icon: Users,
+    emotion: "angry",
     title: "Game Đấu Trực Tuyến",
     description: "Tạo phòng thi đấu trắc nghiệm thời gian thực cho lớp học hoặc nhóm bạn cùng ôn thi thêm phần hào hứng.",
   },
   {
-    icon: Award,
+    emotion: "sleepy",
     title: "Xuất PDF & Word Đẹp",
     description: "Tải bài kiểm tra dưới định dạng PDF/Word được định dạng sẵn chuyên nghiệp để in ấn hoặc chia sẻ ngay.",
   },
@@ -107,7 +99,6 @@ export function Features() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {featuresList.map((feature, index) => {
             const color = pastelColors[index % pastelColors.length];
-            const Icon = feature.icon;
 
             return (
               <div
@@ -125,17 +116,23 @@ export function Features() {
                   p-6 sm:p-8 text-center space-y-5
                 `}
               >
-                {/* Icon Bubble */}
+                {/* 3D Mascot Stage */}
                 <div
                   className={`
-                    inline-flex p-5 rounded-2xl
+                    mx-auto w-28 h-28 sm:w-32 sm:h-32 rounded-3xl
                     ${color.bg}
-                    shadow-inner
-                    group-hover:scale-110
-                    transition-transform duration-300
+                    shadow-inner border border-white/60 dark:border-white/10
+                    relative overflow-hidden group-hover:scale-110 group-hover:-rotate-2
+                    transition-all duration-300 flex items-center justify-center
                   `}
                 >
-                  <Icon className={`w-9 h-9 ${color.iconColor}`} />
+                  <MascotCard
+                    emotion={feature.emotion}
+                    cameraPosition={[0, 0.05, 5.8]}
+                    autoPoke={true}
+                    autoPokeInterval={5000 + (index % 3) * 800}
+                    className="w-full h-full"
+                  />
                 </div>
 
                 {/* Title */}

@@ -42,7 +42,7 @@ const FEATURES = [
 const FEATURE_EMOTION_MAP: Record<number, ExpressionId> = {
   1: "happy",
   2: "cool",
-  3: "cheeky",
+  3: "laughing",
 };
 
 export function Hero() {
@@ -203,32 +203,17 @@ export function Hero() {
                     className="w-full h-full"
                   />
                 </div>
-
-                {/* Floating Poke Hint Badge */}
-                <button
-                  type="button"
-                  onClick={triggerPoke}
-                  className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/90 hover:bg-card backdrop-blur-md border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold text-xs shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
-                  title="Chạm vào tớ để chơi đùa!"
-                >
-                  <span>Chạm vào tớ! 🐾</span>
-                </button>
               </div>
 
               {/* Card Info Area */}
               <div className="p-6 bg-card/90 backdrop-blur-md relative z-10 space-y-4">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-heading">
-                      {activeFeature.name}
-                    </h3>
-                    <p className="text-muted-foreground font-bold text-xs uppercase tracking-wider">
-                      {activeFeature.role}
-                    </p>
-                  </div>
-                  <div className="px-3 py-1 rounded-full bg-secondary font-bold text-secondary-foreground text-xs border border-border">
-                    lvl 99
-                  </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight font-heading">
+                    {activeFeature.name}
+                  </h3>
+                  <p className="text-muted-foreground font-bold text-xs uppercase tracking-wider">
+                    {activeFeature.role}
+                  </p>
                 </div>
 
                 <p className="text-muted-foreground font-medium leading-relaxed text-xs sm:text-sm">
@@ -275,23 +260,6 @@ export function Hero() {
                     </div>
                   </button>
                 ))}
-              </div>
-
-              {/* Floating Verified Badge (Top Right) */}
-              <div className="absolute top-6 right-6 bg-card/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border-2 border-border animate-float hidden sm:block">
-                <div className="flex items-center gap-2.5">
-                  <div className="bg-primary/15 p-2 rounded-full text-primary">
-                    <CheckCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-black text-foreground text-xs font-heading">
-                      Verified AI
-                    </div>
-                    <div className="text-[10px] text-muted-foreground font-bold">
-                      Top Rated Quiz Maker
-                    </div>
-                  </div>
-                </div>
               </div>
 
             </div>
