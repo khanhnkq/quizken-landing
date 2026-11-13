@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import dynamic from 'next/dynamic'
 import type { ExpressionId } from './cat/expressions'
 import MascotFallback from './MascotFallback'
@@ -52,6 +52,8 @@ function checkWebGLSupport(): boolean {
   }
 }
 
+const emptySubscribe = () => () => {}
+
 export function MascotCard({
   emotion = 'happy',
   pokeKey = 0,
@@ -59,13 +61,17 @@ export function MascotCard({
   className = '',
   onPoke,
 }: MascotCardProps) {
-  const [mounted, setMounted] = useState(false)
-  const [hasWebGL, setHasWebGL] = useState(true)
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  )
 
-  useEffect(() => {
-    setMounted(true)
-    setHasWebGL(checkWebGLSupport())
-  }, [])
+  const hasWebGL = useSyncExternalStore(
+    emptySubscribe,
+    checkWebGLSupport,
+    () => true,
+  )
 
   if (!mounted) {
     return <MascotSkeleton className={className} />

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { ContactShadows } from '@react-three/drei'
 import { CatModel } from './CatModel'
@@ -25,10 +26,12 @@ export function MascotScene({
   className = '',
   onPoke,
 }: MascotSceneProps) {
+  const [cursor, setCursor] = useState<'default' | 'pointer'>('default')
+
   return (
     <div
       className={`relative w-full h-full select-none ${className}`}
-      style={{ touchAction: 'pan-y' }}
+      style={{ touchAction: 'pan-y', cursor }}
     >
       <Canvas
         flat
@@ -64,6 +67,7 @@ export function MascotScene({
           pokeKey={pokeKey}
           pointerRef={pointerRef}
           onPoke={onPoke}
+          onHoverChange={(hovered) => setCursor(hovered ? 'pointer' : 'default')}
         />
 
         {/* Ground ambient contact shadow */}

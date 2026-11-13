@@ -21,6 +21,7 @@ export interface CatModelProps {
   pokeKey?: number
   pointerRef?: React.RefObject<{ x: number; y: number; inside: boolean } | null>
   onPoke?: () => void
+  onHoverChange?: (hovered: boolean) => void
 }
 
 const noRaycast = () => {}
@@ -38,9 +39,10 @@ export function CatModel({
   pokeKey = 0,
   pointerRef,
   onPoke,
+  onHoverChange,
 }: CatModelProps) {
-  const toon = useMemo(createToonMaterials, [])
-  const clay = useMemo(createClayMaterials, [])
+  const toon = useMemo(() => createToonMaterials(), [])
+  const clay = useMemo(() => createClayMaterials(), [])
 
   useEffect(
     () => () => {
@@ -71,11 +73,9 @@ export function CatModel({
   const gl = useThree((state) => state.gl)
   const get = useThree((state) => state.get)
 
-  const now = () => get().clock.getElapsedTime()
-
   const poke = () => {
     if (!reduceMotion) {
-      animator.react(expression, now(), materials, outline)
+      animator.react(expression, get().clock.getElapsedTime(), materials, outline)
     }
     onPoke?.()
   }
@@ -86,9 +86,9 @@ export function CatModel({
     if (shownExpression.current === expression) return
     shownExpression.current = expression
     if (!reduceMotion) {
-      animator.pop(expression, now(), materials, outline)
+      animator.pop(expression, get().clock.getElapsedTime(), materials, outline)
     }
-  }, [expression, reduceMotion, materials, outline])
+  }, [expression, reduceMotion, materials, outline, animator, get])
 
   // External poke trigger
   const lastPoke = useRef(pokeKey)
@@ -96,24 +96,27 @@ export function CatModel({
     if (pokeKey === lastPoke.current) return
     lastPoke.current = pokeKey
     if (!reduceMotion) {
-      animator.react(expression, now(), materials, outline)
+      animator.react(expression, get().clock.getElapsedTime(), materials, outline)
     }
-  }, [pokeKey, expression, reduceMotion, materials, outline])
+  }, [pokeKey, expression, reduceMotion, materials, outline, animator, get])
 
   // Canvas hover detection for local fallback
   const pointerInside = useRef(false)
+
   useEffect(() => {
     const canvas = gl.domElement
     const enter = () => (pointerInside.current = true)
-    const leave = () => (pointerInside.current = false)
+    const leave = () => {
+      pointerInside.current = false
+      onHoverChange?.(false)
+    }
     canvas.addEventListener('pointerenter', enter)
     canvas.addEventListener('pointerleave', leave)
     return () => {
       canvas.removeEventListener('pointerenter', enter)
       canvas.removeEventListener('pointerleave', leave)
-      canvas.style.cursor = ''
     }
-  }, [gl])
+  }, [gl, onHoverChange])
 
   const scratch = useMemo(
     () => ({
@@ -173,15 +176,15 @@ export function CatModel({
   }
 
   const onPointerOver = (event: ThreeEvent<PointerEvent>) => {
-    gl.domElement.style.cursor = 'pointer'
+    onHoverChange?.(true)
     if (reduceMotion) return
     const name = event.object.name
-    if (name === 'Ear_L') animator.twitchEar(0, now())
-    if (name === 'Ear_R') animator.twitchEar(1, now())
+    if (name === 'Ear_L') animator.twitchEar(0, get().clock.getElapsedTime())
+    if (name === 'Ear_R') animator.twitchEar(1, get().clock.getElapsedTime())
   }
 
   const onPointerOut = () => {
-    gl.domElement.style.cursor = ''
+    onHoverChange?.(false)
   }
 
   return (
