@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Sparkles, Brain, Zap, Layout, CheckCircle, Play } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { appLink } from "@/lib/site";
 import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
+import MascotCard from "@/components/mascot-3d/MascotCard";
+import type { ExpressionId } from "@/components/mascot-3d/cat/expressions";
 
 const FEATURES = [
   {
@@ -37,11 +39,51 @@ const FEATURES = [
   },
 ];
 
+const FEATURE_EMOTION_MAP: Record<number, ExpressionId> = {
+  1: "happy",
+  2: "cool",
+  3: "cheeky",
+};
+
 export function Hero() {
   const [activeFeature, setActiveFeature] = useState(FEATURES[0]);
+  const [pokeKey, setPokeKey] = useState(0);
+
+  const heroRef = useRef<HTMLElement>(null);
+  const pointerRef = useRef<{ x: number; y: number; inside: boolean }>({
+    x: 0,
+    y: 0,
+    inside: false,
+  });
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLElement>) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) return;
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+    pointerRef.current = {
+      x: Math.max(-1, Math.min(1, x)),
+      y: Math.max(-1, Math.min(1, y)),
+      inside: true,
+    };
+  };
+
+  const handlePointerLeave = () => {
+    pointerRef.current = { x: 0, y: 0, inside: false };
+  };
+
+  const triggerPoke = () => {
+    setPokeKey((k) => k + 1);
+  };
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden flex items-center bg-background">
+    <section
+      ref={heroRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      className="relative min-h-[90vh] md:min-h-screen pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden flex items-center bg-background"
+    >
       {/* Background Floating Animals & Objects */}
       <BackgroundDecorations density="high" />
 
@@ -141,9 +183,9 @@ export function Hero() {
             <div className="relative z-10 w-full max-w-md aspect-[4/5] rounded-[3rem] bg-card shadow-2xl border-4 border-card flex flex-col overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
               
               {/* Illustration Area */}
-              <div className={`flex-1 ${activeFeature.color} relative flex items-center justify-center p-8 transition-colors duration-500`}>
+              <div className={`flex-1 ${activeFeature.color} relative flex items-center justify-center transition-colors duration-500 overflow-hidden`}>
                 <div
-                  className="absolute inset-0 opacity-15"
+                  className="absolute inset-0 opacity-15 pointer-events-none"
                   style={{
                     backgroundImage:
                       "radial-gradient(currentColor 1px, transparent 1px)",
@@ -151,11 +193,26 @@ export function Hero() {
                   }}
                 />
 
-                {/* Animated Feature Icon */}
-                <activeFeature.icon
-                  className="w-40 h-40 sm:w-48 sm:h-48 drop-shadow-2xl filter transition-all duration-500 animate-float"
-                  strokeWidth={1.5}
-                />
+                {/* Interactive 3D Mascot Character */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <MascotCard
+                    emotion={FEATURE_EMOTION_MAP[activeFeature.id] || "happy"}
+                    pointerRef={pointerRef}
+                    pokeKey={pokeKey}
+                    onPoke={triggerPoke}
+                    className="w-full h-full"
+                  />
+                </div>
+
+                {/* Floating Poke Hint Badge */}
+                <button
+                  type="button"
+                  onClick={triggerPoke}
+                  className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/90 hover:bg-card backdrop-blur-md border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold text-xs shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                  title="Chạm vào tớ để chơi đùa!"
+                >
+                  <span>Chạm vào tớ! 🐾</span>
+                </button>
               </div>
 
               {/* Card Info Area */}
