@@ -1,6 +1,11 @@
 import { buildAbsoluteUrl, SITE } from "@/lib/site";
 
-export type ToolCategory = "diem-so" | "on-thi" | "giao-vien" | "hoc-tap-stem";
+export type ToolCategory =
+  | "diem-so"
+  | "on-thi"
+  | "giao-vien"
+  | "hoc-tap-stem"
+  | "code-van-phong";
 
 export type ToolCatalogItem = {
   slug: string;
@@ -21,6 +26,7 @@ export const TOOL_CATEGORIES: Array<{
   { id: "all", label: "Tất cả công cụ" },
   { id: "diem-so", label: "Tính & Quy đổi điểm" },
   { id: "hoc-tap-stem", label: "Học tập & STEM" },
+  { id: "code-van-phong", label: "Tin học & Văn phòng" },
   { id: "on-thi", label: "Lập kế hoạch ôn thi" },
   { id: "giao-vien", label: "Công cụ Giáo viên" },
 ];
@@ -599,6 +605,253 @@ export const TOOLS_CATALOG: ToolCatalogItem[] = [
       "trộn đề 4 mã đề xuất file word docx",
       "phần mềm trộn đề thi thpt 2027 đúng sai trả lời ngắn",
       "tải bảng đáp án tổng hợp nhiều mã đề",
+    ],
+  },
+
+  // Wave 6 (15 new tools -> total 50)
+  // Cluster A: Safe Client-Side IT & Data Tools
+  {
+    slug: "thuc-hanh-html-css-tin-hoc-12",
+    title: "Thực hành HTML5 & CSS3 Trực tiếp Online (Chuẩn SGK Tin học 12)",
+    shortTitle: "Thực hành HTML & CSS Tin học 12",
+    description:
+      "Môi trường thực hành viết mã HTML5 và CSS3 an toàn trực tiếp trên trình duyệt theo chương trình Tin học 12 GDPT 2018: kèm 6 bài mẫu chuẩn SGK, xem trước tức thì trong sandbox tắt script và tải file .html.",
+    badge: "Tin học 12 • Sandbox",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "thực hành html css online tin học 12",
+      "soạn thảo html trực tuyến miễn phí",
+      "bài thực hành html css sgk tin học 12 gdpt 2018",
+      "học html css cơ bản trực quan",
+    ],
+  },
+  {
+    slug: "dinh-dang-kiem-tra-json-sql-online",
+    title: "Định dạng & Kiểm tra JSON, Xuất CSV và Làm đẹp Câu lệnh SQL Online",
+    shortTitle: "Format JSON, xuất CSV & SQL",
+    description:
+      "Làm đẹp (Beautify), thu gọn (Minify), kiểm tra lỗi cú pháp JSON kèm chuyển mảng JSON sang bảng CSV, và trình định dạng câu lệnh SQL chuẩn CSDL Tin học 11 ngay trên trình duyệt.",
+    badge: "JSON • CSV • SQL",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "format json online",
+      "kiểm tra lỗi json beautify minify",
+      "chuyển json sang csv online",
+      "định dạng câu lệnh sql tin học 11",
+    ],
+  },
+  {
+    slug: "so-sanh-hai-van-ban-diff-checker",
+    title: "So sánh Hai Văn bản & Mã nguồn Trực tuyến (Diff Checker)",
+    shortTitle: "So sánh 2 văn bản (Diff)",
+    description:
+      "Tìm kiếm tức thì từng dòng và từng từ thêm mới hoặc bị xóa giữa hai phiên bản văn bản, đề thi hoặc đoạn mã với thuật toán LCS 100% client-side, hiển thị tỷ lệ giống nhau (%) và xem song song.",
+    badge: "Diff Checker LCS",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "so sánh hai văn bản online",
+      "diff checker tiếng việt miễn phí",
+      "tìm điểm khác nhau giữa 2 đoạn văn bản",
+      "so sánh code online không cần cài đặt",
+    ],
+  },
+  {
+    slug: "kiem-tra-bieu-thuc-chinh-quy-regex",
+    title: "Kiểm tra Biểu thức Chính quy (Regex Tester) & Mẫu Học thuật VN",
+    shortTitle: "Kiểm tra Regex Online",
+    description:
+      "Kiểm tra biểu thức chính quy (Regular Expression) an toàn trực tiếp trên trình duyệt: tô màu kết quả khớp, bảng Capture Groups và 10 mẫu Regex chuẩn Việt Nam (ngày DD/MM/YYYY, email .edu.vn, mã học sinh, mã màu HEX).",
+    badge: "Regex Safe Tester",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "kiểm tra regex online",
+      "regex tester tiếng việt",
+      "mẫu regex ngày tháng email số điện thoại việt nam",
+      "học biểu thức chính quy trực quan",
+    ],
+  },
+  {
+    slug: "bang-ma-mau-hex-rgb-do-tuong-phan-wcag",
+    title: "Chuyển đổi Mã màu HEX/RGB/HSL & Kiểm tra Độ tương phản WCAG 2.1",
+    shortTitle: "Mã màu & Độ tương phản WCAG",
+    description:
+      "Chọn và chuyển đổi qua lại tức thì giữa HEX, RGB và HSL; tính tỷ lệ tương phản WCAG 2.1 (1:1–21:1) kèm nhãn AA/AAA cho chữ thường, chữ lớn và slide máy chiếu lớp học.",
+    badge: "HEX/RGB • WCAG 2.1",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "chuyển đổi mã màu hex sang rgb hsl",
+      "kiểm tra độ tương phản màu wcag",
+      "chọn màu chữ dễ đọc trên máy chiếu",
+      "bảng mã màu thiết kế web tin học 12",
+    ],
+  },
+
+  // Cluster B: Office & Document Productivity Tools
+  {
+    slug: "chuyen-anh-sang-pdf-a4-online",
+    title: "Ghép Nhiều Ảnh (JPG/PNG/WebP) thành File PDF Khổ A4 Miễn phí",
+    shortTitle: "Chuyển Ảnh sang PDF A4",
+    description:
+      "Nén và ghép nhiều ảnh chụp bài tập, phiếu bài làm hoặc ghi chú viết tay thành 1 file PDF chuẩn khổ A4 (Dọc/Ngang, căn lề sạch sẽ) hoàn toàn trên trình duyệt, không tải ảnh lên máy chủ.",
+    badge: "Ảnh → PDF A4",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "chuyển ảnh sang pdf online miễn phí",
+      "ghép nhiều ảnh jpg png thành pdf a4",
+      "nộp bài tập ảnh chụp thành pdf",
+      "image to pdf không giới hạn không watermark",
+    ],
+  },
+  {
+    slug: "tinh-phan-tram-doc-so-thanh-chu",
+    title: "Máy tính Phần trăm (%) Nhanh & Đọc Số Tiền Thành Chữ Tiếng Việt",
+    shortTitle: "Tính % & Đọc số thành chữ",
+    description:
+      "Tính nhanh X% của Y, X chiếm bao nhiêu % của Y, % tăng giảm và chuyển đổi tức thì các con số hàng tỷ/nghìn tỷ thành chữ tiếng Việt chuẩn dấu phẩy để viết hóa đơn, báo cáo, bài giảng.",
+    badge: "Tính % • Đọc số VN",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "tính phần trăm online",
+      "đọc số thành chữ tiếng việt",
+      "cách tính phần trăm tăng giảm",
+      "chuyển số tiền thành chữ viết hóa đơn",
+    ],
+  },
+  {
+    slug: "chuyen-bang-excel-sang-markdown-html-latex",
+    title: "Chuyển Bảng Excel / Google Sheets sang Markdown, HTML & LaTeX",
+    shortTitle: "Excel → Markdown / HTML / LaTeX",
+    description:
+      "Dán trực tiếp vùng dữ liệu copy từ Excel, Google Sheets hoặc CSV để chuyển đổi tức thì thành bảng Markdown, thẻ HTML <table> hoặc bảng LaTeX dùng cho báo cáo khoa học và tài liệu học tập.",
+    badge: "Excel → MD/HTML/TeX",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "chuyển bảng excel sang markdown",
+      "excel sang html table online",
+      "tạo bảng latex từ excel",
+      "chuyển csv sang markdown table",
+    ],
+  },
+  {
+    slug: "soan-thao-markdown-xuat-pdf-a4",
+    title: "Trình Soạn thảo Markdown Trực tiếp (Live Preview) & In PDF A4",
+    shortTitle: "Soạn Markdown & Xuất PDF",
+    description:
+      "Soạn thảo tài liệu học tập, đề cương ôn thi bằng Markdown song song với khung xem trước trực tiếp (GFM bảng, checklist, code block), tải file .md hoặc in PDF A4 sạch sẽ 1-click.",
+    badge: "Markdown + PDF A4",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "soạn thảo markdown online",
+      "markdown live preview tiếng việt",
+      "chuyển markdown sang pdf a4",
+      "trình viết ghi chú học tập markdown",
+    ],
+  },
+  {
+    slug: "tinh-khoang-cach-ngay-tuoi-lich-on-thi",
+    title: "Tính Khoảng cách Ngày, Ngày làm việc & Đếm ngày đến Mục tiêu",
+    shortTitle: "Tính khoảng cách ngày & Tuổi",
+    description:
+      "Tính chính xác số ngày, tuần, tháng và số ngày làm việc (trừ Thứ 7, Chủ nhật) giữa hai mốc thời gian; cộng/trừ ngày lập tiến độ ôn thi và tính tuổi chi tiết theo ngày sinh.",
+    badge: "Date & Countdown",
+    category: "on-thi",
+    categoryLabel: "Lập kế hoạch ôn thi",
+    keywords: [
+      "tính khoảng cách giữa hai ngày online",
+      "đếm số ngày làm việc trừ cuối tuần",
+      "công cụ tính tuổi chính xác theo ngày sinh",
+      "cộng trừ ngày lập kế hoạch ôn thi",
+    ],
+  },
+
+  // Cluster C: Academic, STEM & Teacher Practice Tools
+  {
+    slug: "chuyen-doi-don-vi-vat-ly-hoa-hoc-tin-hoc",
+    title: "Chuyển đổi Đơn vị Chuẩn SI (Vật lý, Hóa học & Tin học) Đầy đủ",
+    shortTitle: "Đổi đơn vị Lý • Hóa • Tin",
+    description:
+      "Chuyển đổi tức thì cùng lúc mọi đơn vị thường gặp trong đề thi Vật lý, Hóa học và Tin học: Áp suất (atm, mmHg, bar, Pa), Nhiệt độ (°C, K, °F), Năng lượng (J, cal, eV, kWh), Tốc độ, Dữ liệu (bit, Byte, KiB, GB), Bước sóng và Khối lượng nguyên tử.",
+    badge: "SI Lý • Hóa • Tin",
+    category: "hoc-tap-stem",
+    categoryLabel: "Học tập & STEM",
+    keywords: [
+      "chuyển đổi đơn vị vật lý hóa học online",
+      "đổi đơn vị áp suất atm mmhg pa bar",
+      "đổi đơn vị dữ liệu bit byte kb kib mb gb",
+      "đổi độ c sang kelvin eV sang joule",
+    ],
+  },
+  {
+    slug: "tinh-xac-suat-to-hop-thong-ke-thpt",
+    title: "Tính Hoán vị, Chỉnh hợp, Tổ hợp & Thống kê Tứ phân vị (Toán 10–12)",
+    shortTitle: "Tổ hợp & Thống kê Tứ phân vị",
+    description:
+      "Tính chính xác số lớn Pn, Ank, Cnk, hệ số Nhị thức Newton và phân tích toàn bộ mẫu số liệu chuẩn Toán 10–12 GDPT 2018: Số trung bình, Trung vị, Mốt, Tứ phân vị Q1–Q2–Q3, khoảng tứ phân vị, giá trị ngoại lệ, phương sai và độ lệch chuẩn.",
+    badge: "Toán 10–12 GDPT 2018",
+    category: "hoc-tap-stem",
+    categoryLabel: "Học tập & STEM",
+    keywords: [
+      "tính tổ hợp chỉnh hợp hoán vị online",
+      "tính tứ phân vị q1 q2 q3 online",
+      "tính phương sai độ lệch chuẩn mẫu số liệu",
+      "tìm giá trị ngoại lệ outlier thống kê toán 10 12",
+    ],
+  },
+  {
+    slug: "tao-thoi-khoa-bieu-lich-hoc-tuan-in-a4",
+    title: "Tạo Thời khóa biểu & Lịch Ôn thi Tuần Tự động (In A4 / Tải PNG)",
+    shortTitle: "Tạo Thời khóa biểu & Lịch tuần",
+    description:
+      "Thiết kế Thời khóa biểu 7 ngày (Thứ 2 – Chủ nhật) theo ca Sáng/Chiều/Tối với mẫu sẵn cho học sinh THPT & sinh viên Đại học, gắn nhãn màu môn học, lưu cục bộ trên máy, xuất ảnh PNG sắc nét hoặc in A4.",
+    badge: "Xuất PNG • In A4",
+    category: "on-thi",
+    categoryLabel: "Lập kế hoạch ôn thi",
+    keywords: [
+      "tạo thời khóa biểu online miễn phí",
+      "mẫu thời khóa biểu tuần in a4",
+      "lập lịch ôn thi đại học theo tuần",
+      "tải ảnh thời khóa biểu đẹp png",
+    ],
+  },
+  {
+    slug: "tao-phieu-bai-tap-toan-tu-luan-in-pdf",
+    title: "Tạo Phiếu Bài tập Toán Rèn Kỹ năng Tính toán In A4 (Kèm Đáp án)",
+    shortTitle: "Tạo phiếu bài tập Toán A4",
+    description:
+      "Sinh ngẫu nhiên có kiểm soát 10–40 bài tập Toán tự luận theo 5 chuyên đề (Số nguyên, Phân số tối giản, Tìm x, Phương trình bậc hai, Hệ phương trình nghiệm nguyên đẹp), tùy chỉnh tiêu đề lớp và in A4 kèm bảng đáp án.",
+    badge: "Phiếu Toán + Đáp án",
+    category: "giao-vien",
+    categoryLabel: "Công cụ Giáo viên",
+    keywords: [
+      "tạo phiếu bài tập toán in pdf a4",
+      "sinh bài tập toán tự luận có đáp án",
+      "phiếu luyện tập số nguyên phân số phương trình",
+      "công cụ ra bài tập toán cho giáo viên",
+    ],
+  },
+  {
+    slug: "tao-bai-tap-dien-tu-cloze-test-tieng-anh",
+    title: "Tạo Bài tập Điền từ Tiếng Anh (Cloze Test / Gap-Fill) Từ Đoạn Văn",
+    shortTitle: "Tạo bài tập Cloze Test Anh",
+    description:
+      "Dán đoạn văn Tiếng Anh bất kỳ để tự động đục lỗ (ẩn giới từ, liên từ, mạo từ, mỗi từ thứ N hoặc bấm trực tiếp chọn từ cần ẩn), tạo khung Word Bank xáo trộn và bảng Đáp án chuẩn in A4 / copy sang Word.",
+    badge: "Cloze Test • Word Bank",
+    category: "giao-vien",
+    categoryLabel: "Công cụ Giáo viên",
+    keywords: [
+      "tạo bài tập điền từ tiếng anh online",
+      "công cụ tạo cloze test gap fill miễn phí",
+      "tạo đề đọc điền từ thpt tiếng anh",
+      "tạo word bank bài tập tiếng anh cho giáo viên",
     ],
   },
 ];

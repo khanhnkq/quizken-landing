@@ -16,6 +16,8 @@ const CATEGORY_HOOKS: Record<ToolCategory, string> = {
     "✨ Công cụ sẵn sàng! Thầy cô muốn mở Phòng Thi Online / Đấu Trường Live cho lớp?",
   "hoc-tap-stem":
     "⚡ Đã giải xong! Luyện ngay 10 câu trắc nghiệm vận dụng chủ đề này?",
+  "code-van-phong":
+    "💻 Đã xử lý xong! Muốn luyện ngay bộ đề trắc nghiệm Tin học & Kỹ năng số trên QuizKen?",
   "on-thi":
     "🔥 Sẵn sàng vào guồng! Tạo ngay đề chẩn đoán lỗ hổng kiến thức 15 phút?",
 };
