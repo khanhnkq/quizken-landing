@@ -18,16 +18,19 @@ import { JsonLd } from "@/components/JsonLd";
 import { ToolsHubClient } from "@/components/tools/ToolsHubClient";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Kho Công Cụ Học Tập & Giáo Viên Miễn Phí 2027",
+  title: "Kho 33 Công Cụ Học Tập & Giáo Viên Miễn Phí 2027",
   description:
-    "Bộ 6 công cụ trực tuyến miễn phí cho học sinh, sinh viên & giáo viên: Tính điểm xét tốt nghiệp THPT 2027 (50/50), Tính GPA Đại học, Quy đổi IELTS/ĐGNL, Đếm ngược ngày thi, Trộn đề 4 mã đề và Tạo phiếu tô đáp án A4.",
+    "Bộ 33 công cụ trực tuyến miễn phí cho học sinh, sinh viên & giáo viên: Tính điểm THPT 50/50, Thông tư 22, Thi lớp 10, Học bạ, GPA, VSTEP/TOEIC/IELTS, Vòng quay gọi tên, Chia nhóm, Đồng hồ máy chiếu, QR lớp học, Hóa học, Đồ thị 2D, LaTeX, Trộn đề & Phiếu tô A4.",
   path: "/cong-cu",
   keywords: [
     "công cụ học tập miễn phí",
     "tính điểm tốt nghiệp thpt 2027",
+    "tính điểm trung bình môn thông tư 22",
+    "tính điểm thi vào lớp 10",
     "tính điểm gpa đại học",
-    "quy đổi điểm ielts đgnl",
-    "đếm ngược ngày thi 2027",
+    "cân bằng phương trình hóa học online",
+    "bảng tuần hoàn hóa học online",
+    "đồng hồ pomodoro online",
     "trộn đề trắc nghiệm online",
     "tạo phiếu trả lời trắc nghiệm a4",
   ],
@@ -63,16 +66,16 @@ export default function CongCuHubPage() {
           <header className="mx-auto max-w-3xl space-y-5 text-center">
             <Badge className="bg-primary/15 text-primary">
               <Wrench className="h-3.5 w-3.5" />
-              <span>6 Tiện ích Giáo dục Miễn phí • Chuẩn 2027</span>
+              <span>{TOOLS_CATALOG.length} Tiện ích Giáo dục Miễn phí • Chuẩn 2027</span>
             </Badge>
             <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Công Cụ Học Tập &amp; Giảng Dạy Miễn Phí
             </h1>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Tính điểm xét tốt nghiệp THPT 50/50 mới, GPA Đại học, quy đổi
-              IELTS/ĐGNL, đếm ngược ngày thi, trộn đề 4 mã đề và tạo phiếu tô
-              đáp án chuẩn Bộ GD&amp;ĐT ngay lập tức — không cần cài đặt hay
-              đăng ký tài khoản.
+              Tính điểm tốt nghiệp THPT 50/50, Thông tư 22, thi vào lớp 10,
+              học bạ, GPA, VSTEP, IELTS/ĐGNL, cân bằng Hóa học, bảng tuần hoàn,
+              giải toán ma trận, Pomodoro, đếm từ, trộn đề 4 mã đề và tạo phiếu
+              tô đáp án A4 — 100% miễn phí, không cần đăng nhập.
             </p>
             <div className="grid grid-cols-1 gap-2.5 pt-2 text-left sm:grid-cols-2">
               {hubHighlights.map((item) => (
@@ -98,7 +101,7 @@ export default function CongCuHubPage() {
                 <span>Danh mục tổng hợp</span>
               </Badge>
               <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
-                Bảng tóm tắt 6 công cụ trên QuizKen
+                Bảng tóm tắt {TOOLS_CATALOG.length} công cụ trên QuizKen
               </h2>
             </div>
 

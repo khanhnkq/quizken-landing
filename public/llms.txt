@@ -1,6 +1,6 @@
 # QuizKen
 
-> Nền tảng tạo đề thi trắc nghiệm bằng AI, luyện thi trực tuyến và công cụ học tập miễn phí dành cho giáo viên, học sinh và sinh viên Việt Nam.
+> Nền tảng tạo đề thi trắc nghiệm bằng AI, luyện thi trực tuyến và công cụ học tập miễn phí dành cho giáo viên, học sinh và sinh viên Việt Nam & quốc tế.
 
 ## Tổng quan hệ sinh thái
 
@@ -10,11 +10,12 @@
 ## Năng lực cốt lõi của sản phẩm
 
 - **Tạo đề thi trắc nghiệm bằng AI:** Chuyển đổi văn bản, PDF, Word hoặc chủ đề bất kỳ thành bộ câu hỏi trắc nghiệm chuẩn ma trận GDPT 2018 trong vài giây.
-- **Hỗ trợ định dạng đề thi THPT 2026:** Đầy đủ Phần I (Trắc nghiệm 4 lựa chọn), Phần II (Đúng/Sai 4 ý chấm điểm lũy tiến 0.1 - 0.25 - 0.5 - 1.0), và Phần III (Trả lời ngắn).
+- **Hỗ trợ định dạng đề thi THPT 2026–2027:** Đầy đủ Phần I (Trắc nghiệm 4 lựa chọn), Phần II (Đúng/Sai 4 ý chấm điểm lũy tiến 0.1 - 0.25 - 0.5 - 1.0), và Phần III (Trả lời ngắn).
+- **Công cụ Giáo viên (`/teacher/tools` trên `app.quizken.com`):** Nhập đề từ Word `.docx`, trộn 4–24 mã đề `.docx` kèm bảng đáp án tổng hợp `.docx`/`.csv`, và tạo ma trận đặc tả Công văn 7991.
 - **Chấm điểm tự động & Giải thích chi tiết:** Phân tích từng đáp án, lưu sổ tay câu sai và xuất đề thi định dạng PDF / Word A4 sẵn sàng in ấn.
 - **English Hub & Đấu trường Multiplayer:** Lộ trình học tiếng Anh theo khung CEFR/TOEIC, flashcard lặp lại ngắt quãng (Spaced Repetition) và phòng thi đấu trắc nghiệm thời gian thực.
 
-## Trung tâm Đề thi chuẩn 2026 (`www.quizken.com/de-thi`)
+## Trung tâm Đề thi chuẩn 2026–2027 (`www.quizken.com/de-thi`)
 
 - [Tổng hợp Đề thi QuizKen](https://www.quizken.com/de-thi): Điểm truy cập trung tâm cho toàn bộ hệ thống đề thi thử tương tác và đáp án chi tiết.
 - [Đề thi 9 môn THPT (Lớp 10, 11, 12 & Ôn thi THPT Quốc gia)](https://www.quizken.com/de-thi): Toán học (`/de-thi/toan`), Tiếng Anh (`/de-thi/tieng-anh`), Vật lý (`/de-thi/vat-ly`), Hóa học (`/de-thi/hoa-hoc`), Sinh học (`/de-thi/sinh-hoc`), Lịch sử (`/de-thi/lich-su`), Địa lý (`/de-thi/dia-ly`), GDKT&PL (`/de-thi/gdkt-pl`), Tin học (`/de-thi/tin-hoc`).
@@ -27,9 +28,57 @@
 
 - [Kho Đề Thi Công Khai](https://www.quizken.com/kho-de): Hàng trăm bộ đề thi công khai từ cộng đồng giáo viên và học sinh, hỗ trợ xem trước câu hỏi SSR và chuyển tiếp vào làm full đề hoặc phòng thi đếm ngược trên `app.quizken.com`.
 
-## Bộ Công Cụ Học Tập Miễn Phí (`www.quizken.com/cong-cu`)
+## Bộ 33 Công Cụ Học Tập & Tính Điểm Miễn Phí (`www.quizken.com/cong-cu`)
 
-- [Danh mục Công cụ QuizKen](https://www.quizken.com/cong-cu): Các micro-tools chạy trực tiếp trên trình duyệt không cần đăng nhập, phục vụ tính điểm xét tốt nghiệp THPT 2026, quy đổi điểm ĐGNL, trộn đề trắc nghiệm, tạo flashcard và hỗ trợ học tập nhanh.
+- [Danh mục Công cụ QuizKen](https://www.quizken.com/cong-cu): 33 micro-tools miễn phí chạy trực tiếp trên trình duyệt, không cần đăng nhập.
+
+### Nhóm Tính & Quy đổi điểm (13 công cụ)
+1. [Tính điểm xét tốt nghiệp THPT 2027 (Công thức 50/50 mới)](https://www.quizken.com/cong-cu/tinh-diem-tot-nghiep-thpt-2027)
+2. [Tính điểm Trung bình môn & Cả năm chuẩn Thông tư 22](https://www.quizken.com/cong-cu/tinh-diem-trung-binh-mon-thong-tu-22)
+3. [Tính điểm Thi tuyển sinh vào lớp 10 (Hà Nội, TP.HCM & Toàn quốc)](https://www.quizken.com/cong-cu/tinh-diem-thi-vao-lop-10)
+4. [Tính điểm Xét Học bạ THPT 2027 theo Tổ hợp khối](https://www.quizken.com/cong-cu/tinh-diem-xet-hoc-ba-thpt-2027)
+5. [Tính điểm Cộng & Giảm trừ Ưu tiên Xét tuyển Đại học 2027](https://www.quizken.com/cong-cu/tinh-diem-cong-uu-tien-dai-hoc-2027)
+6. [Tra cứu Tổ hợp môn & Nhóm ngành Xét tuyển Đại học 2027](https://www.quizken.com/cong-cu/tra-cuu-to-hop-mon-ma-nganh-2027)
+7. [Tính điểm GPA Đại học (Hệ 10 ↔ Hệ 4 ↔ Điểm chữ)](https://www.quizken.com/cong-cu/tinh-diem-gpa-dai-hoc)
+8. [Tính điểm Học phần Tín chỉ & Điểm Cuối kỳ Cần đạt để Qua môn](https://www.quizken.com/cong-cu/tinh-diem-hoc-phan-tin-chi-can-dat)
+9. [Tính điểm Rèn luyện & Xét Học bổng Khuyến khích Học tập Đại học](https://www.quizken.com/cong-cu/tinh-diem-ren-luyen-hoc-bong-dai-hoc)
+10. [Tra cứu & Quy đổi điểm IELTS / TOEIC / SAT / ĐGNL 2027](https://www.quizken.com/cong-cu/quy-doi-diem-ielts-dgnl-2027)
+11. [Tính & Quy đổi điểm thi VSTEP (B1, B2, C1)](https://www.quizken.com/cong-cu/tinh-diem-thi-vstep-b1-b2-c1)
+12. [Tính điểm TOEIC Listening & Reading (Raw to Scaled 10–990)](https://www.quizken.com/cong-cu/tinh-diem-toeic-listening-reading)
+13. [Tính điểm thi JLPT (N5–N1) & Quy đổi HSK 2.0 ↔ HSK 3.0 (CEFR)](https://www.quizken.com/cong-cu/tinh-diem-thi-hsk-jlpt-quy-doi-cefr)
+
+### Nhóm Học tập & STEM (9 công cụ)
+14. [Cân bằng Phương trình Hóa học & Tính Phân tử khối (M) Online](https://www.quizken.com/cong-cu/can-bang-phuong-trinh-hoa-hoc)
+15. [Bảng tuần hoàn các Nguyên tố Hóa học Tương tác (118 Nguyên tố)](https://www.quizken.com/cong-cu/bang-tuan-hoan-hoa-hoc-tuong-tac)
+16. [Giải Phương trình, Hệ phương trình & Tính Định thức Ma trận](https://www.quizken.com/cong-cu/giai-phuong-trinh-he-phuong-trinh-ma-tran)
+17. [Vẽ Đồ thị Hàm số 2D Trực quan Online (Toán THPT & Đại học)](https://www.quizken.com/cong-cu/ve-do-thi-ham-so-online)
+18. [Trình Soạn thảo Công thức Toán – Lý – Hóa LaTeX Trực quan Online](https://www.quizken.com/cong-cu/soan-cong-thuc-toan-latex-online)
+19. [Chuyển đổi Hệ cơ số Tin học (BIN/OCT/DEC/HEX) & Số La Mã](https://www.quizken.com/cong-cu/chuyen-doi-he-co-so-nhi-phan-thap-luc-phan)
+20. [Tạo Trích dẫn Tài liệu Tham khảo APA 7, IEEE, Harvard & TCVN](https://www.quizken.com/cong-cu/tao-trich-dan-tai-lieu-apa-ieee)
+21. [Đếm từ Bài luận & Kiểm tra Độ dài (IELTS, VSTEP, Ngữ văn)](https://www.quizken.com/cong-cu/dem-tu-bai-luan-ielts-ngu-van)
+22. [Tra cứu 150+ Động từ Bất quy tắc, Phiên âm IPA & Nghe phát âm](https://www.quizken.com/cong-cu/tra-cuu-dong-tu-bat-quy-tac-phat-am-ipa)
+
+### Nhóm Lập kế hoạch ôn thi (3 công cụ)
+23. [Đếm ngược ngày thi 2027 (THPT Quốc gia, ĐGNL, Vào lớp 10)](https://www.quizken.com/cong-cu/dem-nguoc-ngay-thi-2027)
+24. [Đồng hồ Pomodoro & Âm thanh Tập trung Ôn thi](https://www.quizken.com/cong-cu/dong-ho-pomodoro-hoc-tap)
+25. [Kiểm tra Tốc độ Gõ phím Tiếng Việt có dấu & Tiếng Anh (WPM Test)](https://www.quizken.com/cong-cu/kiem-tra-toc-do-go-phim-tieng-viet)
+
+### Nhóm Công cụ Giáo viên & Lớp học (8 công cụ)
+26. [Trộn đề trắc nghiệm online miễn phí (4 mã đề)](https://www.quizken.com/cong-cu/tron-de-trac-nghiem-online)
+27. [Tạo phiếu trả lời trắc nghiệm chuẩn Bộ GD&ĐT 2026–2027 (In A4)](https://www.quizken.com/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027)
+28. [Vòng quay Gọi tên Học sinh Ngẫu nhiên](https://www.quizken.com/cong-cu/vong-quay-goi-ten-hoc-sinh)
+29. [Chia nhóm & Chọn Nhóm trưởng Ngẫu nhiên cho Lớp học Online](https://www.quizken.com/cong-cu/chia-nhom-ngau-nhien-lop-hoc)
+30. [Đồng hồ Bấm giờ Thi thử Toàn màn hình Máy chiếu (15p / 45p / 90p)](https://www.quizken.com/cong-cu/dong-ho-bam-gio-thi-thu-may-chieu)
+31. [Tạo & In Flashcard 2 mặt Chuẩn Khổ A4 Miễn phí](https://www.quizken.com/cong-cu/in-flashcard-2-mat-a4)
+32. [Chuẩn hóa Văn bản Soạn đề, Xóa ngắt dòng PDF & Sắp xếp Tên A–Z](https://www.quizken.com/cong-cu/chuyen-doi-chu-hoa-thuong-soat-loi-van-ban)
+33. [Tạo Mã QR Lớp học & Tài liệu Học tập Vĩnh viễn (SVG / PNG)](https://www.quizken.com/cong-cu/tao-ma-qr-lop-hoc-mien-phi)
+
+## Global English Free Study Tools (`www.quizken.com/tools`)
+
+- [Free Online Study Tools Hub](https://www.quizken.com/tools)
+1. [Pomodoro Study Timer with Ambient Rain & White Noise](https://www.quizken.com/tools/pomodoro-study-timer)
+2. [Essay Word, Character & Flesch Readability Counter](https://www.quizken.com/tools/essay-word-character-counter)
+3. [College 4.0 GPA & Final Exam Grade Calculator](https://www.quizken.com/tools/gpa-grade-calculator)
 
 ## Blog & Tài nguyên Hướng dẫn
 

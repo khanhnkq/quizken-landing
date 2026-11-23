@@ -4,6 +4,7 @@ import { getAllPosts } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/categories";
 import { SUBJECTS, GRADES } from "@/lib/pSEO";
 import { getToolPaths } from "@/lib/toolsCatalog";
+import { EN_TOOLS_CATALOG } from "@/components/tools/en/EnToolShell";
 import { getExtendedPseoPaths } from "@/lib/pseoExtended";
 import { fetchPublicQuizSlugs } from "@/lib/publicQuizzes";
 
@@ -98,13 +99,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   );
 
-  // Free interactive micro-tools (/cong-cu and /cong-cu/<slug>)
+  // Free interactive micro-tools (/cong-cu and /cong-cu/<slug>) + Global English (/tools/*)
   const toolPages: MetadataRoute.Sitemap = getToolPaths().map((path) => ({
     url: `${SITE.url}${path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: path === "/cong-cu" ? 0.9 : 0.85,
   }));
+
+  const enToolPages: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE.url}/tools`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    ...EN_TOOLS_CATALOG.map((tool) => ({
+      url: `${SITE.url}/tools/${tool.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 
   // Public community quizzes (/kho-de/<slug>)
   const publicQuizPages: MetadataRoute.Sitemap = publicQuizSlugs.map((item) => ({
@@ -145,6 +161,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...pseoPages,
     ...extendedPseoPages,
     ...toolPages,
+    ...enToolPages,
     ...publicQuizPages,
     ...categoryPages,
     ...blogPages,
