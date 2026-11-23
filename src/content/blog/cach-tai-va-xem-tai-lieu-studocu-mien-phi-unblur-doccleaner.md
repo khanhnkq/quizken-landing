@@ -1,15 +1,15 @@
 ---
-title: "Cách Xem và Tải Tài Liệu Studocu Miễn Phí Không Bị Mờ Với DocCleaner (2026)"
-description: "Hướng dẫn cách tải tài liệu Studocu, Scribd miễn phí không bị mờ trang với tiện ích DocCleaner. Tự động unblur 100%, chặn quảng cáo và xuất PDF HD sắc nét."
+title: "Cách Tối Ưu Giao Diện Đọc & Định Dạng PDF Tài Liệu Studocu Với DocCleaner (2026)"
+description: "Hướng dẫn sử dụng tiện ích DocCleaner trên Chrome Web Store để bật Reader Mode khi đọc tài liệu công khai trên Studocu, Scribd, ẩn banner và căn chỉnh khổ in A4."
 date: 2026-09-27
 slug: cach-tai-va-xem-tai-lieu-studocu-mien-phi-unblur-doccleaner
 category: cong-cu-meo
 cover: /images/blog/cach-tai-va-xem-tai-lieu-studocu-mien-phi-unblur-doccleaner.png
 tags:
-  - tải tài liệu studocu miễn phí
-  - studocu unblur free
+  - đọc tài liệu studocu tập trung
+  - better studocu reader
   - doccleaner
-  - tải scribd miễn phí
+  - reader mode studocu
   - mẹo học tập
   - tiện ích chrome
 author: QuizKen Team
@@ -17,138 +17,109 @@ featured: true
 ---
 
 > **TL;DR (Tóm tắt nhanh):**  
-> Để xem và tải tài liệu Studocu bị làm mờ (unblur) hoàn toàn miễn phí mà không cần trả phí VIP hay dính link quảng cáo độc hại, bạn có thể sử dụng tiện ích mở rộng mã nguồn mở **DocCleaner** (hỗ trợ cả Studocu và Scribd). Tiện ích tự động trích xuất CloudFront signature để mở khóa toàn bộ trang chất lượng HD, chặn 100% banner quảng cáo, auto-scroll chống lỗi trang trắng và cho phép xuất file PDF chuẩn A4 chỉ với 1 cú click chuột. Sau khi có file PDF, bạn có thể ném ngay vào **QuizKen** để AI tự động chuyển hóa thành bộ đề trắc nghiệm ôn thi trong 5 giây!
+> Để đọc các đề cương, bài giảng công khai trên Studocu và Scribd trong không gian tối giản không bị làm phiền bởi hộp thoại cookie hay thanh điều hướng thừa, bạn có thể cài đặt miễn phí tiện ích **[DocCleaner - Better Studocu & Scribd Reader](https://chromewebstore.google.com/detail/doccleaner-better-studocu/fnhdoegoihnkgggnaiemommemdejhbkb?hl=vi)** từ Chrome Web Store. Tiện ích giúp bật **Reader Mode**, hỗ trợ **Smart Page Formatter** giảm lỗi trang trắng khi cuộn tài liệu dài và căn chỉnh bố cục in A4 sạch đẹp, kết hợp cùng **[QuizKen](https://app.quizken.com)** để chuyển hóa giáo trình thành bộ đề trắc nghiệm ôn thi trong 5 giây!
 
 ---
 
-# Cách Xem và Tải Tài Liệu Studocu Miễn Phí 100% Không Bị Mờ (Mới Nhất 2026)
+# Cách Tối Ưu Giao Diện Đọc Tập Trung (Reader Mode) & Định Dạng In A4 Trên Studocu (2026)
 
-Mỗi mùa thi cử hoặc chạy deadline tiểu luận, **Studocu** và **Scribd** luôn là hai kho tàng tài liệu học tập khổng lồ được hàng triệu sinh viên đại học tìm kiếm: từ đề cương ôn thi, bài giảng giảng viên, đề thi mẫu các năm trước cho đến slide thuyết trình chuyên sâu.
+Mỗi mùa thi cử hoặc làm tiểu luận, **Studocu** và **Scribd** là hai nguồn tham khảo quen thuộc được sinh viên đại học sử dụng để tra cứu đề cương ôn tập, ghi chú bài giảng và slide thuyết trình do cộng đồng sinh viên chia sẻ.
 
-Tuy nhiên, cảm giác ức chế lớn nhất là khi bạn tìm thấy đúng tài liệu mình cần thì:
-* **Từ trang thứ 3 trở đi toàn bộ chữ bị làm mờ (blur)**, không thể đọc được nội dung cốt lõi.
-* Màn hình liên tục nhảy ra các **pop-up đòi nâng cấp tài khoản Premium/VIP** với chi phí đắt đỏ đối với học sinh, sinh viên.
-* Bị che lấp bởi hàng loạt banner quảng cáo phiền toái, nút tải xuống (Download) bị vô hiệu hóa hoàn toàn.
-* Các website get link bên thứ ba trôi nổi trên mạng thì đầy rẫy mã độc, link rút gọn chứa virus hoặc thường xuyên bị Studocu cập nhật chặn tính năng.
+Tuy nhiên, khi đọc các tài liệu dài trực tiếp trên trình duyệt máy tính, người học thường gặp phải các bất tiện về giao diện:
+* Màn hình bị thu hẹp bởi nhiều thanh điều hướng, hộp thoại xin quyền Cookie (OneTrust/Didomi) và các banner nổi gây mất tập trung.
+* Khi cuộn nhanh qua các tài liệu dài 50–100 trang, cơ chế tải chậm (Lazy Loading) đôi khi khiến các trang chưa kịp hiển thị, gây ra hiện tượng khoảng trắng (Blank Pages).
+* Khi cần in ấn các tài liệu công khai được phép chia sẻ để học offline, lệnh in mặc định của trình duyệt dễ dính cả khung menu web khiến trang giấy bị lệch bố cục.
 
-Trong bài viết này, đội ngũ **QuizKen** sẽ giới thiệu và hướng dẫn bạn chi tiết cách sử dụng **DocCleaner** – tiện ích mở rộng Chrome mã nguồn mở miễn phí 100% do tác giả **KhanhNKQ** phát triển, giúp giải quyết triệt để vấn đề unblur và tải PDF Studocu chuẩn nét nhất hiện nay!
-
----
-
-## 1. Vì Sao Tài Liệu Studocu Bị Làm Mờ Và Khóa Tải Xuống?
-
-Để hiểu vì sao các thủ thuật cũ (như inspect phần tử xóa CSS blur hay dùng extension Stuhack trước đây) không còn tác dụng, bạn cần nắm rõ cơ chế bảo vệ của Studocu:
-
-1. **Cơ chế Paywall & Giới hạn xem trước (Preview Cap):** Studocu cho phép người dùng vãng lai đọc miễn phí từ 2 đến 3 trang đầu để đánh giá nội dung. Sau đó, hệ thống chèn một lớp phủ (overlay) và hạ độ phân giải hình ảnh trang văn bản.
-2. **Ảo hóa danh sách trang (Virtual Scrolling / Lazy Loading):** Để tối ưu tốc độ tải và ngăn bot quét dữ liệu tự động, Studocu chỉ nạp các trang đang nằm trong tầm nhìn (viewport) của bạn. Khi bạn cuộn nhanh hoặc bấm lệnh in thông thường (`Ctrl + P`), các trang bên dưới chưa kịp nạp sẽ biến thành các trang trắng tinh.
-3. **Mã hóa URL ảnh nền qua CloudFront Signature:** Các trang sắc nét thực chất được lưu trữ dưới dạng ảnh vector hoặc PNG trên CDN AWS CloudFront. Khi người dùng chưa trả phí, Studocu chỉ cung cấp token xem phiên bản mờ.
-
-Chính vì vậy, nếu chỉ can thiệp bằng cách xóa class CSS đơn giản, chữ bên dưới vẫn sẽ bị mờ nhạt và vỡ nét hạt khi in ấn.
+Trong bài viết này, đội ngũ **QuizKen** sẽ hướng dẫn bạn cách sử dụng **DocCleaner - Better Studocu & Scribd Reader** – tiện ích mở rộng Chrome miễn phí trên Chrome Web Store giúp tối ưu hóa không gian đọc tập trung (Reader Mode) và căn chỉnh bố cục in A4 chuẩn xác!
 
 ---
 
-## 2. Giới Thiệu DocCleaner: Giải Pháp Tải & Unblur Toàn Diện
+## 1. Vì Sao Đọc Tài Liệu Dài Trên Web Thường Bị Khựng Trang Trắng?
 
-[DocCleaner (GitHub)](https://github.com/khanhnkq/DocCleaner) là một tiện ích Chrome Extension mã nguồn mở hiện đại (chuẩn Manifest V3) được thiết kế đặc biệt nhằm tối ưu hóa bố cục, chặn sạch quảng cáo và hỗ trợ xuất tài liệu PDF sắc nét từ **Studocu** (`studocu.com`, `studocu.vn`) lẫn **Scribd** (`scribd.com`).
-
-| Tiêu chí | DocCleaner Extension | Website Get Link Trực Tuyến | Cách Tải Lên Đổi Lượt Cũ | Mua VIP Studocu |
-| :--- | :--- | :--- | :--- | :--- |
-| **Chi phí** | **Miễn phí 100% (Mã nguồn mở)** | Miễn phí kèm rủi ro | Mất nhiều thời gian | Tốn tiền định kỳ |
-| **Độ an toàn** | **Tuyệt đối an toàn** (Xem được code trên GitHub) | Nguy cơ dính pop-up độc hại | Cần tài khoản thật | An toàn |
-| **Chất lượng PDF** | **HD A4 sắc nét** (Tải ảnh gốc CloudFront) | Thường bị nén mờ hoặc lỗi font | Chuẩn gốc | Chuẩn gốc |
-| **Chặn quảng cáo** | **Tự động chặn 100%** ngay lúc tải trang | Chứa nhiều quảng cáo | Vẫn có quảng cáo | Không quảng cáo |
-| **Tốc độ thực hiện** | **1-Click tức thì** | Chờ xếp hàng bot tải | Chờ duyệt 24 - 48 giờ | Ngay lập tức |
-
-### Các Tính Năng Đột Phá Của DocCleaner:
-
-* **Tự động nhận diện nền tảng đa năng:** Hoạt động trơn tru trên cả Studocu toàn cầu, Studocu Việt Nam và Scribd.
-* **Cơ chế Unblur CloudFront thông minh:** Tiện ích tự động trích xuất các tham số ký số CloudFront Signature để tải lại ảnh nền gốc độ phân giải cao (`/html/bgN.png`), khôi phục 100% độ sắc nét cho các trang bị khóa.
-* **Chặn quảng cáo chuyên sâu (`document_start`):** Gỡ sạch toàn bộ khung quảng cáo Google Ads, DoubleClick, các pop-up chào mời mua gói VIP và banner xin quyền cookie (OneTrust, Didomi) ngay trước khi trang hoàn tất hiển thị.
-* **Auto-Scroll Preload tự động:** Khắc phục triệt để lỗi trang trắng khi in do cơ chế Lazy Load. DocCleaner sẽ tự động cuộn trang ngầm để nạp toàn bộ các trang tài liệu vào bộ nhớ đệm trước khi tiến hành xuất PDF.
-* **Nút bấm tải PDF nổi (Floating Action Button):** Giao diện nổi bật, chỉ cần 1 cú nhấp chuột để bắt đầu quá trình xử lý và tải tài liệu về máy.
+Khi hiển thị tài liệu nhiều trang trên trình duyệt, các nền tảng học liệu sử dụng hai kỹ thuật chính:
+1. **Ảo hóa danh sách trang (Virtual Scrolling / Lazy Loading):** Để tiết kiệm băng thông ban đầu, trình duyệt chỉ dựng nội dung cho các trang đang nằm trong khung nhìn (viewport). Khi bạn cuộn nhanh, các trang bên dưới cần thời gian để nạp vào DOM.
+2. **Nhiều lớp giao diện phụ (UI Clutter):** Các khung thông báo cookie, thanh công cụ nổi và sidebar chiếm dụng diện tích màn hình và tài nguyên bộ nhớ khi mở nhiều tab cùng lúc.
 
 ---
 
-## 3. Hướng Dẫn Cài Đặt DocCleaner Trên Trình Duyệt
+## 2. Giới Thiệu DocCleaner: Trải Nghiệm Reader Mode Gọn Sạch Trên Chrome Web Store
 
-Vì là tiện ích mã nguồn mở bảo mật, bạn có thể dễ dàng cài đặt DocCleaner trên tất cả các trình duyệt nhân Chromium như **Google Chrome, Cốc Cốc, Microsoft Edge, Brave** theo các bước đơn giản sau:
+**[DocCleaner - Better Studocu & Scribd Reader](https://chromewebstore.google.com/detail/doccleaner-better-studocu/fnhdoegoihnkgggnaiemommemdejhbkb?hl=vi)** là tiện ích trình duyệt chuẩn Manifest V3 được thiết kế nhằm mang lại không gian đọc tối giản (Reader Mode) và hỗ trợ định dạng trang in A4 cho các tài liệu học tập công khai trên **Studocu** (`studocu.com`, `studocu.vn`) và **Scribd** (`scribd.com`).
 
-### Bước 1: Tải mã nguồn từ GitHub
-1. Truy cập vào kho mã nguồn chính thức: [https://github.com/khanhnkq/DocCleaner](https://github.com/khanhnkq/DocCleaner).
-2. Nhấn vào nút xanh **Code** > chọn **Download ZIP**.
-3. Sau khi file tải về, hãy giải nén file `.zip` đó ra một thư mục cố định trên máy tính của bạn (ví dụ: `D:/Tools/DocCleaner`).
+| Tiêu chí | DocCleaner (Chrome Web Store) | Giao diện Web Mặc định | Website Trung Gian Trôi Nổi |
+| :--- | :--- | :--- | :--- |
+| **Chi phí** | **Miễn phí 100%** | Miễn phí | Tiềm ẩn rủi ro quảng cáo |
+| **Độ an toàn** | **Đã qua kiểm duyệt Chrome Web Store** | An toàn | Nguy cơ dính pop-up độc hại |
+| **Không gian đọc** | **Reader Mode sạch sẽ, căn giữa trang** | Nhiều popup cookie & thanh bên | Không hỗ trợ đọc trực tiếp |
+| **Hỗ trợ cuộn trang** | **Smart Page Formatter pre-render mượt** | Dễ gặp khoảng trắng khi kéo nhanh | Không có |
+| **Định dạng in A4** | **1-Click Print Format ẩn menu thừa** | Dễ dính khung giao diện web | Thường lỗi font chữ |
 
-### Bước 2: Kích hoạt chế độ Developer Mode trên trình duyệt
-1. Mở trình duyệt Chrome/Cốc Cốc/Edge.
-2. Nhập vào thanh địa chỉ: `chrome://extensions/` (hoặc `edge://extensions/` đối với Microsoft Edge) rồi nhấn **Enter**.
-3. Ở góc trên cùng bên phải màn hình, gạt công tắc **Developer mode (Chế độ dành cho nhà phát triển)** sang trạng thái **BẬT (ON)**.
-
-### Bước 3: Nạp tiện ích vào trình duyệt
-1. Nhấn vào nút **Load unpacked (Tải tiện ích đã giải nén)** ở góc trên bên trái.
-2. Điều hướng đến thư mục **DocCleaner** mà bạn vừa giải nén ở Bước 1 và nhấn **Select Folder (Chọn thư mục)**.
-3. Biểu tượng tiện ích DocCleaner sẽ xuất hiện ngay trên danh sách tiện ích mở rộng. Bạn nên nhấn vào biểu tượng chiếc ghim (Pin) trên thanh công cụ trình duyệt để tiện sử dụng mọi lúc.
-
----
-
-## 4. Các Bước Xem Và Tải File PDF Studocu Không Bị Mờ
-
-Sau khi cài đặt xong, bạn có thể bắt đầu tải tài liệu theo quy trình cực kỳ nhẹ nhàng:
-
-1. **Bước 1:** Mở trang tài liệu Studocu hoặc Scribd mà bạn cần tải về (ví dụ tài liệu đề cương ôn tập, slide bài học).
-2. **Bước 2:** Tiện ích DocCleaner sẽ tự động can thiệp ngay lập tức: toàn bộ banner quảng cáo và thông báo che mờ sẽ bị ẩn đi, chữ bị mờ sẽ tự động chuyển sang trạng thái nét căng.
-3. **Bước 3:** Nhìn sang góc phải màn hình, bạn sẽ thấy nút bấm nổi **"Download PDF"**. Hãy nhấp chuột vào nút này.
-4. **Bước 4:** Tiện ích sẽ kích hoạt chế độ **Auto-Scroll Preload**. Bạn sẽ thấy màn hình tự động cuộn qua các trang để nạp ảnh gốc chất lượng cao vào bộ nhớ.
-5. **Bước 5:** Hộp thoại in tài liệu hệ thống xuất hiện, tại mục *Máy in đích (Destination)*, bạn chỉ cần chọn **Lưu dưới dạng PDF (Save as PDF)** rồi nhấn **Lưu**. File PDF thu được sẽ chuẩn chỉnh từng trang A4, không sót bất kỳ trang nào và hình ảnh rõ ràng 100%!
+### Các Tính Năng Cốt Lõi Của DocCleaner:
+* **Reader Mode tự động:** Nhận diện trang đọc tài liệu trên Studocu và Scribd để ẩn các hộp thoại cookie và thanh nổi gây xao nhãng.
+* **Smart Page Formatter:** Hỗ trợ nạp trước (pre-render) và căn chỉnh các trang tài liệu mở theo luồng đọc liền mạch, giảm thiểu lỗi trang trắng khi cuộn hoặc in.
+* **1-Click Print Format:** Tự động gom gọn khung trang giấy theo chuẩn A4 và gọi hộp thoại in gốc của trình duyệt (`Save as PDF`) cho các tài liệu học tập được phép lưu trữ.
+* **Giao diện song ngữ Việt – Anh:** Chuyển đổi ngôn ngữ nhanh ngay trong popup của tiện ích trên thanh công cụ.
 
 ---
 
-## 5. 💡 Mẹo Học Tập Đột Phá: Biến Tài Liệu Studocu Thành Đề Trắc Nghiệm AI Cùng QuizKen
+## 3. Hướng Dẫn Cài Đặt DocCleaner Trên Chrome, Edge, Cốc Cốc, Brave
 
-Tải được tài liệu PDF đầy đủ chỉ là bước khởi đầu. Vấn đề thực sự của hầu hết sinh viên khi ôn thi là: **Làm sao để hấp thu một tập tài liệu dài 50 - 100 trang chỉ trong vài ngày trước kỳ thi?**
+Hiện tại bạn có thể cài đặt DocCleaner trực tiếp từ **Chrome Web Store** chỉ với 1 cú nhấp chuột (không cần giải nén thủ công):
 
-Nghiên cứu khoa học về nhận thức đã chỉ ra rằng việc chỉ ngồi đọc thụ động (Passive Reading) khiến não bộ quên mất hơn 80% kiến thức chỉ sau 48 giờ. Để ghi nhớ sâu và đạt điểm số tối đa, phương pháp hiệu quả nhất là **Gợi nhớ chủ động (Active Recall)** và **Luyện đề thực chiến**.
+1. **Bước 1:** Mở trình duyệt nhân Chromium (Google Chrome, Microsoft Edge, Cốc Cốc hoặc Brave) và truy cập liên kết chính thức: [DocCleaner - Better Studocu & Scribd Reader trên Chrome Web Store](https://chromewebstore.google.com/detail/doccleaner-better-studocu/fnhdoegoihnkgggnaiemommemdejhbkb?hl=vi).
+2. **Bước 2:** Nhấn vào nút **Thêm vào Chrome (Add to Chrome)** và chọn **Thêm tiện ích (Add extension)**.
+3. **Bước 3:** Nhấn vào biểu tượng mảnh ghép (Extensions) ở góc phải trình duyệt và bấm **Ghim (Pin)** để đưa biểu tượng DocCleaner ra thanh công cụ.
 
-Đây chính là lúc bạn nên kết hợp tài liệu vừa tải với nền tảng giáo dục thông minh **[QuizKen](https://app.quizken.com)**:
+---
 
-```
-[Tài liệu Studocu PDF] 
-          │ (Tải qua DocCleaner)
-          ▼
-[Nạp vào QuizKen AI]
-          │ (Chỉ mất 3 - 5 giây xử lý)
-          ├──► Tạo 30 - 50 câu trắc nghiệm 4 lựa chọn sát thực tế
-          ├──► Trích xuất bộ thẻ Flashcard ghi nhớ thuật ngữ (SM-2)
-          └──► Tự động tạo bảng giải thích đáp án & ma trận kiến thức
+## 4. Cách Sử Dụng Reader Mode & Xuất Bản In A4 Chuẩn Đẹp
+
+1. **Bước 1:** Mở tài liệu học tập công khai trên Studocu hoặc Scribd mà bạn đang ôn luyện.
+2. **Bước 2:** Tiện ích DocCleaner sẽ tự động kích hoạt chế độ **Reader Mode**, ẩn các hộp thoại cookie và căn giữa trang tài liệu giúp bạn đọc tập trung.
+3. **Bước 3:** Khi cần in hoặc lưu bản PDF sạch cho tài liệu được phép chia sẻ, hãy đợi **Smart Page Formatter** nạp đủ các trang rồi nhấn nút nổi **1-Click Print Format** ở góc phải màn hình.
+4. **Bước 4:** Khi hộp thoại in của trình duyệt xuất hiện, tại mục *Destination (Máy in đích)*, chọn **Save as PDF (Lưu dưới dạng PDF)**, bật tùy chọn *Background graphics (Đồ họa nền)* và nhấn **Lưu**.
+
+---
+
+## 5. 💡 Mẹo Học Tập Đột Phá: Biến Giáo Trình PDF Thành Đề Trắc Nghiệm AI Cùng QuizKen
+
+Đọc tài liệu sạch sẽ mới chỉ là bước khởi đầu. Nghiên cứu khoa học về nhận thức chỉ ra rằng việc ngồi đọc thụ động (Passive Reading) khiến não bộ quên hơn 80% kiến thức chỉ sau 48 giờ. Để ghi nhớ sâu và đạt điểm số tối đa, phương pháp hiệu quả nhất là **Gợi nhớ chủ động (Active Recall)** và **Luyện đề thực chiến**.
+
+Hãy kết hợp giáo trình và ghi chú học tập của bạn với nền tảng **[QuizKen](https://app.quizken.com)**:
+
+```mermaid
+flowchart TD
+    A["Giáo trình PDF / Ghi chú bài giảng"] --> B["Nạp vào QuizKen AI (3 - 5 giây)"]
+    B --> C["Tạo 30 - 50 câu trắc nghiệm 3 phần chuẩn GDPT 2018"]
+    B --> D["Trích xuất bộ thẻ Flashcard thuật ngữ (SM-2)"]
+    B --> E["Bảng giải thích đáp án & phân tích lỗ hổng kiến thức"]
 ```
 
 ### Quy trình 3 bước tự ôn thi cấp tốc với QuizKen:
-1. **Tải tệp PDF lên QuizKen:** Truy cập [app.quizken.com](https://app.quizken.com), nhấn vào mục *Tải file tài liệu* và chọn tệp PDF tài liệu Studocu mà DocCleaner vừa xuất ra.
-2. **Chọn cấu trúc đề thi mong muốn:** Tùy chỉnh mức độ nhận thức (Nhận biết, Thông hiểu, Vận dụng), dạng câu hỏi (Nhiều lựa chọn hoặc Đúng/Sai 4 ý chuẩn xu hướng khảo thí hiện đại).
-3. **Bắt đầu làm bài & Luyện tập:** AI của QuizKen sẽ phân tích toàn bộ văn bản trong tài liệu, loại bỏ những nội dung râu ria và sinh ra bộ đề thi trắc nghiệm hoàn chỉnh kèm lời giải thích chi tiết cho từng phương án.
+1. **Tải tệp PDF/Word lên QuizKen:** Truy cập [app.quizken.com](https://app.quizken.com), nhấn vào mục *Tải file tài liệu* và chọn tệp giáo trình hoặc đề cương của bạn.
+2. **Chọn cấu trúc đề thi mong muốn:** Tùy chỉnh mức độ nhận thức (Nhận biết, Thông hiểu, Vận dụng) và dạng câu hỏi (Nhiều lựa chọn, Đúng/Sai 4 ý, Trả lời ngắn).
+3. **Bắt đầu làm bài & Luyện tập:** AI của QuizKen sẽ sinh ra bộ đề thi trắc nghiệm hoàn chỉnh kèm lời giải thích chi tiết cho từng phương án.
 
-> 🚀 **Trải nghiệm ngay:** Không cần cài đặt bất kỳ phần mềm nào, bạn có thể [bấm vào đây để tạo đề thi AI miễn phí trên QuizKen](https://app.quizken.com) ngay trên trình duyệt điện thoại hoặc máy tính!
+> 🚀 **Trải nghiệm ngay:** [Bấm vào đây để tạo đề thi AI miễn phí trên QuizKen](https://app.quizken.com) hoặc sử dụng ngay [58 Công Cụ Học Tập & Tiện Ích Miễn Phí](/cong-cu) chạy trực tiếp trên trình duyệt!
 
 ---
 
 ## 6. Lưu Ý Về Bản Quyền Và Liêm Chính Học Thuật
 
-Mặc dù các tiện ích mở rộng như DocCleaner mang lại sự tiện lợi vượt trội cho việc học tập cá nhân, QuizKen khuyến khích bạn luôn tôn trọng quyền tác giả và liêm chính học thuật:
-* Chỉ nên sử dụng tài liệu tải về nhằm mục đích **nghiên cứu, tự học cá nhân hoặc chuẩn bị bài giảng**.
-* Tuyệt đối không sao chép nguyên văn để làm bài luận tốt nghiệp hoặc sử dụng cho các mục đích thương mại vi phạm bản quyền của tác giả.
-* Nếu có điều kiện kinh tế và thường xuyên sử dụng tài liệu học thuật toàn cầu, việc ủng hộ gói bản quyền chính thức cũng là cách giúp cộng đồng chia sẻ tri thức phát triển bền vững.
+QuizKen luôn khuyến khích học sinh, sinh viên tôn trọng quyền tác giả, điều khoản dịch vụ của các nền tảng và liêm chính học thuật:
+* Chỉ sử dụng tài liệu học tập công khai (Open Access), tài liệu được phép chia sẻ hoặc tài liệu thuộc quyền sở hữu hợp pháp của bạn nhằm mục đích **nghiên cứu, tự học cá nhân hoặc chuẩn bị bài giảng**.
+* Tuyệt đối không sao chép nguyên văn để gian lận học thuật hoặc phân phối trái phép tài liệu có bản quyền vì mục đích thương mại.
+* Khuyến khích sinh viên tham gia đóng góp ghi chú bài giảng của chính mình lên các cộng đồng học thuật hoặc ủng hộ gói bản quyền chính thức của nền tảng để hệ sinh thái tri thức phát triển bền vững.
 
 ---
 
-## Câu hỏi thường gặp về cách tải Studocu và DocCleaner
+## Câu hỏi thường gặp (FAQ)
 
-### Tiện ích DocCleaner có an toàn cho máy tính và tài khoản của tôi không?
-Hoàn toàn an toàn. DocCleaner là phần mềm nguồn mở 100% được công khai minh bạch mã nguồn trên GitHub ([khanhnkq/DocCleaner](https://github.com/khanhnkq/DocCleaner)). Tiện ích không thu thập dữ liệu cá nhân, không gửi cookie hay mật khẩu về bất kỳ máy chủ bên ngoài nào mà chỉ thực thi các thao tác tinh chỉnh DOM và giải phóng CSS ngay trong phiên trình duyệt nội bộ của bạn.
+### 1. Tiện ích DocCleaner có an toàn cho máy tính và tài khoản của tôi không?
+Hoàn toàn an toàn. DocCleaner đã được kiểm duyệt và phát hành chính thức trên Chrome Web Store. Tiện ích hoạt động 100% cục bộ (Client-Side) ngay trong trình duyệt của bạn, không thu thập dữ liệu cá nhân, không gửi cookie hay mật khẩu về bất kỳ máy chủ bên ngoài nào.
 
-### Tôi có thể dùng DocCleaner trên điện thoại di động không?
-Có thể. Trên điện thoại Android, bạn có thể cài đặt các trình duyệt hỗ trợ tiện ích Chrome Extension như **Kiwi Browser** hoặc **Lemur Browser**, sau đó làm theo các bước cài đặt tiện ích giải nén tương tự như trên máy tính để unblur và tải tài liệu Studocu.
+### 2. DocCleaner hỗ trợ những trình duyệt nào?
+Mọi trình duyệt máy tính sử dụng nhân Chromium như **Google Chrome, Microsoft Edge, Cốc Cốc và Brave** đều có thể cài đặt trực tiếp từ Chrome Web Store chỉ với 1 click.
 
-### DocCleaner có hỗ trợ tải tài liệu từ Scribd không?
-Có. DocCleaner v1.3 trở lên hỗ trợ đa nền tảng, tự động nhận diện cả Studocu và Scribd. Khi bạn truy cập trang tài liệu Scribd, tiện ích sẽ tự động xóa bộ lọc CSS blur, bỏ các lớp quảng cáo che chữ `.page_blur_promo` và khôi phục văn bản đầy đủ.
-
-### Sau khi tải file PDF về, làm thế nào để ôn thi hiệu quả nhất?
-Thay vì đọc lướt qua tệp tài liệu hàng chục trang dễ gây buồn ngủ, bạn hãy nạp file PDF trực tiếp vào nền tảng [QuizKen](https://app.quizken.com). Trí tuệ nhân tạo sẽ tự động tóm tắt nội dung cốt lõi và biến toàn bộ giáo trình thành các câu hỏi trắc nghiệm kiểm tra phản xạ, giúp bạn nhớ bài ngay lập tức trước giờ thi.
+### 3. Sau khi có file PDF đề cương, làm thế nào để ôn thi hiệu quả nhất?
+Thay vì đọc lướt qua tệp tài liệu hàng chục trang dễ gây buồn ngủ, bạn hãy nạp file PDF trực tiếp vào nền tảng [QuizKen](https://app.quizken.com). Trí tuệ nhân tạo sẽ giúp bạn tóm tắt nội dung cốt lõi và biến giáo trình thành các câu hỏi trắc nghiệm kiểm tra phản xạ, giúp bạn nhớ bài sâu trước giờ thi.

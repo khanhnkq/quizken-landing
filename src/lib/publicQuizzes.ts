@@ -181,26 +181,89 @@ interface RawSupabaseQuizRow {
   updated_at: string | null;
 }
 
+const PROHIBITED_CONTENT_PATTERNS: RegExp[] = [
+  // Gambling, betting, illegal finance
+  /\b(nhà\s*cái|cá\s*độ|cá\s*cược|tài\s*xỉu|nổ\s*hũ|xóc\s*đĩa|lô\s*đề|xổ\s*số\s*lô|kubet|sv388|w88|fb88|fun88|m88|188bet|bk8|789bet|f8bet|hi88|new88|jun88|shbet|go88|sunwin|rikvip|b52\s*club|hitclub|casino|betting|slot\s*game|bắn\s*cá\s*đổi\s*thưởng|game\s*bài\s*đổi\s*thưởng|vay\s*tiền\s*nhanh|tín\s*dụng\s*đen)\b/i,
+  // Adult / 18+ / NSFW
+  /\b(phim\s*sex|web\s*sex|ảnh\s*sex|xxx|jav\s*hd|xvideos|pornhub|xnxx|hentai|18\+|onlyfans|gái\s*gọi|massage\s*kích\s*dục|sugar\s*baby)\b/i,
+  // Illegal hacking, cracking, phishing, drugs, weapons
+  /\b(hack\s*tài\s*khoản|crack\s*phần\s*mềm|keylog|ddos\s*attack|mua\s*bán\s*ma\s*túy|cần\s*sa|thuốc\s*lắc|vũ\s*khí\s*nóng|lừa\s*đảo\s*chiếm\s*đoạt)\b/i,
+  // Severe profanity
+  /\b(địt\s*mẹ|đụ\s*mẹ|vãi\s*lồn|cái\s*lồn|con\s*cặc|đầu\s*buồi)\b/i,
+];
+
+const RAW_URL_SPAM_RE = /\b(?:https?:\/\/|www\.)[^\s<>"]+/gi;
+
+export function isSafePublicQuizContent(text: string): boolean {
+  if (!text) return true;
+  const normalized = text.normalize("NFC");
+  for (const pattern of PROHIBITED_CONTENT_PATTERNS) {
+    if (pattern.test(normalized)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+export function sanitizePublicText(text: string): string {
+  return text.replace(RAW_URL_SPAM_RE, "").replace(/\s{2,}/g, " ").trim();
+}
+
 function mapRowToDetail(row: RawSupabaseQuizRow): PublicQuizDetail | null {
   if (!row.id || !row.title) return null;
+
+  const rawTitle = row.title.trim();
+  const rawDescription = row.description?.trim() || "";
+  if (
+    !isSafePublicQuizContent(rawTitle) ||
+    !isSafePublicQuizContent(rawDescription)
+  ) {
+    return null;
+  }
+
+  const title = sanitizePublicText(rawTitle);
+  if (title.length < 3) return null;
+
   const questions = parseQuestionsArray(row.questions);
   if (questions.length < 5) return null;
 
-  const title = row.title.trim();
+  for (const q of questions) {
+    const combinedQ = [
+      q.question,
+      q.explanation ?? "",
+      ...q.options,
+      ...(q.subItems?.map((s) => s.text) ?? []),
+    ].join(" ");
+    if (!isSafePublicQuizContent(combinedQ)) {
+      return null;
+    }
+  }
+
+  const cleanedDesc = sanitizePublicText(rawDescription);
   const updatedAt = row.updated_at || row.created_at;
+
+  const safeTags = Array.isArray(row.tags)
+    ? row.tags
+        .filter(
+          (t): t is string =>
+            typeof t === "string" &&
+            t.trim().length > 0 &&
+            isSafePublicQuizContent(t)
+        )
+        .map((t) => sanitizePublicText(t))
+        .filter((t) => t.length > 0)
+    : [];
 
   return {
     id: row.id,
     slug: buildQuizSlug(title, row.id),
     title,
     description:
-      row.description?.trim() ||
+      cleanedDesc ||
       `Bộ đề thi trắc nghiệm "${title}" do cộng đồng QuizKen biên soạn và chia sẻ công khai, hỗ trợ ôn tập và thi thử trực tuyến miễn phí.`,
     category: row.category?.trim() || "general",
     difficulty: row.difficulty?.trim() || "medium",
-    tags: Array.isArray(row.tags)
-      ? row.tags.filter((t): t is string => typeof t === "string" && t.trim().length > 0)
-      : [],
+    tags: safeTags,
     questionCount: questions.length,
     usageCount: typeof row.usage_count === "number" ? row.usage_count : 0,
     attempts: typeof row.attempts === "number" ? row.attempts : 0,

@@ -20,27 +20,27 @@ import { ArticleCard } from "@/components/blog/ArticleCard";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mẹo Học Tập & Công Cụ Tiện Ích Sinh Viên Miễn Phí | QuizKen",
+  title: "Mẹo Học Tập & 58 Công Cụ Tiện Ích Sinh Viên Miễn Phí | QuizKen",
   description:
-    "Tổng hợp các công cụ tải tài liệu Studocu, Scribd không bị mờ (unblur), tiện ích Chrome mở rộng, mẹo ôn thi và công nghệ AI hỗ trợ học tập đỉnh cao.",
+    "Tổng hợp 58 công cụ học tập & văn phòng chạy 100% trên trình duyệt, tiện ích chế độ đọc tập trung (Reader Mode), mẹo khai thác học liệu mở Open Access và công nghệ AI ôn thi đỉnh cao.",
   path: "/meo",
   keywords: [
     "mẹo học tập",
     "công cụ sinh viên",
-    "tải tài liệu studocu miễn phí",
-    "studocu unblur free",
-    "doccleaner extension",
-    "tải pdf studocu scribd",
+    "chế độ đọc tập trung reader mode",
+    "học liệu mở open access",
+    "doccleaner reader mode",
+    "công cụ tính điểm và lập trình miễn phí",
     "tiện ích học tập chrome",
     "mẹo ôn thi hiệu quả",
   ],
 });
 
 const docCleanerHighlights = [
-  "Unblur 100% trang khóa Studocu & Scribd",
-  "Chặn sạch Ads, Popup VIP & Cookie Banner",
-  "Auto-scroll preload chống mất trang khi xuất PDF",
-  "Mã nguồn mở an toàn trên GitHub (khanhnkq)",
+  "Chế độ đọc tập trung (Reader Mode) cho tài liệu công khai",
+  "Ẩn thanh điều hướng & khung hiển thị gây xao nhãng",
+  "Hỗ trợ căn chỉnh bố cục in ấn A4 rõ nét cho bài giảng mở",
+  "58 công cụ học tập & dev chạy 100% Client-Side tại /cong-cu",
 ];
 
 export default function MeoPage() {
@@ -59,8 +59,8 @@ export default function MeoPage() {
           "studocu",
           "doccleaner",
           "extension",
-          "unblur",
-          "tải tài liệu",
+          "reader mode",
+          "học liệu",
         ].some((key) => t.toLowerCase().includes(key)),
       ),
   );
@@ -89,42 +89,42 @@ export default function MeoPage() {
           <div className="mx-auto max-w-3xl space-y-5 text-center">
             <Badge>
               <Wrench className="h-3.5 w-3.5" />
-              <span>Thư viện Tiện ích & Thủ thuật Công nghệ</span>
+              <span>Thư viện Tiện ích & Thủ thuật Học tập Hợp pháp</span>
             </Badge>
             <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Kho Mẹo & Công Cụ Học Tập Đỉnh Cao
             </h1>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Tổng hợp tiện ích mã nguồn mở, mẹo tải tài liệu không giới hạn,
-              unblur Studocu/Scribd và các công cụ công nghệ giúp học sinh, sinh
-              viên tiết kiệm hàng giờ mỗi tuần.
+              Tổng hợp 58 công cụ học tập, văn phòng và lập trình chạy 100% trên
+              trình duyệt, cùng hướng dẫn bật chế độ đọc tập trung (Reader Mode)
+              và khai thác kho học liệu mở (Open Access) hợp pháp giúp học sinh,
+              sinh viên tiết kiệm hàng giờ mỗi tuần.
             </p>
           </div>
 
-          {/* Featured Spotlight: DocCleaner */}
+          {/* Featured Spotlight: Reader Mode & Client-Side Tools */}
           <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-8">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className="space-y-5 lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-2">
-                  <Badge>Công Cụ Nổi Bật #1</Badge>
-                  <Badge>Chrome Extension v1.3</Badge>
+                  <Badge>Tiện Ích Học Tập</Badge>
+                  <Badge>Reader Mode & Open Access</Badge>
                   <Badge>
                     <ShieldCheck className="h-3.5 w-3.5" />
-                    100% Miễn phí & An toàn
+                    100% Client-Side & Tuân thủ Bản quyền
                   </Badge>
                 </div>
 
                 <h2 className="font-heading text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-                  DocCleaner: Unblur & Tải Tài Liệu Studocu, Scribd Chuẩn HD
-                  1-Click
+                  Tối Ưu Giao Diện Đọc Tập Trung (Reader Mode) & 58 Công Cụ Học Tập Miễn Phí
                 </h2>
 
                 <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Tiện ích mở rộng thông minh giúp sinh viên tự động gỡ bỏ lớp
-                  làm mờ (unblur) trên Studocu qua CloudFront signature, chặn
-                  sạch quảng cáo phiền toái, tự động preload trang chống lỗi
-                  trắng và xuất file PDF in ấn chuẩn A4 sắc nét chỉ với 1 cú
-                  click chuột.
+                  Bộ giải pháp giúp sinh viên tối ưu không gian đọc tài liệu học
+                  thuật công khai trên trình duyệt (ẩn thanh bên gây xao nhãng,
+                  căn chỉnh khổ giấy in A4 cho các bài giảng được phép chia sẻ)
+                  kết hợp hệ sinh thái 58 công cụ tính điểm, trộn đề Word, lập
+                  trình Python và mật mã học chạy trực tiếp trên thiết bị.
                 </p>
 
                 <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -141,16 +141,25 @@ export default function MeoPage() {
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
                   <Button
-                    href="/blog/cach-tai-va-xem-tai-lieu-studocu-mien-phi-unblur-doccleaner"
+                    href="/cong-cu"
                     variant="primary"
                     size="md"
                     className="h-10 rounded-xl border-0 shadow-none"
                   >
-                    <BookOpen className="h-4 w-4" />
-                    Xem Hướng Dẫn Chi Tiết
+                    <Wrench className="h-4 w-4" />
+                    Mở 58 Công Cụ Miễn Phí
                   </Button>
                   <Button
-                    href="https://github.com/khanhnkq/DocCleaner"
+                    href="/blog/bat-reader-mode-cho-studocu-vn-va-scribd-khong-banner-quang-cao"
+                    variant="secondary"
+                    size="md"
+                    className="h-10 rounded-xl border-0 shadow-none"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    Hướng Dẫn Reader Mode
+                  </Button>
+                  <Button
+                    href="https://github.com/khanhnkq"
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="secondary"
@@ -158,20 +167,20 @@ export default function MeoPage() {
                     className="h-10 rounded-xl border-0 shadow-none"
                   >
                     <Github className="h-4 w-4" />
-                    GitHub Repo
+                    GitHub
                   </Button>
                 </div>
               </div>
 
               <div className="lg:col-span-5">
                 <Link
-                  href="/blog/cach-tai-va-xem-tai-lieu-studocu-mien-phi-unblur-doccleaner"
+                  href="/blog/bat-reader-mode-cho-studocu-vn-va-scribd-khong-banner-quang-cao"
                   className="group block rounded-xl border-0 bg-foreground/[0.04] p-2 shadow-none transition-colors hover:bg-foreground/[0.07] dark:bg-foreground/[0.06]"
                 >
                   <div className="overflow-hidden rounded-lg">
                     <Image
                       src="/images/blog/cach-tai-va-xem-tai-lieu-studocu-mien-phi-unblur-doccleaner.png"
-                      alt="DocCleaner Studocu Unblur Tool"
+                      alt="Chế độ đọc tập trung Reader Mode cho tài liệu học tập"
                       width={800}
                       height={450}
                       className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
@@ -179,7 +188,7 @@ export default function MeoPage() {
                     />
                   </div>
                   <div className="flex items-center justify-between px-2 pb-1 pt-2.5 text-xs font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
-                    <span>Đọc hướng dẫn cài đặt & tải tool ngay</span>
+                    <span>Đọc hướng dẫn tối ưu giao diện Reader Mode</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </div>
                 </Link>
@@ -242,12 +251,12 @@ export default function MeoPage() {
                 Vòng Lặp Học Tập Đột Phá
               </Badge>
               <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-                Đã Tải Được Tài Liệu PDF? Biến Ngay Thành Đề Trắc Nghiệm AI
+                Đã Có Giáo Trình & Bài Giảng PDF? Biến Ngay Thành Đề Trắc Nghiệm AI
                 Trong 5 Giây!
               </h2>
               <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Đọc tài liệu thụ động khiến bạn chỉ nhớ được 20% kiến thức. Hãy
-                kéo thả file PDF vừa tải từ Studocu/Scribd vào{" "}
+                kéo thả file PDF giáo trình hoặc ghi chú cá nhân của bạn vào{" "}
                 <strong className="text-foreground">QuizKen</strong> để AI tự
                 động tạo bộ câu hỏi trắc nghiệm, giải thích chi tiết và
                 flashcard ôn thi chủ động (Active Recall).

@@ -78,7 +78,7 @@ graph TD
 | **FastForward / Bypass Links** | Bỏ qua đếm ngược 60s tải file | `greasyfork.org` | **Rất cao (Tiết kiệm 5 - 10p/ngày)** |
 | **HTML5 Video Speed Master** | Tùy biến tốc độ phát video 0.5x - 4x | `greasyfork.org` | **Cao (Rút ngắn 50% giờ xem bài giảng)** |
 | **LMS Dark Mode Enhancer** | Bảo vệ mắt khi học khuya | `greasyfork.org` | Bảo vệ thị lực sinh viên |
-| **Copy Protector Remover** | Gỡ bỏ chặn chuột phải và bôi đen | `greasyfork.org` | Nhanh chóng lấy trích dẫn |
+| **Academic Citation Helper** | Tạo nhanh trích dẫn chuẩn APA / IEEE | `greasyfork.org` | Hỗ trợ viết tiểu luận đúng chuẩn |
 
 ---
 

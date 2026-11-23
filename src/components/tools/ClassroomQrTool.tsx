@@ -19,8 +19,49 @@ import { cn } from "@/lib/utils";
 
 type QrMode = "url" | "text" | "wifi";
 
+const DANGEROUS_SCHEME_RE = /^\s*(javascript|data|vbscript|file|blob)\s*:/i;
+const SAFE_HTTP_URL_RE = /^https?:\/\/[^\s/$.?#].[^\s]*$/i;
+const MAX_QR_PAYLOAD_LENGTH = 500;
+
 function escapeWifiField(val: string): string {
   return val.replace(/([\\;,:"])/g, "\\$1");
+}
+
+function validateSafeUrl(raw: string): { valid: boolean; error?: string } {
+  const trimmed = raw.trim();
+  if (!trimmed) {
+    return { valid: false, error: "Vui lòng nhập đường dẫn URL (bắt đầu bằng https:// hoặc http://)." };
+  }
+  if (trimmed.length > MAX_QR_PAYLOAD_LENGTH) {
+    return { valid: false, error: `Đường dẫn quá dài (tối đa ${MAX_QR_PAYLOAD_LENGTH} ký tự để mã QR dễ quét).` };
+  }
+  if (DANGEROUS_SCHEME_RE.test(trimmed)) {
+    return {
+      valid: false,
+      error: "Không chấp nhận giao thức không an toàn (javascript:, data:, file:). Chỉ hỗ trợ đường dẫn https:// hoặc http://.",
+    };
+  }
+  if (!SAFE_HTTP_URL_RE.test(trimmed)) {
+    return {
+      valid: false,
+      error: "Đường dẫn không hợp lệ. Vui lòng nhập URL đầy đủ bắt đầu bằng https:// hoặc http:// (ví dụ: https://app.quizken.com).",
+    };
+  }
+  try {
+    const parsed = new URL(trimmed);
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
+      return {
+        valid: false,
+        error: "Chỉ cho phép giao thức web chuẩn https:// hoặc http://.",
+      };
+    }
+    return { valid: true };
+  } catch {
+    return {
+      valid: false,
+      error: "Cấu trúc URL không hợp lệ. Vui lòng kiểm tra lại đường dẫn.",
+    };
+  }
 }
 
 export function ClassroomQrTool() {
@@ -41,17 +82,42 @@ export function ClassroomQrTool() {
   );
   const [copied, setCopied] = useState(false);
 
+  const urlValidation = useMemo(() => {
+    if (mode !== "url") return { valid: true as const, error: undefined };
+    return validateSafeUrl(urlValue);
+  }, [mode, urlValue]);
+
   const payload = useMemo(() => {
-    if (mode === "url") return urlValue.trim();
-    if (mode === "text") return textValue.trim();
-    const ssid = escapeWifiField(wifiSsid.trim());
-    const pass = escapeWifiField(wifiPass);
+    if (mode === "url") {
+      return urlValidation.valid ? urlValue.trim() : "";
+    }
+    if (mode === "text") {
+      const trimmed = textValue.trim().slice(0, MAX_QR_PAYLOAD_LENGTH);
+      if (DANGEROUS_SCHEME_RE.test(trimmed)) return "";
+      return trimmed;
+    }
+    const ssid = escapeWifiField(wifiSsid.trim().slice(0, 64));
+    const pass = escapeWifiField(wifiPass.slice(0, 64));
     if (!ssid) return "";
     if (wifiAuth === "nopass") return `WIFI:T:nopass;S:${ssid};;`;
     return `WIFI:T:${wifiAuth};S:${ssid};P:${pass};;`;
-  }, [mode, urlValue, textValue, wifiSsid, wifiPass, wifiAuth]);
+  }, [mode, urlValue, urlValidation.valid, textValue, wifiSsid, wifiPass, wifiAuth]);
 
-  const qr = useMemo(() => encodeQrMatrix(payload, ecc), [payload, ecc]);
+  const qr = useMemo(() => {
+    if (mode === "url" && !urlValidation.valid) {
+      return {
+        success: false as const,
+        error: urlValidation.error ?? "Đường dẫn URL không hợp lệ.",
+      };
+    }
+    if (mode === "text" && DANGEROUS_SCHEME_RE.test(textValue.trim())) {
+      return {
+        success: false as const,
+        error: "Nội dung văn bản không được bắt đầu bằng giao thức thực thi mã (javascript:, data:, file:).",
+      };
+    }
+    return encodeQrMatrix(payload, ecc);
+  }, [mode, urlValidation, textValue, payload, ecc]);
 
   const buildSvgString = () => {
     if (!qr.success) return "";
