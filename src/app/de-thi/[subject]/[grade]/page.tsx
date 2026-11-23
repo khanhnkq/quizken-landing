@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/Badge";
 import {
   SUBJECTS,
   GRADES,
+  getQuestionsForSubjectGrade,
   isMultipleChoice,
   isTrueFalse,
   isShortAnswer,
@@ -118,6 +119,7 @@ export default async function PseoPage(props: {
 
   const title = `Đề Thi Trắc Nghiệm ${subData.name} ${grData.name} Chuẩn Format 2026 Có Đáp Án`;
   const ctaUrl = appLink(`/?subject=${subject}&grade=${grade}`);
+  const questions = getQuestionsForSubjectGrade(subData, grade);
 
   // Dynamic FAQs for user knowledge & Schema.org FAQPage
   const faqs = [
@@ -148,7 +150,7 @@ export default async function PseoPage(props: {
   ];
 
   // Generate Schema.org Quiz questions
-  const quizQuestionsSchema = subData.questions.flatMap((q, idx) => {
+  const quizQuestionsSchema = questions.flatMap((q, idx) => {
     if (isMultipleChoice(q)) {
       return [
         {
@@ -232,11 +234,17 @@ export default async function PseoPage(props: {
           "@type": "ListItem",
           position: 2,
           name: "Đề thi",
-          item: buildAbsoluteUrl(`/de-thi/${subject}/${grade}`),
+          item: buildAbsoluteUrl("/de-thi"),
         },
         {
           "@type": "ListItem",
           position: 3,
+          name: subData.name,
+          item: buildAbsoluteUrl(`/de-thi/${subject}`),
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
           name: `Đề thi ${subData.name} ${grData.name}`,
           item: buildAbsoluteUrl(`/de-thi/${subject}/${grade}`),
         },
@@ -289,15 +297,19 @@ export default async function PseoPage(props: {
               Trang chủ
             </Link>
             <ChevronRight className="h-3 w-3 shrink-0" />
-            <Link
-              href={`/de-thi/${subject}/${grade}`}
-              className="transition-colors hover:text-primary"
-            >
+            <Link href="/de-thi" className="transition-colors hover:text-primary">
               Đề thi
             </Link>
             <ChevronRight className="h-3 w-3 shrink-0" />
+            <Link
+              href={`/de-thi/${subject}`}
+              className="transition-colors hover:text-primary"
+            >
+              {subData.name}
+            </Link>
+            <ChevronRight className="h-3 w-3 shrink-0" />
             <span className="font-medium text-foreground">
-              Đề thi {subData.name} {grData.name}
+              {grData.name}
             </span>
           </nav>
 
@@ -455,7 +467,7 @@ export default async function PseoPage(props: {
               {/* Interactive Quiz Section (Trung tâm bài học) */}
               <section aria-label="Làm bài thi trắc nghiệm trực tuyến">
                 <InteractiveQuizWidget
-                  questions={subData.questions}
+                  questions={questions}
                   subjectName={subData.name}
                   gradeName={grData.name}
                 />
@@ -484,7 +496,7 @@ export default async function PseoPage(props: {
                 </div>
 
                 <div className="space-y-5">
-                  {subData.questions.map((q, idx) => {
+                  {questions.map((q, idx) => {
                     const questionNumber = idx + 1;
 
                     if (isMultipleChoice(q)) {
@@ -737,6 +749,43 @@ export default async function PseoPage(props: {
                         </span>
                       </Link>
                     ))}
+                  </div>
+                </div>
+
+                {/* 3. Hub Navigation: Khám phá thêm đề thi & công cụ */}
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
+                  <h2 className="mb-4 font-heading text-lg font-bold text-foreground sm:text-xl">
+                    Khám Phá Kho Đề &amp; Công Cụ Học Tập QuizKen
+                  </h2>
+                  <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+                    <Link
+                      href="/de-thi"
+                      className="group flex h-10 items-center justify-between rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/[0.08]"
+                    >
+                      <span className="truncate group-hover:text-primary">Tổng hợp Đề thi</span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <Link
+                      href={`/de-thi/${subject}`}
+                      className="group flex h-10 items-center justify-between rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/[0.08]"
+                    >
+                      <span className="truncate group-hover:text-primary">Kho đề {subData.name}</span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <Link
+                      href="/kho-de"
+                      className="group flex h-10 items-center justify-between rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/[0.08]"
+                    >
+                      <span className="truncate group-hover:text-primary">Kho đề cộng đồng</span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                    <Link
+                      href="/cong-cu"
+                      className="group flex h-10 items-center justify-between rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/[0.08]"
+                    >
+                      <span className="truncate group-hover:text-primary">Công cụ miễn phí</span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
+                    </Link>
                   </div>
                 </div>
               </section>

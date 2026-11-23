@@ -3,7 +3,7 @@ title: "Top Công Cụ Thi Trực Tuyến Chống Gian Lận Bằng AI Miễn Ph
 description: "Đánh giá các công cụ thi trực tuyến chống gian lận bằng AI miễn phí (free), hỗ trợ trường học và trung tâm khảo thí an toàn, bảo mật dữ liệu học sinh."
 date: 2026-09-20
 slug: cong-cu-thi-truc-tuyen-chong-gian-lan-ai-free-tot-nhat
-category: danh-gia
+category: so-sanh
 cover: /images/blog/cong-cu-thi-truc-tuyen-chong-gian-lan-ai-free-tot-nhat.png
 tags:
   - công cụ thi trực tuyến

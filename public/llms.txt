@@ -1,0 +1,39 @@
+# QuizKen
+
+> Nền tảng tạo đề thi trắc nghiệm bằng AI, luyện thi trực tuyến và công cụ học tập miễn phí dành cho giáo viên, học sinh và sinh viên Việt Nam.
+
+## Tổng quan hệ sinh thái
+
+- **Trang chủ, Kho đề & Tài nguyên SEO (`www.quizken.com`):** https://www.quizken.com
+- **Ứng dụng Web tạo đề & thi trực tuyến (`app.quizken.com`):** https://app.quizken.com
+
+## Năng lực cốt lõi của sản phẩm
+
+- **Tạo đề thi trắc nghiệm bằng AI:** Chuyển đổi văn bản, PDF, Word hoặc chủ đề bất kỳ thành bộ câu hỏi trắc nghiệm chuẩn ma trận GDPT 2018 trong vài giây.
+- **Hỗ trợ định dạng đề thi THPT 2026:** Đầy đủ Phần I (Trắc nghiệm 4 lựa chọn), Phần II (Đúng/Sai 4 ý chấm điểm lũy tiến 0.1 - 0.25 - 0.5 - 1.0), và Phần III (Trả lời ngắn).
+- **Chấm điểm tự động & Giải thích chi tiết:** Phân tích từng đáp án, lưu sổ tay câu sai và xuất đề thi định dạng PDF / Word A4 sẵn sàng in ấn.
+- **English Hub & Đấu trường Multiplayer:** Lộ trình học tiếng Anh theo khung CEFR/TOEIC, flashcard lặp lại ngắt quãng (Spaced Repetition) và phòng thi đấu trắc nghiệm thời gian thực.
+
+## Trung tâm Đề thi chuẩn 2026 (`www.quizken.com/de-thi`)
+
+- [Tổng hợp Đề thi QuizKen](https://www.quizken.com/de-thi): Điểm truy cập trung tâm cho toàn bộ hệ thống đề thi thử tương tác và đáp án chi tiết.
+- [Đề thi 9 môn THPT (Lớp 10, 11, 12 & Ôn thi THPT Quốc gia)](https://www.quizken.com/de-thi): Toán học (`/de-thi/toan`), Tiếng Anh (`/de-thi/tieng-anh`), Vật lý (`/de-thi/vat-ly`), Hóa học (`/de-thi/hoa-hoc`), Sinh học (`/de-thi/sinh-hoc`), Lịch sử (`/de-thi/lich-su`), Địa lý (`/de-thi/dia-ly`), GDKT&PL (`/de-thi/gdkt-pl`), Tin học (`/de-thi/tin-hoc`).
+- [Đề thi Đánh giá năng lực & Tư duy (ĐGNL)](https://www.quizken.com/de-thi/dgnl): HSA ĐHQG Hà Nội, V-ACT ĐHQG TP.HCM, TSA Bách Khoa, SPT Sư Phạm, V-SAT.
+- [Đề thi Đại cương & Chuyên ngành Đại học](https://www.quizken.com/de-thi/dai-hoc): Triết học Mác - Lênin, Kinh tế chính trị, Pháp luật đại cương, Tư tưởng Hồ Chí Minh, Lịch sử Đảng, Chủ nghĩa xã hội khoa học, Xác suất thống kê, Kinh tế vi mô.
+- [Đề thi Tuyển sinh vào lớp 10](https://www.quizken.com/de-thi/vao-10): Toán vào 10, Tiếng Anh vào 10, Ngữ văn vào 10, Đề thi vào 10 Hà Nội, Đề thi vào 10 TP.HCM.
+- [Luyện thi Chứng chỉ & Sát hạch](https://www.quizken.com/de-thi/chung-chi): TOEIC, VSTEP B1-B2, HSK, JLPT, Digital SAT, 600 câu lý thuyết GPLX, Tin học văn phòng MOS/CNTT, Ôn thi Công chức.
+
+## Kho đề Cộng đồng (`www.quizken.com/kho-de`)
+
+- [Kho Đề Thi Công Khai](https://www.quizken.com/kho-de): Hàng trăm bộ đề thi công khai từ cộng đồng giáo viên và học sinh, hỗ trợ xem trước câu hỏi SSR và chuyển tiếp vào làm full đề hoặc phòng thi đếm ngược trên `app.quizken.com`.
+
+## Bộ Công Cụ Học Tập Miễn Phí (`www.quizken.com/cong-cu`)
+
+- [Danh mục Công cụ QuizKen](https://www.quizken.com/cong-cu): Các micro-tools chạy trực tiếp trên trình duyệt không cần đăng nhập, phục vụ tính điểm xét tốt nghiệp THPT 2026, quy đổi điểm ĐGNL, trộn đề trắc nghiệm, tạo flashcard và hỗ trợ học tập nhanh.
+
+## Blog & Tài nguyên Hướng dẫn
+
+- [Blog EdTech & Mẹo Ôn Thi](https://www.quizken.com/blog): Chia sẻ phương pháp học tập, hướng dẫn dùng AI soạn đề, so sánh công cụ khảo thí trực tuyến.
+- [Hướng dẫn sử dụng QuizKen](https://www.quizken.com/howtouse)
+- [Câu hỏi thường gặp (FAQ)](https://www.quizken.com/faq)
+- [Mẹo & Tài liệu học tập](https://www.quizken.com/meo)

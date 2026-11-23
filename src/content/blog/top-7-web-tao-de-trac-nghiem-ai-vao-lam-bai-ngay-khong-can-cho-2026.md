@@ -3,7 +3,7 @@ title: "Top 7 Web Tạo Đề Trắc Nghiệm AI Vào Làm Bài Ngay Không Cầ
 description: "Khám phá top 7 nền tảng tạo trắc nghiệm bằng AI thế hệ mới 2026 với tốc độ thần tốc 3-5 giây, tự động chuyển vào giao diện làm bài không cần chờ đợi."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "ai-giao-duc"
+category: ai-giao-duc
 tags: ["ai tao de thi", "trac nghiem ai", "tao quiz sieu toc", "quizken", "on thi thpt"]
 keywords: ["web tao de trac nghiem ai", "tao quiz ai vao lam ngay", "ai tao trac nghiem tu dong", "cong cu tao trac nghiem nhanh nhat 2026"]
 cover: "/images/blog/top-7-web-tao-de-trac-nghiem-ai-vao-lam-bai-ngay-khong-can-cho-2026.png"

@@ -3,7 +3,7 @@ title: "Top 5 Công Cụ AI Trợ Giảng Giúp Giáo Viên Tiết Kiệm 70% Th
 description: "Đánh giá chi tiết top 5 phần mềm AI trợ giảng hỗ trợ giáo viên soạn giáo án, tạo đề thi trắc nghiệm và chấm bài tự động tốt nhất tại Việt Nam năm 2026."
 date: 2026-07-22
 slug: top-cong-cu-ai-tro-giang-giam-tai-giao-vien-2026
-category: danh-gia
+category: so-sanh
 cover: /images/blog/seo_top_cong_cu_ai_tro_giang_2026.png
 tags:
   - công cụ AI trợ giảng 2026

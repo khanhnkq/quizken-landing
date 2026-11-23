@@ -3,7 +3,7 @@ title: "Top 7 Web Kết Hợp Flashcard Spaced Repetition Và Thi Thử Trắc N
 description: "Khám phá top 7 website kết hợp hoàn hảo thẻ ghi nhớ Flashcard lặp lại ngắt quãng (Spaced Repetition) và thi thử trắc nghiệm bấm giờ năm 2026."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "meo-hoc-tap"
+category: meo-hoc-tap
 tags: ["flashcard spaced repetition", "on thi thong minh", "lap lai ngat quang", "quizken", "active recall"]
 keywords: ["web flashcard ket hop trac nghiem", "spaced repetition on thi 2026", "phan mem the ghi nho va trac nghiem", "hoc tu vung va lam quiz"]
 cover: "/images/blog/top-7-web-ket-hop-flashcard-spaced-repetition-va-thi-thu-trac-nghiem-2026.png"

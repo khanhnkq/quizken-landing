@@ -18,6 +18,18 @@ const footerNav: { title: string; links: { label: string; href: string; external
     ],
   },
   {
+    title: "Đề thi & Công cụ",
+    links: [
+      { label: "Đề thi (THPT & Kỳ thi)", href: "/de-thi" },
+      { label: "Kho đề cộng đồng", href: "/kho-de" },
+      { label: "Công cụ miễn phí", href: "/cong-cu" },
+      { label: "Đề thi ĐGNL (HSA, TSA)", href: "/de-thi/dgnl" },
+      { label: "Đề thi Đại học", href: "/de-thi/dai-hoc" },
+      { label: "Đề thi vào lớp 10", href: "/de-thi/vao-10" },
+      { label: "Chứng chỉ TOEIC, GPLX", href: "/de-thi/chung-chi" },
+    ],
+  },
+  {
     title: "Tài nguyên",
     links: [
       { label: "Mẹo & Tool học tập", href: "/meo" },
@@ -61,7 +73,7 @@ export function Footer() {
         </div>
 
         {/* Main Footer Links & Social */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Logo & Description */}
           <div className="md:col-span-2 space-y-4">
             <Logo />

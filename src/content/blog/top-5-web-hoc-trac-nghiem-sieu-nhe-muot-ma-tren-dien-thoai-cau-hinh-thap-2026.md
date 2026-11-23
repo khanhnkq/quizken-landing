@@ -3,7 +3,7 @@ title: "Top 5 Web Học Trắc Nghiệm Siêu Nhẹ Mượt Mà Trên Điện Th
 description: "Khám phá top 5 website thi trắc nghiệm online siêu nhẹ, tối ưu bundle và tiết kiệm 3G/4G, chạy mượt mà 60fps trên điện thoại cấu hình thấp năm 2026."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "cong-cu-meo"
+category: cong-cu-meo
 tags: ["web hoc sieu nhe", "on thi tren dien thoai", "toi uu 4g", "quizken", "trai nghiem muot ma"]
 keywords: ["web trac nghiem cho may yeu", "web on thi sieu nhe 2026", "app thi trac nghiem tiet kiem 4g", "thi online dien thoai cau hinh thap"]
 cover: "/images/blog/top-5-web-hoc-trac-nghiem-sieu-nhe-muot-ma-tren-dien-thoai-cau-hinh-thap-2026.png"

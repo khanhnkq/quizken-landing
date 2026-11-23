@@ -3,7 +3,7 @@ title: "Top 6 Ứng Dụng Sổ Tay Câu Sai Trắc Nghiệm Tự Động Chữa
 description: "Khám phá top 6 ứng dụng sổ tay câu sai tự động gom lỗi và giải thích bằng AI năm 2026, giúp học sinh triệt tiêu bẫy trắc nghiệm và bứt phá điểm số."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "meo-hoc-tap"
+category: meo-hoc-tap
 tags: ["so tay cau sai", "chua de bang ai", "meo on thi thpt", "hoc tap thong minh", "quizken"]
 keywords: ["so tay cau sai trac nghiem", "app luu cau sai tu dong", "ai giai thich cau sai trac nghiem", "on lai cau sai 2026"]
 cover: "/images/blog/top-6-ung-dung-so-tay-cau-sai-trac-nghiem-tu-dong-chua-loi-bang-ai-2026.png"

@@ -3,7 +3,7 @@ title: "Top 6 Web Tạo Trắc Nghiệm AI Hỗ Trợ Gắn Gemini API Key Cá N
 description: "Khám phá top 6 website tạo đề trắc nghiệm AI hỗ trợ gắn khóa Gemini API Key cá nhân (BYOK) năm 2026, giúp tạo đề không giới hạn và bảo mật tối đa."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "ai-giao-duc"
+category: ai-giao-duc
 tags: ["gemini api key", "byok ai", "tao de khong gioi han", "quizken", "ai giao duc"]
 keywords: ["gan gemini api key tao trac nghiem", "web trac nghiem byok 2026", "tao quiz bang google ai studio key", "phan mem trac nghiem api ca nhan"]
 cover: "/images/blog/top-6-web-tao-trac-nghiem-ai-ho-tro-gan-gemini-api-key-ca-nhan-2026.png"

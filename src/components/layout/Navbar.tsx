@@ -38,12 +38,12 @@ export function Navbar() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Điều hướng chính">
           {NAV_LINKS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="h-10 inline-flex items-center rounded-xl px-3 text-sm font-semibold text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
+              className="h-10 inline-flex items-center whitespace-nowrap rounded-xl px-3 text-sm font-semibold text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
             >
               {item.label}
             </Link>

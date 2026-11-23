@@ -3,7 +3,7 @@ title: "Top 6 Web AI Phân Tích Lỗ Hổng Kiến Thức Bằng Biểu Đồ R
 description: "Khám phá top 6 website AI thông minh phân tích lỗ hổng kiến thức bằng biểu đồ mạng nhện Radar trực quan năm 2026, giúp phát hiện và bồi đắp ngay vùng yếu."
 date: "2026-11-22"
 author: "QuizKen Team"
-category: "ai-giao-duc"
+category: ai-giao-duc
 tags: ["bieu do radar", "phan tich lo hong kien thuc", "ai giao duc", "on thi thpt 2026", "quizken"]
 keywords: ["bieu do radar lo hong kien thuc", "ai phan tich diem yeu hoc tap", "web chan doan lo hong kien thuc 2026", "danh gia nang luc radar chart"]
 cover: "/images/blog/top-6-web-ai-phan-tich-lo-hong-kien-thuc-bang-bieu-do-radar-2026.png"
