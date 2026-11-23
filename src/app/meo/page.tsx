@@ -20,7 +20,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { JsonLd } from "@/components/JsonLd";
-import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 
 export const metadata: Metadata = buildMetadata({
   title: "Mẹo Học Tập & Công Cụ Tiện Ích Sinh Viên Miễn Phí | QuizKen",
@@ -80,7 +79,6 @@ export default function MeoPage() {
       />
 
       <div className="relative py-12 sm:py-20 overflow-hidden">
-        <BackgroundDecorations density="low" />
 
         <Container className="relative z-10 space-y-16">
           {/* Header Section */}

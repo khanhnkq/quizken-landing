@@ -5,7 +5,6 @@ import { Sparkles, Brain, Zap, Layout, CheckCircle, Play } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { appLink } from "@/lib/site";
-import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 import MascotCard from "@/components/mascot-3d/MascotCard";
 import type { ExpressionId } from "@/components/mascot-3d/cat/expressions";
 
@@ -84,9 +83,6 @@ export function Hero() {
       onPointerLeave={handlePointerLeave}
       className="relative min-h-[90vh] md:min-h-screen pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden flex items-center bg-background"
     >
-      {/* Background Floating Animals & Objects */}
-      <BackgroundDecorations density="high" />
-
       {/* Generalized Background Ambient Blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0 select-none">
         <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-primary/20 mix-blend-screen filter blur-[80px] opacity-40 animate-blob" />

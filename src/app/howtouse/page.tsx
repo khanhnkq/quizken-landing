@@ -29,7 +29,6 @@ import {
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/JsonLd";
-import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 import { appLink, buildAbsoluteUrl } from "@/lib/site";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 
@@ -301,7 +300,6 @@ export default function HowToUsePage() {
 
       {/* Hero Header */}
       <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28 overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background">
-        <BackgroundDecorations />
         <Container className="relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-6">
             <BookOpen className="h-4 w-4" />

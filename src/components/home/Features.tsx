@@ -75,12 +75,6 @@ export function Features() {
       id="features"
       className="relative overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20 dark:from-slate-900/40 dark:via-slate-950 dark:to-slate-900/40 py-20 sm:py-28 px-4"
     >
-      {/* Floating Background Decorative Blobs */}
-      <div className="absolute top-20 left-[5%] w-16 h-16 rounded-full bg-pink-200/40 animate-bounce-slow" />
-      <div className="absolute top-40 right-[10%] w-12 h-12 rounded-2xl bg-amber-200/40 rotate-12 animate-bounce-slow [animation-delay:0.5s]" />
-      <div className="absolute bottom-32 left-[15%] w-10 h-10 rounded-full bg-emerald-200/40 animate-bounce-slow [animation-delay:1s]" />
-      <div className="absolute bottom-20 right-[20%] w-14 h-14 rounded-3xl bg-violet-200/40 -rotate-12 animate-bounce-slow [animation-delay:1.5s]" />
-
       <Container className="relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20">

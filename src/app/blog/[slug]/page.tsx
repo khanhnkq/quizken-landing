@@ -14,7 +14,6 @@ import { AuthorCard } from "@/components/blog/AuthorCard";
 import { BlogCta } from "@/components/blog/BlogCta";
 import { NewsletterCta } from "@/components/blog/NewsletterCta";
 import { JsonLd } from "@/components/JsonLd";
-import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -81,7 +80,6 @@ export default async function BlogPostPage({
     <>
       <JsonLd data={schemas} />
       <article className="py-12 sm:py-20 relative">
-        <BackgroundDecorations density="low" />
 
         <Container className="relative z-10">
           <Link

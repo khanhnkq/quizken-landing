@@ -9,7 +9,6 @@ import { Pagination } from "./Pagination";
 import { CATEGORIES } from "@/lib/categories";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { BackgroundDecorations } from "@/components/ui/BackgroundDecorations";
 
 type BlogListProps = {
   posts: Post[];
@@ -71,7 +70,6 @@ export function BlogList({ posts, initialCategory = null }: BlogListProps) {
 
   return (
     <div className="relative">
-      <BackgroundDecorations density="low" />
 
       {/* Header Section */}
       <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">

@@ -40,17 +40,6 @@ export function Footer() {
 
   return (
     <footer id="footer" className="relative pt-24 pb-12 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-background">
-      {/* Peeking Floating Background Icons */}
-      <div className="absolute top-10 left-[8%] opacity-20 hidden md:block animate-bounce-slow" style={{ animationDelay: "0s" }}>
-        <Star className="w-24 h-24 text-primary rotate-[-12deg]" />
-      </div>
-      <div className="absolute top-16 right-[12%] opacity-20 hidden md:block animate-bounce-slow" style={{ animationDelay: "1s" }}>
-        <Music className="w-20 h-20 text-primary rotate-[12deg]" />
-      </div>
-      <div className="absolute bottom-40 left-[18%] opacity-15 hidden lg:block animate-bounce-slow" style={{ animationDelay: "0.5s" }}>
-        <Heart className="w-16 h-16 text-primary rotate-[6deg]" />
-      </div>
-
       {/* Hero CTA Section in Footer */}
       <Container className="relative z-10 mb-20">
         <div className="max-w-3xl mx-auto text-center space-y-6">
