@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId, useMemo, type KeyboardEvent } from "react";
+import { useState, useId, useMemo, type FormEvent, type KeyboardEvent } from "react";
 import {
   Sparkles,
   CheckCircle2,
@@ -30,7 +30,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { appLink } from "@/lib/site";
+import { buildConversionUrl, trackConversionClick } from "@/lib/conversion";
 
 export interface InteractiveQuizWidgetProps {
   questions: PseoQuestion[];
@@ -103,6 +103,10 @@ export function InteractiveQuizWidget({
 
   // Manual explanation toggles: questionId -> boolean
   const [expandedExplanations, setExpandedExplanations] = useState<Record<string, boolean>>({});
+
+  // Quick topic input for Post-Quiz AI Conversion Card
+  const defaultQuizPrompt = `Đề thi thử ${subjectName} ${gradeName} chuẩn 3 phần`;
+  const [quizPrompt, setQuizPrompt] = useState<string>(defaultQuizPrompt);
 
   // Categorize questions by part
   const part1Questions = useMemo(
@@ -285,6 +289,7 @@ export function InteractiveQuizWidget({
     setPart3Answers({});
     setIsSubmitted(false);
     setExpandedExplanations({});
+    setQuizPrompt(defaultQuizPrompt);
     const element = document.getElementById(resultCardId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -533,18 +538,86 @@ export function InteractiveQuizWidget({
               <RotateCcw className="h-4 w-4" />
               Làm lại bài thi
             </Button>
-
-            <Button
-              href={appLink(`/?subject=${subjectName}&grade=${gradeName}`)}
-              variant="primary"
-              size="md"
-              className="gap-2"
-            >
-              <Sparkles className="h-4 w-4" />
-              Tạo thêm đề mới bằng AI trên App
-              <ArrowRight className="h-4 w-4" />
-            </Button>
           </div>
+
+          {/* Post-Quiz AI Conversion Card */}
+          {(() => {
+            const hasMissedQuestions =
+              Math.round(scoreReport.totalEarned * 100) <
+              Math.round(scoreReport.totalMax * 100);
+            const activePrompt = quizPrompt.trim() || defaultQuizPrompt;
+            const conversionUrl = buildConversionUrl({
+              path: "/quiz/create",
+              placement: "pseo_quiz_result",
+              campaign: subjectName,
+              prompt: activePrompt,
+            });
+            const ctaLabel = hasMissedQuestions
+              ? "Luyện Lại 10 Câu Tương Tự"
+              : "Thi Thử Full 50 Câu Ngay";
+
+            const handleConversionTrack = () => {
+              trackConversionClick({
+                placement: "pseo_quiz_result",
+                campaign: subjectName,
+                targetUrl: conversionUrl,
+                label: ctaLabel,
+              });
+            };
+
+            const handleConversionFormSubmit = (
+              event: FormEvent<HTMLFormElement>,
+            ) => {
+              event.preventDefault();
+              handleConversionTrack();
+              window.open(conversionUrl, "_blank", "noopener,noreferrer");
+            };
+
+            return (
+              <div className="no-print mt-6 rounded-2xl border border-primary/30 bg-primary/[0.06] p-5 sm:p-6">
+                <div className="flex flex-col gap-4">
+                  <div className="space-y-1.5">
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      <span>Gia sư AI QuizKen • Chẩn đoán sau bài làm</span>
+                    </div>
+                    <p className="font-heading text-base font-bold leading-snug text-foreground sm:text-lg">
+                      {hasMissedQuestions
+                        ? "Bạn còn mất điểm ở đề mẫu này! Mở QuizKen App để Gia sư AI giải thích chi tiết từng ý Đúng/Sai và sinh 10 câu tương tự để luyện lại."
+                        : "Xuất sắc đạt điểm tuyệt đối! Thử sức ngay với Đề Thi Thử Full 50 câu có đồng hồ đếm ngược & bảng xếp hạng trên QuizKen App."}
+                    </p>
+                  </div>
+
+                  <form
+                    onSubmit={handleConversionFormSubmit}
+                    className="flex flex-col gap-3 sm:flex-row sm:items-center"
+                  >
+                    <label className="flex-1">
+                      <span className="sr-only">Chủ đề tạo đề AI trên QuizKen</span>
+                      <input
+                        type="text"
+                        value={quizPrompt}
+                        onChange={(event) => setQuizPrompt(event.target.value)}
+                        placeholder={defaultQuizPrompt}
+                        className="h-11 w-full rounded-xl border border-border bg-background/95 px-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      />
+                    </label>
+                    <Button
+                      href={conversionUrl}
+                      variant="primary"
+                      size="lg"
+                      onClick={handleConversionTrack}
+                      className="h-11 shrink-0 gap-2"
+                    >
+                      <Sparkles className="h-4 w-4" />
+                      <span>{ctaLabel}</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       )}
 

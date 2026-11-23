@@ -15,6 +15,8 @@ import {
   faqSchema,
 } from "@/lib/seo";
 import { appLink } from "@/lib/site";
+import { buildConversionUrl } from "@/lib/conversion";
+import { ToolActionUpsellToast } from "@/components/ads/ToolActionUpsellToast";
 import {
   TOOLS_CATALOG,
   toolSoftwareSchema,
@@ -52,6 +54,19 @@ export function ToolPageShell({
   seoContent,
 }: ToolPageShellProps) {
   const relatedTools = TOOLS_CATALOG.filter((t) => t.slug !== tool.slug);
+  const bridgePath = ctaHref.startsWith("http")
+    ? (() => {
+        const parsed = new URL(ctaHref);
+        return `${parsed.pathname}${parsed.search}`;
+      })()
+    : ctaHref.startsWith("/")
+      ? ctaHref
+      : "/quiz/create";
+  const resolvedCtaHref = buildConversionUrl({
+    path: bridgePath,
+    placement: "tool_action_toast",
+    campaign: tool.slug,
+  });
 
   return (
     <>
@@ -128,7 +143,7 @@ export function ToolPageShell({
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <Button href={ctaHref} variant="primary" size="lg" className="min-h-11">
+                <Button href={resolvedCtaHref} variant="primary" size="lg" className="min-h-11">
                   <span>{ctaLabel}</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -222,6 +237,8 @@ export function ToolPageShell({
           </section>
         </Container>
       </div>
+
+      <ToolActionUpsellToast key={tool.slug} tool={tool} />
     </>
   );
 }

@@ -13,6 +13,7 @@ import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { AuthorCard } from "@/components/blog/AuthorCard";
 import { BlogCta } from "@/components/blog/BlogCta";
+import { StickySidebarAd } from "@/components/ads/StickySidebarAd";
 import { NewsletterCta } from "@/components/blog/NewsletterCta";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -153,7 +154,10 @@ export default async function BlogPostPage({
             <div className="min-w-0 space-y-10">
               <MarkdownRenderer content={post.content} />
 
-              <BlogCta />
+              <BlogCta
+                category={post.frontmatter.category}
+                tags={post.frontmatter.tags}
+              />
               <NewsletterCta />
 
               <div className="pt-4">
@@ -171,13 +175,16 @@ export default async function BlogPostPage({
               <RelatedPosts posts={relatedPosts} />
             </div>
 
-            {headings.length > 2 && (
-              <aside className="hidden lg:block">
-                <div className="sticky top-28 space-y-6">
-                  <TableOfContents headings={headings} />
-                </div>
-              </aside>
-            )}
+            <aside className="hidden lg:block">
+              <div className="sticky top-28 space-y-6">
+                {headings.length > 2 && <TableOfContents headings={headings} />}
+                <StickySidebarAd
+                  category={post.frontmatter.category}
+                  tags={post.frontmatter.tags}
+                  slug={slug}
+                />
+              </div>
+            </aside>
           </div>
         </Container>
       </article>
