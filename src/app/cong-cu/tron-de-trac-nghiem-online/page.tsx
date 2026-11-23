@@ -46,7 +46,7 @@ export default function TronDeTracNghiemOnlinePage() {
       faqs={faqs}
       ctaTitle="Xuất thẳng Word (.docx) & PDF chuẩn A4 với QuizKen Teacher Tools"
       ctaDescription="Tạo đề kiểm tra bằng AI từ file PDF/Word sẵn có, trộn đề không giới hạn mã đề, tự động giữ nguyên công thức Toán/Hóa và in phiếu chấm điểm ngay trên QuizKen."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở Teacher Tools ngay"
       secondaryCtaHref="/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027"
       secondaryCtaLabel="Tạo phiếu tô đáp án A4"

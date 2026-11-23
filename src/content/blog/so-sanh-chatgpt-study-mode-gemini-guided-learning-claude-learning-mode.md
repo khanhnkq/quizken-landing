@@ -85,4 +85,4 @@ Không, nếu bạn dùng đúng mục đích để hiểu phương pháp giải
 **Gemini Guided Learning** rất tiện khi bạn cần chụp ảnh nhanh bài tập trên giấy để AI gợi ý từng bước; còn khi cần tổng hợp cả đề cương hoặc luyện trắc nghiệm đúng chuẩn 3 phần GDPT 2018 (Đúng/Sai 4 ý, Trả lời ngắn), bạn nên kết hợp thêm **QuizKen**.
 
 ### 4. Giáo viên muốn dùng AI tạo đề thi in ra giấy hoặc giao bài cho cả lớp thì nên dùng công cụ nào?
-ChatGPT/Gemini/Claude chỉ trả về văn bản chat; để trộn thành 4 mã đề chuẩn, xuất phiếu tô A4 hoặc giao bài thi online tự chấm, thầy cô nên dùng [Bộ công cụ Giáo viên QuizKen](https://app.quizken.com/teacher/tools) và [Công cụ trộn đề online](/cong-cu/tron-de-trac-nghiem-online).
+ChatGPT/Gemini/Claude chỉ trả về văn bản chat; để trộn thành 4 mã đề chuẩn, xuất phiếu tô A4 hoặc giao bài thi online tự chấm, thầy cô nên dùng [Bộ công cụ Giáo viên QuizKen](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) và [Công cụ trộn đề online](/cong-cu/tron-de-trac-nghiem-online).

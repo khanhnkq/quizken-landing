@@ -41,7 +41,7 @@ export default function SoanCongThucLatexPage() {
       faqs={faqs}
       ctaTitle="Soạn đề thi Toán – Lý – Hóa hỗ trợ LaTeX tự động trên QuizKen"
       ctaDescription="Chỉ cần nhập chủ đề hoặc tải PDF đề thi Toán/Lý/Hóa, QuizKen AI tự động chuẩn hóa công thức LaTeX và xuất ra file Word/PDF sắc nét."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở bộ công cụ Giáo viên QuizKen"
       secondaryCtaHref="/cong-cu/giai-phuong-trinh-he-phuong-trinh-ma-tran"
       secondaryCtaLabel="Mở bộ giải PT & Ma trận"

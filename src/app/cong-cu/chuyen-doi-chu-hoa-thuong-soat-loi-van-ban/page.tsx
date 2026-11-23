@@ -41,7 +41,7 @@ export default function ChuyenDoiChuHoaThuongPage() {
       faqs={faqs}
       ctaTitle="Không cần copy-paste thủ công từ PDF! Tải thẳng PDF lên QuizKen AI"
       ctaDescription="Upload file PDF đề thi hoặc bài giảng trực tiếp vào QuizKen để AI tự bóc tách câu hỏi trắc nghiệm, trộn 4–24 mã đề và xuất Word (.docx) chuẩn đẹp."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở Teacher Tools ngay"
       secondaryCtaHref="/cong-cu/tron-de-trac-nghiem-online"
       secondaryCtaLabel="Trộn đề trắc nghiệm 4 mã"

@@ -60,7 +60,7 @@ Thu nhập được cải thiện đi kèm yêu cầu đổi mới phương phá
 * **Trộn 4 mã đề chuẩn trong 5 giây:** Dán ngân hàng câu hỏi vào [Công cụ trộn đề trắc nghiệm online](/cong-cu/tron-de-trac-nghiem-online) để tự động đảo câu, đảo đáp án A/B/C/D và xuất ngay bảng đáp án tổng `101–104`.
 * **In phiếu tô đáp án chuẩn Bộ GD&ĐT:** Tạo và in miễn phí tại [Tạo phiếu trả lời trắc nghiệm 2027 (In A4)](/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027) (đầy đủ Phần I, II Đúng/Sai 4 ý, Phần III Trả lời ngắn).
 * **Bộ 3 tiện ích trình chiếu lớp học không quảng cáo:** [Vòng quay gọi tên học sinh](/cong-cu/vong-quay-goi-ten-hoc-sinh), [Chia nhóm ngẫu nhiên](/cong-cu/chia-nhom-ngau-nhien-lop-hoc), và [Đồng hồ bấm giờ thi thử máy chiếu](/cong-cu/dong-ho-bam-gio-thi-thu-may-chieu).
-* **Tạo đề từ PDF/Word bằng AI:** Truy cập [QuizKen Teacher Tools](https://app.quizken.com/teacher/tools) để AI bóc tách file giáo án/đề cương thành bài kiểm tra online chỉ trong 1 phút.
+* **Tạo đề từ PDF/Word bằng AI:** Truy cập [QuizKen Teacher Tools](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) để AI bóc tách file giáo án/đề cương thành bài kiểm tra online chỉ trong 1 phút.
 
 ---
 

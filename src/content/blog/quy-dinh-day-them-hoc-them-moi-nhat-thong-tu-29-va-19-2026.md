@@ -58,7 +58,7 @@ flowchart TD
 
 Khi thời lượng dạy thêm trực tiếp bị giới hạn nghiêm ngặt, thầy cô và học sinh cần những công cụ số miễn phí giúp **giao bài tự luyện có phản hồi tức thì tại nhà** mà không phát sinh gánh nặng sổ sách hay chi phí:
 
-1. **Giao bài tập & Thi thử online 0đ:** Thầy cô có thể dùng [QuizKen Teacher Tools](https://app.quizken.com/teacher/tools) để chuyển đề cương Word/PDF thành bài trắc nghiệm 3 phần chuẩn GDPT 2018 và xuất đường link hoặc mã QR qua [Công cụ tạo mã QR lớp học miễn phí](/cong-cu/tao-ma-qr-lop-hoc-mien-phi) gửi ngay lên nhóm lớp.
+1. **Giao bài tập & Thi thử online 0đ:** Thầy cô có thể dùng [QuizKen Teacher Tools](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) để chuyển đề cương Word/PDF thành bài trắc nghiệm 3 phần chuẩn GDPT 2018 và xuất đường link hoặc mã QR qua [Công cụ tạo mã QR lớp học miễn phí](/cong-cu/tao-ma-qr-lop-hoc-mien-phi) gửi ngay lên nhóm lớp.
 2. **Tạo phiếu tô đáp án & trộn mã đề nhanh cho lớp ôn thi cuối cấp:** Với học sinh lớp 9 và lớp 12 ôn thi miễn phí tại trường, giáo viên tiết kiệm hàng giờ chuẩn bị nhờ [Công cụ trộn 4 mã đề online](/cong-cu/tron-de-trac-nghiem-online) và [Tạo phiếu trả lời trắc nghiệm A4 2027](/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027).
 3. **Tổ chức hoạt động trên lớp sinh động:** Thay vì kiểm tra bài cũ căng thẳng, thầy cô có thể chiếu [Vòng quay gọi tên học sinh](/cong-cu/vong-quay-goi-ten-hoc-sinh) hoặc [Đồng hồ bấm giờ máy chiếu 15p–90p](/cong-cu/dong-ho-bam-gio-thi-thu-may-chieu) ngay trên trình duyệt.
 
@@ -76,4 +76,4 @@ Không. Theo hướng dẫn cập nhật gắn với Thông tư 19/2026/TT-BGDĐ
 Không. Theo Thông tư 29, việc tổ chức ôn thi tốt nghiệp THPT cho học sinh cuối cấp tự nguyện đăng ký trong nhà trường phải hoàn toàn **không thu tiền** của học sinh.
 
 ### 4. Giáo viên muốn giao đề luyện tập tự chấm cho học sinh ôn ở nhà mà không thu phí thì dùng công cụ nào?
-Thầy cô có thể sử dụng miễn phí [QuizKen](https://app.quizken.com/teacher/tools) để tạo bài kiểm tra trắc nghiệm kèm giải thích chi tiết bằng AI và gửi link qua Zalo/Classroom cho học sinh tự làm nhiều lần.
+Thầy cô có thể sử dụng miễn phí [QuizKen](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) để tạo bài kiểm tra trắc nghiệm kèm giải thích chi tiết bằng AI và gửi link qua Zalo/Classroom cho học sinh tự làm nhiều lần.

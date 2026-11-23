@@ -41,7 +41,7 @@ export default function ChiaNhomNgauNhienPage() {
       faqs={faqs}
       ctaTitle="Chia nhóm xong? Giao bài kiểm tra nhóm qua mã QR trên QuizKen!"
       ctaDescription="Tạo nhanh bộ câu hỏi ôn tập từ PDF bài giảng và cho các nhóm thi đua tính điểm ngay trên lớp học với QuizKen Teacher Tools."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở Teacher Tools ngay"
       secondaryCtaHref="/cong-cu/vong-quay-goi-ten-hoc-sinh"
       secondaryCtaLabel="Mở Vòng quay gọi tên"

@@ -41,7 +41,7 @@ export default function DongHoBamGioMayChieuPage() {
       faqs={faqs}
       ctaTitle="Tổ chức thi thử bấm giờ trực tuyến ngay trên QuizKen!"
       ctaDescription="Không chỉ bấm giờ trên lớp — học sinh có thể tự làm bài thi thử 50 phút hoặc 90 phút chuẩn GDPT 2018 ngay tại nhà với đồng hồ đếm ngược tự động nộp bài trên QuizKen."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở Teacher Tools ngay"
       secondaryCtaHref="/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027"
       secondaryCtaLabel="In phiếu tô đáp án A4"

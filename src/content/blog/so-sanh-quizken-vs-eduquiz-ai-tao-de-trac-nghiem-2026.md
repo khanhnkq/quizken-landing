@@ -79,4 +79,4 @@ Bạn không cần dùng đến AI hay đăng nhập: chỉ cần dán trực ti
 Bạn hoàn toàn có thể tìm đề tham khảo trên cả hai nền tảng, nhưng nếu bạn có file slide/PDF mới của giảng viên kỳ này và muốn AI tự tạo đề sát bài giảng kèm Flashcard ôn tập và [Công cụ tính điểm qua môn](/cong-cu/tinh-diem-hoc-phan-tin-chi-can-dat), **QuizKen** sẽ mang lại trải nghiệm liền mạch hơn.
 
 ### 4. Giáo viên có thể dùng QuizKen để in đề và phiếu tô đáp án phát tại lớp không?
-Có. Thầy cô có thể xuất đề từ [QuizKen Teacher Tools](https://app.quizken.com/teacher/tools) và in mẫu phiếu tô chuẩn Bộ GD&ĐT tại [Tạo phiếu trả lời trắc nghiệm 2027](/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027).
+Có. Thầy cô có thể xuất đề từ [QuizKen Teacher Tools](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) và in mẫu phiếu tô chuẩn Bộ GD&ĐT tại [Tạo phiếu trả lời trắc nghiệm 2027](/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027).

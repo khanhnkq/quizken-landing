@@ -11,7 +11,7 @@
 
 - **Tạo đề thi trắc nghiệm bằng AI:** Chuyển đổi văn bản, PDF, Word hoặc chủ đề bất kỳ thành bộ câu hỏi trắc nghiệm chuẩn ma trận GDPT 2018 trong vài giây.
 - **Hỗ trợ định dạng đề thi THPT 2026–2027:** Đầy đủ Phần I (Trắc nghiệm 4 lựa chọn), Phần II (Đúng/Sai 4 ý chấm điểm lũy tiến 0.1 - 0.25 - 0.5 - 1.0), và Phần III (Trả lời ngắn).
-- **Công cụ Giáo viên (`/teacher/tools` trên `app.quizken.com`):** Nhập đề từ Word `.docx`, trộn 4–24 mã đề `.docx` kèm bảng đáp án tổng hợp `.docx`/`.csv`, và tạo ma trận đặc tả Công văn 7991.
+- **Bộ Công cụ Giáo viên trên Landing (`/cong-cu/*` trên `www.quizken.com` điều hướng sang `app.quizken.com`):** Tạo Ma trận & Bản đặc tả Công văn 7991 xuất Word `.docx` (`/cong-cu/tao-ma-tran-de-thi-cong-van-7991`), Chuyển đề Word `.docx` & trộn 4–24 mã đề `.docx` nén `.zip` (`/cong-cu/chuyen-de-word-docx-sang-trac-nghiem`).
 - **Chấm điểm tự động & Giải thích chi tiết:** Phân tích từng đáp án, lưu sổ tay câu sai và xuất đề thi định dạng PDF / Word A4 sẵn sàng in ấn.
 - **English Hub & Đấu trường Multiplayer:** Lộ trình học tiếng Anh theo khung CEFR/TOEIC, flashcard lặp lại ngắt quãng (Spaced Repetition) và phòng thi đấu trắc nghiệm thời gian thực.
 

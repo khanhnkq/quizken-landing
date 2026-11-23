@@ -46,7 +46,7 @@ export default function VongQuayGoiTenHocSinhPage() {
       faqs={faqs}
       ctaTitle="Tổ chức trò chơi trắc nghiệm Live Game cả lớp với QuizKen!"
       ctaDescription="Không chỉ gọi tên từng bạn — thầy cô có thể tạo nhanh bộ câu hỏi từ PDF bài giảng và cho cả lớp tham gia thi đấu bảng xếp hạng trực tiếp qua mã QR."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Mở QuizKen Teacher Tools"
       secondaryCtaHref="/cong-cu/chia-nhom-ngau-nhien-lop-hoc"
       secondaryCtaLabel="Chia nhóm lớp học ngẫu nhiên"

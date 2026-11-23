@@ -46,7 +46,7 @@ export default function TaoPhieuTraLoiTracNghiemPage() {
       faqs={faqs}
       ctaTitle="Đã có phiếu tô A4? Tạo đề thi 3 phần chuẩn GDPT 2018 ngay trên QuizKen"
       ctaDescription="Kết hợp phiếu tô đáp án A4 miễn phí với tính năng tự động sinh đề & trộn 4 mã đề chuẩn cấu trúc Bộ GD&ĐT trên QuizKen Teacher Tools để tổ chức thi thử chỉ trong 5 phút."
-      ctaHref={appLink("/teacher/tools")}
+      ctaHref={appLink("/quiz/create")}
       ctaLabel="Tạo đề thi chuẩn 3 phần"
       secondaryCtaHref="/cong-cu/tron-de-trac-nghiem-online"
       secondaryCtaLabel="Trộn đề trắc nghiệm 4 mã"

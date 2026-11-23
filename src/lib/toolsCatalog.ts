@@ -567,6 +567,40 @@ export const TOOLS_CATALOG: ToolCatalogItem[] = [
       "bảng quy đổi hsk jlpt sang cefr",
     ],
   },
+  {
+    slug: "tao-ma-tran-de-thi-cong-van-7991",
+    title: "Tạo Ma trận & Bản đặc tả Đề kiểm tra chuẩn Công văn 7991 (Xuất Word .docx)",
+    shortTitle: "Tạo Ma trận đề thi CV 7991",
+    description:
+      "Tự động lập bảng Ma trận và Bản đặc tả đề kiểm tra định kỳ THCS/THPT chuẩn Công văn 7991/BGDĐT-GDTrH (4 mức độ nhận thức, tỷ lệ 70-30 hoặc 100% trắc nghiệm 3 phần), tải file Word .docx và chuyển sang AI tạo đề.",
+    badge: "Chuẩn CV 7991 • .docx",
+    category: "giao-vien",
+    categoryLabel: "Công cụ Giáo viên",
+    keywords: [
+      "tạo ma trận đề thi công văn 7991",
+      "mẫu ma trận bản đặc tả đề kiểm tra 7991",
+      "phần mềm tạo ma trận đề thi miễn phí",
+      "xuất ma trận đề thi ra file word docx",
+      "ma trận đề kiểm tra giữa kỳ cuối kỳ gdpt 2018",
+    ],
+  },
+  {
+    slug: "chuyen-de-word-docx-sang-trac-nghiem",
+    title: "Chuyển File Word (.docx) sang Đề Trắc nghiệm & Trộn 4–24 Mã đề (.docx ZIP)",
+    shortTitle: "Trộn mã đề Word (.docx ZIP)",
+    description:
+      "Tải file đề thi Word (.docx) hoặc dán văn bản chuẩn 3 phần GDPT 2018 để bóc tách câu hỏi tự động, trộn thành 4–24 mã đề Word (.docx) kèm bảng đáp án tổng hợp (.docx & .csv) nén ZIP hoặc chuyển sang App mở phòng thi.",
+    badge: "Word .docx • 4–24 Mã đề",
+    category: "giao-vien",
+    categoryLabel: "Công cụ Giáo viên",
+    keywords: [
+      "trộn đề trắc nghiệm file word online",
+      "chuyển file word sang đề thi trắc nghiệm",
+      "trộn đề 4 mã đề xuất file word docx",
+      "phần mềm trộn đề thi thpt 2027 đúng sai trả lời ngắn",
+      "tải bảng đáp án tổng hợp nhiều mã đề",
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolCatalogItem | undefined {

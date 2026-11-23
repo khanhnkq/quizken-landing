@@ -76,6 +76,8 @@ const TOOL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = 
   "tra-cuu-to-hop-mon-ma-nganh-2027": Compass,
   "tra-cuu-dong-tu-bat-quy-tac-phat-am-ipa": Languages,
   "tinh-diem-thi-hsk-jlpt-quy-doi-cefr": Languages,
+  "tao-ma-tran-de-thi-cong-van-7991": FileSpreadsheet,
+  "chuyen-de-word-docx-sang-trac-nghiem": Shuffle,
 };
 
 export function ToolsHubClient() {

@@ -64,7 +64,7 @@ Khác với Azota hay SHub vốn đòi hỏi nhiều bước thiết lập lớp
 ## 3. Gợi Ý Kết Hợp Tối Ưu Cho Thầy Cô Năm Học 2026–2027
 
 Nhiều giáo viên giàu kinh nghiệm không chọn 1 bỏ 2 mà phối hợp rất thông minh:
-* **Soạn đề & tạo câu hỏi mới:** Nạp giáo án lên [QuizKen Teacher Tools](https://app.quizken.com/teacher/tools) để AI sinh nhanh bộ câu hỏi có sẵn đáp án và giải thích chi tiết (giảm 70% thời gian gõ đề).
+* **Soạn đề & tạo câu hỏi mới:** Nạp giáo án lên [QuizKen Teacher Tools](/cong-cu/chuyen-de-word-docx-sang-trac-nghiem) để AI sinh nhanh bộ câu hỏi có sẵn đáp án và giải thích chi tiết (giảm 70% thời gian gõ đề).
 * **Tổ chức ôn tập trên lớp:** Chiếu [Vòng quay gọi tên](/cong-cu/vong-quay-goi-ten-hoc-sinh) hoặc bật phòng thi Live Game QuizKen để tăng hứng thú tiết ôn tập cuối kỳ.
 * **Kiểm tra giấy tại lớp:** Trộn nhanh 4 mã đề và in [Phiếu trả lời trắc nghiệm A4 2027](/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027), sau đó nếu cần thu thêm bài tự luận chụp ảnh thì kết hợp Azota hoặc giao qua LMS lớp.
 

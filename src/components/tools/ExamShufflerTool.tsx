@@ -669,7 +669,7 @@ export function ExamShufflerTool() {
           </p>
         </div>
         <Link
-          href={appLink("/teacher/tools")}
+          href={appLink("/quiz/create")}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-5 font-heading text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
