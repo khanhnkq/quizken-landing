@@ -11,21 +11,24 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-12 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white relative overflow-hidden shadow-xl">
-      <div className="pointer-events-none absolute inset-0 opacity-15 bg-dot-grid" />
-      
-      <Container className="relative z-10">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/20">
-          {stats.map((s, idx) => (
-            <div key={idx} className="text-center px-4 pt-4 md:pt-0">
-              <p className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-yellow-300 drop-shadow-md">
-                {s.value}
-              </p>
-              <p className="mt-2 text-xs sm:text-sm font-semibold text-emerald-100 uppercase tracking-wider">
-                {s.label}
-              </p>
-            </div>
-          ))}
+    <section className="py-6 sm:py-10 bg-background">
+      <Container>
+        <div className="rounded-2xl bg-card/85 border border-border/70 shadow-none backdrop-blur-none p-4 sm:p-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {stats.map((s, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 sm:p-5 text-center"
+              >
+                <p className="font-heading text-2xl sm:text-4xl font-bold tracking-tight text-foreground">
+                  {s.value}
+                </p>
+                <p className="mt-1.5 text-xs sm:text-sm font-medium text-muted-foreground">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

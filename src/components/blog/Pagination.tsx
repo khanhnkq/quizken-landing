@@ -39,30 +39,30 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
   const pages = getPages();
 
   return (
-    <nav aria-label="Phân trang" className="mt-16 flex items-center justify-center gap-1.5">
-      {/* Nút Prev */}
+    <nav aria-label="Phân trang" className="flex items-center justify-center gap-1.5">
       <button
+        type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex h-10 min-w-[40px] items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.04] text-muted-foreground transition-colors hover:bg-foreground/[0.08] hover:text-foreground disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
         aria-label="Trang trước"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
 
-      {/* Trang số */}
       {pages.map((p) => {
         const isActive = p === currentPage;
         return (
           <button
+            type="button"
             key={p}
             onClick={() => onPageChange(p)}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "inline-flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-medium transition-colors",
+              "inline-flex h-10 min-w-[40px] px-3 items-center justify-center rounded-xl border-0 shadow-none text-sm font-semibold transition-colors cursor-pointer",
               isActive
-                ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                : "border-border bg-card text-muted-foreground hover:bg-secondary hover:text-foreground"
+                ? "bg-primary text-primary-foreground"
+                : "bg-foreground/[0.04] text-muted-foreground hover:bg-foreground/[0.08] hover:text-foreground"
             )}
           >
             {p}
@@ -70,11 +70,11 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         );
       })}
 
-      {/* Nút Next */}
       <button
+        type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex h-10 min-w-[40px] items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.04] text-muted-foreground transition-colors hover:bg-foreground/[0.08] hover:text-foreground disabled:pointer-events-none disabled:opacity-40 cursor-pointer"
         aria-label="Trang sau"
       >
         <ChevronRight className="h-4 w-4" />

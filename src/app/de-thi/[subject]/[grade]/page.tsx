@@ -10,8 +10,6 @@ import {
   BookOpen,
   FileText,
   Printer,
-  Check,
-  X,
   Layers,
   GraduationCap,
   ListOrdered,
@@ -19,7 +17,6 @@ import {
   Download,
   Flame,
   Award,
-  Share2,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -281,13 +278,7 @@ export default async function PseoPage(props: {
     <>
       <JsonLd data={jsonLdData} />
 
-      <section className="relative overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24">
-        {/* Glow Background */}
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          <span className="absolute left-[10%] top-[5%] h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px]" />
-          <span className="absolute right-[8%] top-[10%] h-[350px] w-[350px] rounded-full bg-emerald-500/15 blur-[100px]" />
-        </div>
-
+      <section className="bg-background pt-10 pb-16 sm:pt-16 sm:pb-24">
         <Container>
           {/* Breadcrumbs Navigation */}
           <nav
@@ -310,24 +301,22 @@ export default async function PseoPage(props: {
             </span>
           </nav>
 
-          <div className="grid gap-12 lg:grid-cols-[1.7fr_1fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.7fr_1fr]">
             {/* Left Main Column */}
             <div className="space-y-10">
               {/* Hero Section */}
               <header className="space-y-4">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Format Đổi Mới GDPT 2018 (Bộ GD&ĐT) • Chuẩn 2026
+                  <Badge>
+                    <Sparkles className="h-3.5 w-3.5 text-primary" />
+                    Format Đổi Mới GDPT 2018 (Bộ GD&amp;ĐT) • Chuẩn 2026
                   </Badge>
-                  <Badge className="bg-secondary text-secondary-foreground">
-                    {grData.name}
-                  </Badge>
+                  <Badge>{grData.name}</Badge>
                 </div>
 
                 <h1 className="font-heading text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                   Đề Thi Trắc Nghiệm {subData.name} {grData.name} Chuẩn Format 2026{" "}
-                  <span className="text-gradient">Có Đáp Án &amp; Lời Giải</span>
+                  <span className="text-primary">Có Đáp Án &amp; Lời Giải</span>
                 </h1>
 
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -340,14 +329,14 @@ export default async function PseoPage(props: {
                 {/* Key Topics Badges */}
                 {subData.topics && subData.topics.length > 0 && (
                   <div className="pt-2">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Chuyên đề trọng tâm trong đề thi:
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {subData.topics.map((topic, tIdx) => (
                         <span
                           key={tIdx}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-border/80 bg-muted/40 px-2.5 py-1 text-xs font-medium text-foreground"
+                          className="inline-flex items-center gap-1.5 rounded-lg border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] px-2.5 py-1 text-xs font-medium text-foreground"
                         >
                           <BookOpen className="h-3 w-3 text-primary" />
                           {topic}
@@ -360,9 +349,9 @@ export default async function PseoPage(props: {
 
               {/* Format Overview Card: Bảng Ma Trận Cấu Trúc Đề Thi 2026 */}
               <section aria-labelledby="matrix-heading">
-                <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm backdrop-blur-sm sm:p-7">
-                  <div className="flex items-center gap-2.5">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-primary">
                       <Layers className="h-4 w-4" />
                     </span>
                     <div>
@@ -380,23 +369,23 @@ export default async function PseoPage(props: {
 
                   <div className="mt-6 grid gap-4 sm:grid-cols-3">
                     {/* Part I Card */}
-                    <div className="rounded-2xl border border-sky-500/20 bg-sky-500/[0.03] p-4.5 sm:p-5">
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-sky-700 dark:text-sky-300">
-                          <ListOrdered className="h-3.5 w-3.5" />
+                    <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 sm:p-5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground">
+                          <ListOrdered className="h-3.5 w-3.5 text-primary" />
                           PHẦN I
                         </span>
-                        <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-[11px] font-bold text-sky-700 dark:text-sky-300">
+                        <span className="rounded-lg border-0 bg-foreground/[0.06] px-2 py-0.5 text-[11px] font-semibold text-foreground">
                           0.25đ / câu
                         </span>
                       </div>
                       <h3 className="mt-2.5 font-heading text-base font-bold text-foreground">
                         Nhiều Lựa Chọn
                       </h3>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                         Gồm 4 phương án A, B, C, D (chọn duy nhất 1 đáp án đúng).
                       </p>
-                      <div className="mt-3 border-t border-sky-500/10 pt-2.5 text-[11px] text-muted-foreground space-y-1">
+                      <div className="mt-3 space-y-1 pt-1 text-[11px] text-muted-foreground">
                         <div>
                           <strong>Mức độ:</strong> Nhận biết &amp; Thông hiểu
                         </div>
@@ -407,23 +396,23 @@ export default async function PseoPage(props: {
                     </div>
 
                     {/* Part II Card */}
-                    <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.03] p-4.5 sm:p-5">
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
-                          <CheckCircle2 className="h-3.5 w-3.5" />
+                    <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 sm:p-5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
                           PHẦN II
                         </span>
-                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">
-                          Lũy tiến 1.0đ / câu
+                        <span className="rounded-lg border-0 bg-foreground/[0.06] px-2 py-0.5 text-[11px] font-semibold text-foreground">
+                          Lũy tiến 1.0đ
                         </span>
                       </div>
                       <h3 className="mt-2.5 font-heading text-base font-bold text-foreground">
                         Trắc Nghiệm Đúng/Sai
                       </h3>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                         Mỗi câu có 4 ý a, b, c, d dựa trên tình huống / ngữ cảnh.
                       </p>
-                      <div className="mt-3 border-t border-emerald-500/10 pt-2.5 text-[11px] text-muted-foreground space-y-1">
+                      <div className="mt-3 space-y-1 pt-1 text-[11px] text-muted-foreground">
                         <div>
                           <strong>Thang điểm:</strong> 0.1 - 0.25 - 0.5 - 1.0đ
                         </div>
@@ -434,23 +423,23 @@ export default async function PseoPage(props: {
                     </div>
 
                     {/* Part III Card */}
-                    <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.03] p-4.5 sm:p-5">
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-300">
-                          <Calculator className="h-3.5 w-3.5" />
+                    <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 sm:p-5">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground">
+                          <Calculator className="h-3.5 w-3.5 text-primary" />
                           PHẦN III
                         </span>
-                        <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-bold text-amber-700 dark:text-amber-300">
+                        <span className="rounded-lg border-0 bg-foreground/[0.06] px-2 py-0.5 text-[11px] font-semibold text-foreground">
                           0.5đ / câu
                         </span>
                       </div>
                       <h3 className="mt-2.5 font-heading text-base font-bold text-foreground">
                         Trả Lời Ngắn
                       </h3>
-                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                         Tự tính toán và điền số / kết quả vào ô, không có gợi ý.
                       </p>
-                      <div className="mt-3 border-t border-amber-500/10 pt-2.5 text-[11px] text-muted-foreground space-y-1">
+                      <div className="mt-3 space-y-1 pt-1 text-[11px] text-muted-foreground">
                         <div>
                           <strong>Mức độ:</strong> Vận dụng - Vận dụng cao
                         </div>
@@ -475,24 +464,26 @@ export default async function PseoPage(props: {
               {/* SEO/GEO Crawlable Fallback Content (Trong HTML tĩnh từ Server) */}
               <section
                 aria-label="Ngân hàng câu hỏi và đáp án mẫu chuẩn SEO"
-                className="mt-12 rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-8"
+                className="mt-12 space-y-6"
               >
-                <div className="border-b border-border/60 pb-5">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-primary">
                       <FileText className="h-4 w-4" />
                     </span>
-                    <h2 className="font-heading text-xl font-bold text-foreground sm:text-2xl">
-                      Ngân Hàng Câu Hỏi &amp; Đáp Án Chi Tiết Môn {subData.name} {grData.name}
-                    </h2>
+                    <div>
+                      <h2 className="font-heading text-xl font-bold text-foreground sm:text-2xl">
+                        Ngân Hàng Câu Hỏi &amp; Đáp Án Chi Tiết Môn {subData.name} {grData.name}
+                      </h2>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        Bản văn bản tĩnh phục vụ tra cứu nhanh, tải tài liệu học tập và hỗ
+                        trợ công cụ tìm kiếm, AI trích xuất lời giải chuẩn xác.
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Bản văn bản tĩnh phục vụ tra cứu nhanh, tải tài liệu học tập và hỗ
-                    trợ công cụ tìm kiếm, AI trích xuất lời giải chuẩn xác.
-                  </p>
                 </div>
 
-                <div className="mt-6 space-y-6">
+                <div className="space-y-5">
                   {subData.questions.map((q, idx) => {
                     const questionNumber = idx + 1;
 
@@ -500,18 +491,18 @@ export default async function PseoPage(props: {
                       return (
                         <article
                           key={q.id}
-                          className="rounded-2xl border border-border/70 bg-card p-5 shadow-xs"
+                          className="rounded-2xl border border-border/70 bg-card/85 p-5 shadow-none backdrop-blur-none sm:p-6"
                         >
                           <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="font-heading text-base font-bold text-foreground">
                               Câu {questionNumber} (Phần I - 0.25 điểm)
                             </span>
-                            <Badge className="bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/20 text-[11px]">
+                            <Badge className="text-[11px]">
                               4 Lựa chọn
                             </Badge>
                           </div>
 
-                          <p className="mt-3 font-medium text-foreground text-base leading-relaxed whitespace-pre-line">
+                          <p className="mt-3 whitespace-pre-line text-base font-medium leading-relaxed text-foreground">
                             {q.question}
                           </p>
 
@@ -519,9 +510,9 @@ export default async function PseoPage(props: {
                             {q.options.map((opt, oIdx) => (
                               <div
                                 key={oIdx}
-                                className="flex items-start gap-2.5 rounded-xl border border-border/60 bg-muted/30 p-3 text-sm"
+                                className="flex items-start gap-2.5 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-3 text-sm"
                               >
-                                <span className="font-bold text-muted-foreground shrink-0">
+                                <span className="shrink-0 font-bold text-muted-foreground">
                                   {String.fromCharCode(65 + oIdx)}.
                                 </span>
                                 <span className="text-foreground">{opt}</span>
@@ -529,15 +520,15 @@ export default async function PseoPage(props: {
                             ))}
                           </div>
 
-                          <details className="group mt-4 border-t border-border/60 pt-3">
+                          <details className="group mt-4 pt-1">
                             <summary className="flex cursor-pointer items-center justify-between text-sm font-semibold text-primary select-none hover:underline">
                               <span>Xem đáp án &amp; giải thích chi tiết</span>
                               <span className="transition-transform group-open:rotate-180">
                                 ▼
                               </span>
                             </summary>
-                            <div className="mt-3 rounded-xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4 text-sm text-muted-foreground">
-                              <p className="font-bold text-emerald-600 dark:text-emerald-400 mb-1 flex items-center gap-1.5">
+                            <div className="mt-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm text-muted-foreground">
+                              <p className="mb-1 flex items-center gap-1.5 font-bold text-primary">
                                 <CheckCircle2 className="h-4 w-4 shrink-0" />
                                 Đáp án chính xác:{" "}
                                 {String.fromCharCode(65 + q.answer)}.{" "}
@@ -554,18 +545,18 @@ export default async function PseoPage(props: {
                       return (
                         <article
                           key={q.id}
-                          className="rounded-2xl border border-border/70 bg-card p-5 shadow-xs"
+                          className="rounded-2xl border border-border/70 bg-card/85 p-5 shadow-none backdrop-blur-none sm:p-6"
                         >
                           <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="font-heading text-base font-bold text-foreground">
                               Câu {questionNumber} (Phần II - Tối đa 1.0 điểm)
                             </span>
-                            <Badge className="bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20 text-[11px]">
+                            <Badge className="text-[11px]">
                               Đúng / Sai lũy tiến
                             </Badge>
                           </div>
 
-                          <p className="mt-3 font-medium text-foreground text-base leading-relaxed whitespace-pre-line">
+                          <p className="mt-3 whitespace-pre-line text-base font-medium leading-relaxed text-foreground">
                             {q.context}
                           </p>
 
@@ -573,52 +564,49 @@ export default async function PseoPage(props: {
                             {q.subQuestions.map((sub, sIdx) => (
                               <div
                                 key={sub.id}
-                                className="flex items-start gap-3 rounded-xl border border-border/60 bg-muted/30 p-3 text-sm"
+                                className="flex items-start gap-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-3 text-sm"
                               >
-                                <span className="font-bold text-primary shrink-0">
+                                <span className="shrink-0 font-bold text-primary">
                                   {String.fromCharCode(97 + sIdx)})
                                 </span>
-                                <span className="text-foreground leading-relaxed">
+                                <span className="leading-relaxed text-foreground">
                                   {sub.text}
                                 </span>
                               </div>
                             ))}
                           </div>
 
-                          <details className="group mt-4 border-t border-border/60 pt-3">
+                          <details className="group mt-4 pt-1">
                             <summary className="flex cursor-pointer items-center justify-between text-sm font-semibold text-primary select-none hover:underline">
                               <span>Xem bảng đáp án Đúng/Sai &amp; phân tích từng ý</span>
                               <span className="transition-transform group-open:rotate-180">
                                 ▼
                               </span>
                             </summary>
-                            <div className="mt-3 space-y-2.5 rounded-xl border border-border/70 bg-muted/40 p-4 text-sm text-muted-foreground">
+                            <div className="mt-3 space-y-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm text-muted-foreground">
                               {q.subQuestions.map((sub, sIdx) => (
-                                <div
-                                  key={sub.id}
-                                  className="border-b border-border/40 pb-2.5 last:border-0 last:pb-0"
-                                >
+                                <div key={sub.id} className="space-y-1">
                                   <div className="flex items-center gap-2">
                                     <span className="font-bold text-foreground">
                                       Ý {String.fromCharCode(97 + sIdx)}:
                                     </span>
                                     <span
-                                      className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-bold ${
+                                      className={`inline-flex items-center gap-1 rounded-lg px-2 py-0.5 text-xs font-bold ${
                                         sub.isCorrect
-                                          ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300"
-                                          : "bg-rose-500/15 text-rose-700 dark:text-rose-300"
+                                          ? "bg-primary/15 text-primary"
+                                          : "bg-destructive/15 text-destructive"
                                       }`}
                                     >
                                       {sub.isCorrect ? "Đúng" : "Sai"}
                                     </span>
                                   </div>
-                                  <p className="mt-1 text-xs sm:text-sm leading-relaxed">
+                                  <p className="text-xs leading-relaxed sm:text-sm">
                                     {sub.explanation}
                                   </p>
                                 </div>
                               ))}
                               {q.explanation && (
-                                <p className="mt-2 text-xs italic text-muted-foreground pt-2 border-t border-border/40">
+                                <p className="pt-1 text-xs italic text-muted-foreground">
                                   {q.explanation}
                                 </p>
                               )}
@@ -632,32 +620,32 @@ export default async function PseoPage(props: {
                       return (
                         <article
                           key={q.id}
-                          className="rounded-2xl border border-border/70 bg-card p-5 shadow-xs"
+                          className="rounded-2xl border border-border/70 bg-card/85 p-5 shadow-none backdrop-blur-none sm:p-6"
                         >
                           <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="font-heading text-base font-bold text-foreground">
                               Câu {questionNumber} (Phần III - 0.5 điểm)
                             </span>
-                            <Badge className="bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20 text-[11px]">
+                            <Badge className="text-[11px]">
                               Trả lời ngắn
                             </Badge>
                           </div>
 
-                          <p className="mt-3 font-medium text-foreground text-base leading-relaxed whitespace-pre-line">
+                          <p className="mt-3 whitespace-pre-line text-base font-medium leading-relaxed text-foreground">
                             {q.question}
                           </p>
 
-                          <details className="group mt-4 border-t border-border/60 pt-3">
+                          <details className="group mt-4 pt-1">
                             <summary className="flex cursor-pointer items-center justify-between text-sm font-semibold text-primary select-none hover:underline">
                               <span>Xem kết quả chuẩn &amp; phương pháp tính</span>
                               <span className="transition-transform group-open:rotate-180">
                                 ▼
                               </span>
                             </summary>
-                            <div className="mt-3 rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4 text-sm text-muted-foreground">
-                              <p className="font-bold text-foreground mb-1">
+                            <div className="mt-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm text-muted-foreground">
+                              <p className="mb-1 font-bold text-foreground">
                                 Kết quả chính xác:{" "}
-                                <span className="text-primary font-heading text-base">
+                                <span className="font-heading text-base text-primary">
                                   {q.answer}
                                 </span>{" "}
                                 {q.unit && (
@@ -667,7 +655,7 @@ export default async function PseoPage(props: {
                                 )}
                               </p>
                               {q.acceptedAnswers && q.acceptedAnswers.length > 1 && (
-                                <p className="text-xs text-muted-foreground mb-2">
+                                <p className="mb-2 text-xs text-muted-foreground">
                                   Biến thể chấp nhận:{" "}
                                   {q.acceptedAnswers.join(", ")}
                                 </p>
@@ -687,9 +675,9 @@ export default async function PseoPage(props: {
               {/* Internal Linking Matrix: Chuyển đổi môn học & khối lớp nhanh */}
               <section aria-labelledby="matrix-nav-heading" className="space-y-6">
                 {/* 1. Other Subjects */}
-                <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-7">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
+                  <div className="mb-4 flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-primary">
                       <GraduationCap className="h-4 w-4" />
                     </span>
                     <h2
@@ -700,25 +688,22 @@ export default async function PseoPage(props: {
                     </h2>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
                     {otherSubjects.map((s) => {
                       const icon = SUBJECT_ICONS[s.slug] || "📚";
                       return (
                         <Link
                           key={s.slug}
                           href={`/de-thi/${s.slug}/${grade}`}
-                          className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-muted/20 p-3.5 transition-all hover:border-primary/50 hover:bg-muted/50 hover:shadow-sm"
+                          className="group flex h-10 items-center justify-between gap-2 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] px-3.5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/[0.08]"
                         >
-                          <div className="flex items-center gap-2">
-                            <span className="text-xl">{icon}</span>
-                            <span className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">
+                          <span className="flex min-w-0 items-center gap-2">
+                            <span className="shrink-0 text-base">{icon}</span>
+                            <span className="truncate font-semibold transition-colors group-hover:text-primary">
                               {s.name}
                             </span>
-                          </div>
-                          <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground">
-                            <span>{s.questions.length} câu mẫu</span>
-                            <ArrowRight className="h-3 w-3 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
-                          </div>
+                          </span>
+                          <ArrowRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
                         </Link>
                       );
                     })}
@@ -726,9 +711,9 @@ export default async function PseoPage(props: {
                 </div>
 
                 {/* 2. Other Grades for Current Subject */}
-                <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-7">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
+                  <div className="mb-4 flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-primary">
                       <Flame className="h-4 w-4" />
                     </span>
                     <h2 className="font-heading text-lg font-bold text-foreground sm:text-xl">
@@ -736,30 +721,20 @@ export default async function PseoPage(props: {
                     </h2>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="grid gap-2.5 sm:grid-cols-3">
                     {otherGrades.map((g) => (
                       <Link
                         key={g.slug}
                         href={`/de-thi/${subject}/${g.slug}`}
-                        className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-muted/20 p-4 transition-all hover:border-primary/50 hover:bg-muted/50 hover:shadow-sm"
+                        className="group flex h-10 items-center justify-between gap-2 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/[0.08]"
                       >
-                        <div>
-                          <div className="flex items-center justify-between">
-                            <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">
-                              {g.name}
-                            </span>
-                            <Badge className="bg-primary/10 text-primary text-[10px]">
-                              Format 2026
-                            </Badge>
-                          </div>
-                          <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
-                            {g.label}
-                          </p>
-                        </div>
-                        <div className="mt-3 flex items-center text-xs font-semibold text-primary">
-                          <span>Xem đề thi</span>
-                          <ChevronRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                        </div>
+                        <span className="truncate font-heading transition-colors group-hover:text-primary">
+                          {g.name}
+                        </span>
+                        <span className="inline-flex shrink-0 whitespace-nowrap items-center gap-1 text-xs font-semibold text-primary">
+                          Xem đề
+                          <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                        </span>
                       </Link>
                     ))}
                   </div>
@@ -768,8 +743,8 @@ export default async function PseoPage(props: {
 
               {/* FAQs Section */}
               <section aria-labelledby="faq-heading">
-                <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
-                  <div className="flex items-center gap-2 mb-6">
+                <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-8">
+                  <div className="mb-6 flex items-center gap-2.5">
                     <HelpCircle className="h-5 w-5 text-primary" />
                     <h2
                       id="faq-heading"
@@ -779,13 +754,13 @@ export default async function PseoPage(props: {
                     </h2>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {faqs.map((f, idx) => (
                       <div
                         key={idx}
-                        className="rounded-2xl border border-border/60 bg-muted/20 p-5 transition-colors"
+                        className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-5"
                       >
-                        <h3 className="font-heading font-semibold text-foreground text-base sm:text-lg mb-2">
+                        <h3 className="mb-2 font-heading text-base font-semibold text-foreground sm:text-lg">
                           {f.q}
                         </h3>
                         <p className="text-sm leading-relaxed text-muted-foreground">
@@ -799,14 +774,12 @@ export default async function PseoPage(props: {
             </div>
 
             {/* Right: Sticky Sidebar CTA Card */}
-            <aside className="lg:sticky lg:top-24 h-fit space-y-6">
+            <aside className="h-fit space-y-6 lg:sticky lg:top-24">
               {/* Primary AI Quiz Generator CTA */}
-              <div className="glass relative overflow-hidden rounded-3xl border border-border p-6 shadow-xl sm:p-8">
-                <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
-
+              <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
                 <div className="flex items-center gap-2">
-                  <Badge className="border-primary/20 bg-primary/10 text-primary">
-                    <Sparkles className="h-3 w-3" />
+                  <Badge>
+                    <Sparkles className="h-3.5 w-3.5 text-primary" />
                     AI Quiz Engine
                   </Badge>
                 </div>
@@ -815,7 +788,7 @@ export default async function PseoPage(props: {
                   Tạo Đề Thi Trắc Nghiệm {subData.name} Bằng AI
                 </h3>
 
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Sử dụng Trí Tuệ Nhân Tạo để tạo ngay đề thi {subData.name} {grData.name} theo ma trận chuẩn 2026 chỉ trong 30 giây.
                 </p>
 
@@ -841,8 +814,8 @@ export default async function PseoPage(props: {
                 <div className="mt-6">
                   <Button
                     href={ctaUrl}
-                    className="w-full justify-center group shadow-md"
-                    size="lg"
+                    className="group w-full justify-center"
+                    size="md"
                   >
                     Tạo đề bằng AI ngay
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -851,9 +824,9 @@ export default async function PseoPage(props: {
               </div>
 
               {/* Secondary Printable PDF CTA */}
-              <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm">
+              <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none">
                 <div className="flex items-center gap-2.5 text-foreground">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted text-foreground">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-foreground">
                     <Printer className="h-4 w-4" />
                   </span>
                   <h4 className="font-heading text-lg font-bold">
@@ -869,8 +842,8 @@ export default async function PseoPage(props: {
                 <div className="mt-4">
                   <Button
                     href={ctaUrl}
-                    variant="outline"
-                    size="sm"
+                    variant="secondary"
+                    size="md"
                     className="w-full justify-center gap-2"
                   >
                     <Download className="h-4 w-4" />
@@ -880,8 +853,8 @@ export default async function PseoPage(props: {
               </div>
 
               {/* Subject Information Box */}
-              <div className="rounded-3xl border border-border/60 bg-muted/20 p-5 text-xs text-muted-foreground space-y-2">
-                <div className="font-heading font-semibold text-foreground text-sm flex items-center gap-1.5">
+              <div className="space-y-2 rounded-2xl border border-border/70 bg-card/85 p-5 text-xs text-muted-foreground shadow-none backdrop-blur-none">
+                <div className="flex items-center gap-1.5 font-heading text-sm font-semibold text-foreground">
                   <Award className="h-4 w-4 text-primary" />
                   Bí quyết ôn thi hiệu quả 2026
                 </div>

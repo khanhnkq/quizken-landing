@@ -1,8 +1,8 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { JsonLd } from "@/components/JsonLd";
-import { webPageSchema } from "@/lib/seo";
-import { buildMetadata } from "@/lib/seo";
+import { webPageSchema, buildMetadata } from "@/lib/seo";
 import { appLink } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/categories";
@@ -18,6 +18,7 @@ import {
   Award,
   Zap,
   GraduationCap,
+  CheckCircle2,
 } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -97,176 +98,204 @@ export default function StatsPage() {
         ]}
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40" />
-        <Container className="relative text-center">
-          <span className="eyebrow">
-            <Sparkles className="h-3.5 w-3.5" />
-            Minh bạch & Tin cậy
-          </span>
-          <h1 className="mx-auto mt-5 max-w-2xl font-heading text-4xl tracking-tight sm:text-5xl lg:text-6xl">
-            QuizKen trong{" "}
-            <span className="text-gradient">con số</span>
-          </h1>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
-            Từ một ý tưởng nhỏ, QuizKen đã giúp hàng nghìn giáo viên và học
-            sinh tiết kiệm thời gian, học tập hiệu quả hơn mỗi ngày.
-          </p>
-        </Container>
-      </section>
-
-      {/* Main stats grid */}
-      <section className="border-y border-border/60 bg-secondary/40">
-        <Container>
-          <div className="grid grid-cols-2 divide-border/60 py-12 sm:grid-cols-4 sm:divide-x">
-            {heroStats.map((s) => (
-              <div key={s.label} className="px-2 py-4 text-center sm:px-6">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <p className="font-heading text-3xl font-600 tracking-tight sm:text-4xl">
-                  <span className="text-gradient">{s.value}</span>
-                </p>
-                <p className="mt-1.5 text-sm text-muted-foreground">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Impact */}
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="text-center">
-            <span className="eyebrow">
-              <TrendingUp className="h-3.5 w-3.5" />
-              Tác động
-            </span>
-            <h2 className="mt-4 font-heading text-3xl tracking-tight sm:text-4xl">
-              Tác động thực tế
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-              Những con số cho thấy QuizKen đang thay đổi cách giáo viên và học
-              sinh tiếp cận kiểm tra, ôn tập.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {impactStats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl border border-border/50 bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <s.icon className="h-5 w-5" />
-                </div>
-                <p className="font-heading text-2xl font-600 tracking-tight text-gradient">
-                  {s.value}
-                </p>
-                <p className="mt-1 text-sm font-600">{s.label}</p>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                  {s.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Interactive Comparison Charts for SEO/GEO */}
-          <StatsCharts />
-        </Container>
-      </section>
-
-      {/* Blog & Content stats */}
-      <section className="border-t border-border/60 bg-secondary/30 py-16 sm:py-20">
-        <Container>
-          <div className="text-center">
-            <span className="eyebrow">
-              <FileText className="h-3.5 w-3.5" />
-              Nội dung
-            </span>
-            <h2 className="mt-4 font-heading text-3xl tracking-tight sm:text-4xl">
-              Blog & Tài nguyên
-            </h2>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-2xl gap-6 sm:grid-cols-3">
-            <div className="rounded-2xl border border-border/50 bg-card p-6 text-center">
-              <p className="font-heading text-4xl font-600 text-gradient">
-                {blog.totalPosts}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Bài viết hướng dẫn
+      <div className="bg-background">
+        {/* Hero */}
+        <section className="py-14 sm:py-20">
+          <Container className="text-center">
+            <div className="mx-auto max-w-2xl space-y-5">
+              <Badge>
+                <Sparkles className="h-3.5 w-3.5" />
+                Minh bạch & Tin cậy
+              </Badge>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                QuizKen trong con số
+              </h1>
+              <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Từ một ý tưởng nhỏ, QuizKen đã giúp hàng nghìn giáo viên và học
+                sinh tiết kiệm thời gian, học tập hiệu quả hơn mỗi ngày.
               </p>
             </div>
-            <div className="rounded-2xl border border-border/50 bg-card p-6 text-center">
-              <p className="font-heading text-4xl font-600 text-gradient">
-                {blog.totalCategories}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Danh mục chủ đề
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border/50 bg-card p-6 text-center">
-              <p className="font-heading text-4xl font-600 text-gradient">
-                {blog.totalTags}+
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Tags kiến thức
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* Features list */}
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="text-center">
-            <span className="eyebrow">
-              <GraduationCap className="h-3.5 w-3.5" />
-              Tính năng
-            </span>
-            <h2 className="mt-4 font-heading text-3xl tracking-tight sm:text-4xl">
-              Nền tảng toàn diện
-            </h2>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
-              <div
-                key={f.label}
-                className="flex items-center gap-3 rounded-xl border border-border/50 bg-card p-4"
-              >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-lg">
-                  ✅
-                </span>
-                <div>
-                  <p className="text-sm font-600">{f.label}</p>
-                  <p className="text-xs text-muted-foreground">{f.detail}</p>
+        {/* Main stats grid */}
+        <section className="py-4">
+          <Container>
+            <div className="rounded-2xl border border-border/70 bg-card/85 p-4 shadow-none backdrop-blur-none sm:p-5">
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                {heroStats.map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-xl border-0 bg-foreground/[0.04] p-5 text-center shadow-none dark:bg-foreground/[0.06]"
+                  >
+                    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl border-0 bg-foreground/[0.06] text-foreground shadow-none">
+                      <s.icon className="h-5 w-5" />
+                    </div>
+                    <p className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                      {s.value}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* Impact */}
+        <section className="py-14 sm:py-20">
+          <Container>
+            <div className="space-y-3 text-center">
+              <Badge>
+                <TrendingUp className="h-3.5 w-3.5" />
+                Tác động
+              </Badge>
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Tác động thực tế
+              </h2>
+              <p className="mx-auto max-w-lg text-sm text-muted-foreground sm:text-base">
+                Những con số cho thấy QuizKen đang thay đổi cách giáo viên và
+                học sinh tiếp cận kiểm tra, ôn tập.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {impactStats.map((s) => (
+                <div
+                  key={s.label}
+                  className="flex flex-col justify-between gap-4 rounded-2xl border border-border/70 bg-card/85 p-5 shadow-none backdrop-blur-none"
+                >
+                  <div>
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border-0 bg-foreground/[0.06] text-foreground shadow-none">
+                      <s.icon className="h-5 w-5" />
+                    </div>
+                    <p className="font-heading text-2xl font-bold tracking-tight text-foreground">
+                      {s.value}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-foreground">
+                      {s.label}
+                    </p>
+                  </div>
+                  <p className="rounded-xl border-0 bg-foreground/[0.04] p-3 text-xs leading-relaxed text-muted-foreground shadow-none dark:bg-foreground/[0.06]">
+                    {s.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Interactive Comparison Charts for SEO/GEO */}
+            <StatsCharts />
+          </Container>
+        </section>
+
+        {/* Blog & Content stats */}
+        <section className="py-12 sm:py-16">
+          <Container>
+            <div className="space-y-3 text-center">
+              <Badge>
+                <FileText className="h-3.5 w-3.5" />
+                Nội dung
+              </Badge>
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Blog & Tài nguyên
+              </h2>
+            </div>
+            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border/70 bg-card/85 p-4 shadow-none backdrop-blur-none sm:p-5">
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-xl border-0 bg-foreground/[0.04] p-5 text-center shadow-none dark:bg-foreground/[0.06]">
+                  <p className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+                    {blog.totalPosts}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Bài viết hướng dẫn
+                  </p>
+                </div>
+                <div className="rounded-xl border-0 bg-foreground/[0.04] p-5 text-center shadow-none dark:bg-foreground/[0.06]">
+                  <p className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+                    {blog.totalCategories}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Danh mục chủ đề
+                  </p>
+                </div>
+                <div className="rounded-xl border-0 bg-foreground/[0.04] p-5 text-center shadow-none dark:bg-foreground/[0.06]">
+                  <p className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+                    {blog.totalTags}+
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Tags kiến thức
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+            </div>
+          </Container>
+        </section>
 
-      {/* CTA */}
-      <section className="border-t border-border/60 bg-gradient-to-br from-primary/5 via-primary/8 to-transparent py-16 sm:py-20">
-        <Container className="text-center">
-          <h2 className="font-heading text-3xl tracking-tight sm:text-4xl">
-            Sẵn sàng thử QuizKen?
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Tạo bài kiểm tra AI đầu tiên của bạn hoàn toàn miễn phí. Không cần
-            thẻ tín dụng, không cần cài đặt.
-          </p>
-          <Button href={appLink("/")} size="lg" className="mt-6">
-            <Sparkles className="mr-2 h-4 w-4" />
-            Bắt đầu miễn phí
-          </Button>
-        </Container>
-      </section>
+        {/* Features list */}
+        <section className="py-12 sm:py-16">
+          <Container>
+            <div className="space-y-3 text-center">
+              <Badge>
+                <GraduationCap className="h-3.5 w-3.5" />
+                Tính năng
+              </Badge>
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Nền tảng toàn diện
+              </h2>
+            </div>
+            <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border/70 bg-card/85 p-4 shadow-none backdrop-blur-none sm:p-5">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {features.map((f) => (
+                  <div
+                    key={f.label}
+                    className="flex items-center gap-3 rounded-xl border-0 bg-foreground/[0.04] p-4 shadow-none dark:bg-foreground/[0.06]"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-foreground/[0.06]">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">
+                        {f.label}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {f.detail}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* CTA */}
+        <section className="py-12 sm:py-20">
+          <Container>
+            <div className="rounded-2xl border border-border/70 bg-card/85 p-8 text-center shadow-none backdrop-blur-none sm:p-12">
+              <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Sẵn sàng thử QuizKen?
+              </h2>
+              <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground sm:text-base">
+                Tạo bài kiểm tra AI đầu tiên của bạn hoàn toàn miễn phí. Không
+                cần thẻ tín dụng, không cần cài đặt.
+              </p>
+              <div className="mt-6">
+                <Button
+                  href={appLink("/")}
+                  variant="primary"
+                  size="md"
+                  className="h-10 rounded-xl border-0 shadow-none"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  Bắt đầu miễn phí
+                </Button>
+              </div>
+            </div>
+          </Container>
+        </section>
+      </div>
     </>
   );
 }

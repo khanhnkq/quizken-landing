@@ -55,7 +55,7 @@ export default async function CategoryPage({
           ]),
         ]}
       />
-      <section className="py-16 sm:py-24">
+      <section className="bg-background py-16 sm:py-24">
         <Container>
           <BlogList posts={posts} initialCategory={category} />
         </Container>
@@ -63,4 +63,3 @@ export default async function CategoryPage({
     </>
   );
 }
-

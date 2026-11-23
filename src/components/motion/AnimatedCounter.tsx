@@ -26,14 +26,11 @@ export function AnimatedCounter({
   const [display, setDisplay] = useState("0");
 
   useEffect(() => {
-    if (!isInView) return;
-    if (reduce) {
-      setDisplay(formatNumber(value));
-      return;
-    }
+    if (!isInView || reduce) return;
 
     const start = performance.now();
     const durationMs = duration * 1000;
+    let rafId = 0;
 
     function tick(now: number) {
       const elapsed = now - start;
@@ -41,16 +38,21 @@ export function AnimatedCounter({
       const eased = easeOutExpo(progress);
       const current = Math.round(eased * value);
       setDisplay(formatNumber(current));
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      }
     }
 
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
   }, [isInView, value, duration, reduce]);
+
+  const rendered = isInView && reduce ? formatNumber(value) : display;
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display}
+      {rendered}
       {suffix}
     </span>
   );

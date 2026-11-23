@@ -136,7 +136,7 @@ export function InteractiveQuizWidget({
   // Scoring results
   const scoreReport = useMemo(() => {
     let part1Score = 0;
-    let part1Max = part1Questions.length * 0.25;
+    const part1Max = part1Questions.length * 0.25;
     let part1CorrectCount = 0;
 
     for (const q of part1Questions) {
@@ -148,7 +148,7 @@ export function InteractiveQuizWidget({
     }
 
     let part2Score = 0;
-    let part2Max = part2Questions.length * 1.0;
+    const part2Max = part2Questions.length * 1.0;
     let part2FullyCorrectCount = 0;
 
     for (const q of part2Questions) {
@@ -167,7 +167,7 @@ export function InteractiveQuizWidget({
     }
 
     let part3Score = 0;
-    let part3Max = part3Questions.length * 0.5;
+    const part3Max = part3Questions.length * 0.5;
     let part3CorrectCount = 0;
 
     for (const q of part3Questions) {
@@ -293,26 +293,24 @@ export function InteractiveQuizWidget({
 
   if (!questions || questions.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-border p-8 text-center text-muted-foreground">
+      <div className="rounded-2xl border border-border/70 bg-card/85 p-8 text-center text-muted-foreground shadow-none backdrop-blur-none">
         Chưa có câu hỏi luyện thi cho môn học này.
       </div>
     );
   }
 
   return (
-    <div className="relative space-y-8" id={resultCardId}>
+    <div className="relative space-y-6" id={resultCardId}>
       {/* Quiz Header & Stats */}
-      <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-sm backdrop-blur-sm sm:p-8">
+      <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              <Badge className="bg-primary/10 text-primary border-primary/20">
-                <Sparkles className="h-3.5 w-3.5" />
+              <Badge>
+                <Sparkles className="h-3.5 w-3.5 text-primary" />
                 Format Mới THPT 2026
               </Badge>
-              <Badge className="bg-secondary text-secondary-foreground">
-                {questions.length} câu hỏi
-              </Badge>
+              <Badge>{questions.length} câu hỏi</Badge>
             </div>
             <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Luyện Thi Trực Tuyến: {subjectName} {gradeName}
@@ -323,7 +321,7 @@ export function InteractiveQuizWidget({
           </div>
 
           <div className="flex items-center gap-3 self-start sm:self-center">
-            <div className="rounded-2xl border border-border/60 bg-muted/40 px-4 py-2.5 text-right">
+            <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 py-2.5 text-right">
               <div className="text-xs font-medium text-muted-foreground">Tiến độ bài làm</div>
               <div className="font-heading text-lg font-bold text-foreground">
                 <span className="text-primary">{answeredCount}</span> / {questions.length} câu
@@ -333,25 +331,25 @@ export function InteractiveQuizWidget({
         </div>
 
         {/* Tab Navigation */}
-        <div className="mt-6 flex flex-wrap gap-2 border-t border-border/60 pt-4">
+        <div className="mt-6 flex flex-wrap gap-1.5 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-1.5">
           <button
             type="button"
             onClick={() => setActiveTab("all")}
             className={cn(
-              "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all min-h-[40px]",
+              "inline-flex h-9 items-center gap-2 rounded-xl border-0 shadow-none px-3.5 text-xs font-semibold transition-colors cursor-pointer sm:text-sm",
               activeTab === "all"
-                ? "bg-primary text-primary-foreground shadow-sm font-semibold"
-                : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
             )}
           >
             <ListFilter className="h-4 w-4" />
             Tất cả câu hỏi
             <span
               className={cn(
-                "rounded-full px-2 py-0.5 text-xs font-bold",
+                "rounded-md px-1.5 py-0.5 text-[11px] font-bold",
                 activeTab === "all"
-                  ? "bg-white/20 text-white"
-                  : "bg-muted-foreground/10 text-muted-foreground"
+                  ? "bg-primary-foreground/20 text-primary-foreground"
+                  : "bg-foreground/[0.06] text-muted-foreground"
               )}
             >
               {questions.length}
@@ -363,19 +361,19 @@ export function InteractiveQuizWidget({
               type="button"
               onClick={() => setActiveTab("part1")}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all min-h-[40px]",
+                "inline-flex h-9 items-center gap-2 rounded-xl border-0 shadow-none px-3.5 text-xs font-semibold transition-colors cursor-pointer sm:text-sm",
                 activeTab === "part1"
-                  ? "bg-primary text-primary-foreground shadow-sm font-semibold"
-                  : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
               )}
             >
               Phần I: 4 Lựa chọn
               <span
                 className={cn(
-                  "rounded-full px-2 py-0.5 text-xs font-bold",
+                  "rounded-md px-1.5 py-0.5 text-[11px] font-bold",
                   activeTab === "part1"
-                    ? "bg-white/20 text-white"
-                    : "bg-muted-foreground/10 text-muted-foreground"
+                    ? "bg-primary-foreground/20 text-primary-foreground"
+                    : "bg-foreground/[0.06] text-muted-foreground"
                 )}
               >
                 {part1Questions.length}
@@ -388,19 +386,19 @@ export function InteractiveQuizWidget({
               type="button"
               onClick={() => setActiveTab("part2")}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all min-h-[40px]",
+                "inline-flex h-9 items-center gap-2 rounded-xl border-0 shadow-none px-3.5 text-xs font-semibold transition-colors cursor-pointer sm:text-sm",
                 activeTab === "part2"
-                  ? "bg-primary text-primary-foreground shadow-sm font-semibold"
-                  : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
               )}
             >
               Phần II: Đúng / Sai
               <span
                 className={cn(
-                  "rounded-full px-2 py-0.5 text-xs font-bold",
+                  "rounded-md px-1.5 py-0.5 text-[11px] font-bold",
                   activeTab === "part2"
-                    ? "bg-white/20 text-white"
-                    : "bg-muted-foreground/10 text-muted-foreground"
+                    ? "bg-primary-foreground/20 text-primary-foreground"
+                    : "bg-foreground/[0.06] text-muted-foreground"
                 )}
               >
                 {part2Questions.length}
@@ -413,19 +411,19 @@ export function InteractiveQuizWidget({
               type="button"
               onClick={() => setActiveTab("part3")}
               className={cn(
-                "inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all min-h-[40px]",
+                "inline-flex h-9 items-center gap-2 rounded-xl border-0 shadow-none px-3.5 text-xs font-semibold transition-colors cursor-pointer sm:text-sm",
                 activeTab === "part3"
-                  ? "bg-primary text-primary-foreground shadow-sm font-semibold"
-                  : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:bg-foreground/[0.06] hover:text-foreground"
               )}
             >
               Phần III: Trả lời ngắn
               <span
                 className={cn(
-                  "rounded-full px-2 py-0.5 text-xs font-bold",
+                  "rounded-md px-1.5 py-0.5 text-[11px] font-bold",
                   activeTab === "part3"
-                    ? "bg-white/20 text-white"
-                    : "bg-muted-foreground/10 text-muted-foreground"
+                    ? "bg-primary-foreground/20 text-primary-foreground"
+                    : "bg-foreground/[0.06] text-muted-foreground"
                 )}
               >
                 {part3Questions.length}
@@ -437,14 +435,14 @@ export function InteractiveQuizWidget({
 
       {/* Submission Score Result Banner */}
       {isSubmitted && (
-        <div className="relative overflow-hidden rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-br from-emerald-500/10 via-card to-card p-6 shadow-xl sm:p-8">
+        <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl border-0 shadow-none bg-primary text-primary-foreground">
                   <Award className="h-4 w-4" />
                 </span>
-                <span className="font-heading font-semibold text-emerald-700 dark:text-emerald-400">
+                <span className="font-heading font-semibold text-primary">
                   Kết Quả Chấm Điểm Chuẩn BGD 2026
                 </span>
               </div>
@@ -460,10 +458,10 @@ export function InteractiveQuizWidget({
                   className={cn(
                     "ml-2 text-sm font-bold",
                     scoreReport.percentage >= 80
-                      ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/30"
+                      ? "bg-primary/15 text-primary"
                       : scoreReport.percentage >= 50
-                      ? "bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/30"
-                      : "bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-500/30"
+                      ? "bg-foreground/[0.06] text-foreground"
+                      : "bg-destructive/15 text-destructive"
                   )}
                 >
                   {scoreReport.percentage}%
@@ -483,7 +481,7 @@ export function InteractiveQuizWidget({
 
             {/* Score Breakdown Cards */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="rounded-2xl border border-border/80 bg-card p-3 text-center sm:p-4">
+              <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-3 text-center sm:p-4">
                 <div className="text-xs text-muted-foreground">Phần I (4 Lựa chọn)</div>
                 <div className="mt-1 font-heading font-bold text-foreground sm:text-lg">
                   {scoreReport.part1.score.toFixed(2)}đ
@@ -493,7 +491,7 @@ export function InteractiveQuizWidget({
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border/80 bg-card p-3 text-center sm:p-4">
+              <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-3 text-center sm:p-4">
                 <div className="text-xs text-muted-foreground">Phần II (Đúng/Sai)</div>
                 <div className="mt-1 font-heading font-bold text-foreground sm:text-lg">
                   {scoreReport.part2.score.toFixed(2)}đ
@@ -503,7 +501,7 @@ export function InteractiveQuizWidget({
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border/80 bg-card p-3 text-center sm:p-4">
+              <div className="rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-3 text-center sm:p-4">
                 <div className="text-xs text-muted-foreground">Phần III (Trả lời ngắn)</div>
                 <div className="mt-1 font-heading font-bold text-foreground sm:text-lg">
                   {scoreReport.part3.score.toFixed(2)}đ
@@ -516,9 +514,9 @@ export function InteractiveQuizWidget({
           </div>
 
           {/* Progress bar */}
-          <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-muted">
+          <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-foreground/[0.08]">
             <div
-              className="h-full rounded-full bg-emerald-500 transition-all duration-500 ease-out"
+              className="h-full rounded-full bg-primary transition-all duration-500 ease-out"
               style={{ width: `${Math.min(100, Math.max(0, scoreReport.percentage))}%` }}
             />
           </div>
@@ -527,8 +525,8 @@ export function InteractiveQuizWidget({
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Button
               type="button"
-              variant="outline"
-              size="sm"
+              variant="secondary"
+              size="md"
               onClick={handleReset}
               className="gap-2"
             >
@@ -539,7 +537,7 @@ export function InteractiveQuizWidget({
             <Button
               href={appLink(`/?subject=${subjectName}&grade=${gradeName}`)}
               variant="primary"
-              size="sm"
+              size="md"
               className="gap-2"
             >
               <Sparkles className="h-4 w-4" />
@@ -608,10 +606,10 @@ export function InteractiveQuizWidget({
       </div>
 
       {/* Bottom Sticky Action Bar */}
-      <div className="sticky bottom-4 z-20 rounded-2xl border border-border/80 bg-card/95 p-4 shadow-lg backdrop-blur-md sm:p-5">
+      <div className="sticky bottom-4 z-20 rounded-2xl border border-border/70 bg-card/95 p-4 shadow-none backdrop-blur-none sm:p-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-primary">
               <Flame className="h-5 w-5" />
             </div>
             <div>
@@ -632,7 +630,7 @@ export function InteractiveQuizWidget({
             {isSubmitted ? (
               <Button
                 type="button"
-                variant="outline"
+                variant="secondary"
                 size="md"
                 onClick={handleReset}
                 className="gap-2"
@@ -646,9 +644,9 @@ export function InteractiveQuizWidget({
                 variant="primary"
                 size="md"
                 onClick={handleSubmit}
-                className="gap-2 min-h-[44px] px-6 text-base font-semibold shadow-md"
+                className="gap-2"
               >
-                <CheckCircle2 className="h-5 w-5" />
+                <CheckCircle2 className="h-4 w-4" />
                 Nộp bài & Chấm điểm
               </Button>
             )}
@@ -682,26 +680,16 @@ function MultipleChoiceCard({
   onToggleExplanation,
 }: MultipleChoiceCardProps) {
   const isCorrect = isSubmitted && userAnswer === question.answer;
-  const isAnswered = userAnswer !== undefined;
 
   return (
-    <div
-      className={cn(
-        "rounded-3xl border bg-card p-6 shadow-sm transition-all sm:p-7",
-        isSubmitted
-          ? isCorrect
-            ? "border-emerald-500/40 bg-emerald-500/[0.02]"
-            : "border-rose-500/30 bg-rose-500/[0.01]"
-          : "border-border/80 hover:border-border"
-      )}
-    >
+    <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
       {/* Question Header */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-heading font-bold text-foreground text-lg">
+          <span className="font-heading text-lg font-bold text-foreground">
             Câu {index}
           </span>
-          <Badge className="bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/20 text-xs">
+          <Badge className="text-xs">
             Phần I: 0.25đ / câu - Trắc nghiệm 4 lựa chọn
           </Badge>
         </div>
@@ -709,11 +697,11 @@ function MultipleChoiceCard({
         {isSubmitted && (
           <div>
             {isCorrect ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-primary/15 px-2.5 py-1 text-xs font-bold text-primary">
                 <Check className="h-3.5 w-3.5" /> +0.25đ (Chính xác)
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 px-3 py-1 text-xs font-bold text-rose-700 dark:text-rose-300">
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-destructive/15 px-2.5 py-1 text-xs font-bold text-destructive">
                 <X className="h-3.5 w-3.5" /> +0.0đ (Chưa chính xác)
               </span>
             )}
@@ -732,21 +720,23 @@ function MultipleChoiceCard({
           const isSelected = userAnswer === oIdx;
           const isThisOptionCorrect = question.answer === oIdx;
 
-          let optionStyle = "border-border/70 bg-card hover:border-primary/50 hover:bg-muted/30 text-foreground";
+          let optionStyle =
+            "bg-foreground/[0.04] dark:bg-foreground/[0.06] hover:bg-foreground/[0.08] text-foreground";
 
           if (isSubmitted) {
             if (isThisOptionCorrect) {
               optionStyle =
-                "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-semibold ring-2 ring-emerald-500/30";
+                "bg-primary/15 ring-2 ring-primary/50 text-foreground font-semibold";
             } else if (isSelected && !isThisOptionCorrect) {
               optionStyle =
-                "border-rose-500 bg-rose-500/10 text-rose-700 dark:text-rose-300 ring-2 ring-rose-500/30";
+                "bg-destructive/15 ring-2 ring-destructive/40 text-destructive";
             } else {
-              optionStyle = "border-border/40 bg-muted/20 opacity-60 text-muted-foreground";
+              optionStyle =
+                "bg-foreground/[0.03] dark:bg-foreground/[0.04] opacity-60 text-muted-foreground";
             }
           } else if (isSelected) {
             optionStyle =
-              "border-primary bg-primary/10 text-primary font-semibold ring-2 ring-primary/30 shadow-sm";
+              "bg-primary/15 ring-2 ring-primary/50 text-foreground font-semibold";
           }
 
           return (
@@ -756,33 +746,33 @@ function MultipleChoiceCard({
               disabled={isSubmitted}
               onClick={() => onSelect(oIdx)}
               className={cn(
-                "group relative flex min-h-[48px] items-center gap-3.5 rounded-2xl border p-4 text-left text-sm transition-all sm:text-base",
+                "group relative flex min-h-[48px] items-center gap-3.5 rounded-xl border-0 shadow-none p-4 text-left text-sm transition-colors sm:text-base",
                 optionStyle,
-                isSubmitted ? "cursor-default" : "cursor-pointer active:scale-[0.99]"
+                isSubmitted ? "cursor-default" : "cursor-pointer"
               )}
             >
               <span
                 className={cn(
-                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-xl text-xs font-bold transition-colors",
+                  "flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold transition-colors",
                   isSubmitted
                     ? isThisOptionCorrect
-                      ? "bg-emerald-500 text-white"
+                      ? "bg-primary text-primary-foreground"
                       : isSelected
-                      ? "bg-rose-500 text-white"
-                      : "bg-muted text-muted-foreground"
+                      ? "bg-destructive text-destructive-foreground"
+                      : "bg-foreground/[0.06] text-muted-foreground"
                     : isSelected
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted/70 text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary"
+                    : "bg-foreground/[0.06] text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary"
                 )}
               >
                 {String.fromCharCode(65 + oIdx)}
               </span>
               <span className="flex-1 leading-snug">{opt}</span>
               {isSubmitted && isThisOptionCorrect && (
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
               )}
               {isSubmitted && isSelected && !isThisOptionCorrect && (
-                <XCircle className="h-5 w-5 shrink-0 text-rose-600 dark:text-rose-400" />
+                <XCircle className="h-5 w-5 shrink-0 text-destructive" />
               )}
             </button>
           );
@@ -791,7 +781,7 @@ function MultipleChoiceCard({
 
       {/* Explanation Accordion */}
       {(isSubmitted || isExplanationExpanded) && (
-        <div className="mt-5 border-t border-border/60 pt-4">
+        <div className="mt-5 pt-2">
           <button
             type="button"
             onClick={onToggleExplanation}
@@ -809,8 +799,8 @@ function MultipleChoiceCard({
           </button>
 
           {isExplanationExpanded && (
-            <div className="mt-3 rounded-2xl border border-dashed border-border/80 bg-muted/30 p-4 text-sm leading-relaxed text-muted-foreground">
-              <p className="mb-1.5 font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+            <div className="mt-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mb-1.5 flex items-center gap-1.5 font-bold text-primary">
                 <CheckCircle2 className="h-4 w-4" />
                 Đáp án chính xác: {String.fromCharCode(65 + question.answer)}
               </p>
@@ -855,25 +845,14 @@ function TrueFalseCard({
   const earnedScore = calculatePart2Score(correctCount);
 
   return (
-    <div
-      className={cn(
-        "rounded-3xl border bg-card p-6 shadow-sm transition-all sm:p-7",
-        isSubmitted
-          ? earnedScore === 1.0
-            ? "border-emerald-500/40 bg-emerald-500/[0.02]"
-            : earnedScore > 0
-            ? "border-amber-500/30 bg-amber-500/[0.01]"
-            : "border-rose-500/30 bg-rose-500/[0.01]"
-          : "border-border/80 hover:border-border"
-      )}
-    >
+    <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
       {/* Question Header */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-heading font-bold text-foreground text-lg">
+          <span className="font-heading text-lg font-bold text-foreground">
             Câu {index}
           </span>
-          <Badge className="bg-violet-500/10 text-violet-700 dark:text-violet-300 border-violet-500/20 text-xs">
+          <Badge className="text-xs">
             Phần II: Tối đa 1.0đ - Đúng / Sai 4 ý
           </Badge>
         </div>
@@ -881,12 +860,12 @@ function TrueFalseCard({
         {isSubmitted && (
           <span
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold",
+              "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-bold",
               earnedScore === 1.0
-                ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300"
+                ? "bg-primary/15 text-primary"
                 : earnedScore > 0
-                ? "bg-amber-500/15 text-amber-700 dark:text-amber-300"
-                : "bg-rose-500/15 text-rose-700 dark:text-rose-300"
+                ? "bg-foreground/[0.06] text-foreground"
+                : "bg-destructive/15 text-destructive"
             )}
           >
             +{earnedScore.toFixed(2)}đ ({correctCount}/4 ý đúng)
@@ -895,45 +874,35 @@ function TrueFalseCard({
       </div>
 
       {/* Context Callout */}
-      <div className="mt-4 rounded-2xl border border-border/80 bg-muted/40 p-4 text-sm font-medium leading-relaxed text-foreground sm:text-base">
+      <div className="mt-4 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm font-medium leading-relaxed text-foreground sm:text-base">
         {question.context}
       </div>
 
       {/* Subquestions Table / Rows */}
-      <div className="mt-5 space-y-4">
+      <div className="mt-5 space-y-3">
         {question.subQuestions.map((sub, sIdx) => {
           const userVal = userAnswers[sub.id];
-          const isAnswered = userVal !== undefined;
-          const isSubCorrect = isSubmitted && isAnswered && userVal === sub.isCorrect;
-
           const letter = String.fromCharCode(97 + sIdx); // a, b, c, d
 
           return (
             <div
               key={sub.id}
-              className={cn(
-                "flex flex-col gap-3 rounded-2xl border p-4 transition-all sm:flex-row sm:items-center sm:justify-between",
-                isSubmitted
-                  ? isSubCorrect
-                    ? "border-emerald-500/30 bg-emerald-500/[0.04]"
-                    : "border-rose-500/30 bg-rose-500/[0.03]"
-                  : "border-border/70 bg-card hover:border-border"
-              )}
+              className="flex flex-col gap-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 sm:flex-row sm:items-center sm:justify-between"
             >
               {/* Statement text */}
               <div className="flex-1 pr-2">
                 <div className="flex items-start gap-2.5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-muted text-xs font-bold text-foreground">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-foreground/[0.06] text-xs font-bold text-foreground">
                     {letter})
                   </span>
-                  <div className="text-sm sm:text-base leading-relaxed text-foreground font-normal">
+                  <div className="text-sm font-normal leading-relaxed text-foreground sm:text-base">
                     {sub.text}
                   </div>
                 </div>
 
                 {/* Subquestion explanation post-submit */}
                 {isSubmitted && (
-                  <div className="mt-2 pl-8.5 text-xs text-muted-foreground">
+                  <div className="mt-2 pl-8 text-xs text-muted-foreground">
                     <span className="font-semibold text-foreground">
                       Đáp án: {sub.isCorrect ? "Đúng" : "Sai"}.{" "}
                     </span>
@@ -943,23 +912,23 @@ function TrueFalseCard({
               </div>
 
               {/* Toggle Buttons: Đúng / Sai */}
-              <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
+              <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
                 <button
                   type="button"
                   disabled={isSubmitted}
                   onClick={() => onToggle(sub.id, true)}
                   className={cn(
-                    "flex min-h-[44px] min-w-[76px] items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-bold transition-all",
+                    "inline-flex h-9 min-w-[76px] items-center justify-center gap-1.5 rounded-xl border-0 shadow-none px-3.5 text-sm font-semibold transition-colors",
                     userVal === true
                       ? isSubmitted
                         ? sub.isCorrect
-                          ? "bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/40"
-                          : "bg-rose-600 text-white shadow-sm ring-2 ring-rose-500/40"
-                        : "bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/30"
+                          ? "bg-primary text-primary-foreground ring-2 ring-primary/50"
+                          : "bg-destructive/15 text-destructive ring-2 ring-destructive/40"
+                        : "bg-primary text-primary-foreground"
                       : isSubmitted && sub.isCorrect
-                      ? "border border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-semibold"
-                      : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground",
-                    isSubmitted ? "cursor-default" : "cursor-pointer active:scale-95"
+                      ? "bg-primary/15 text-primary ring-2 ring-primary/50"
+                      : "bg-foreground/[0.06] text-muted-foreground hover:bg-foreground/[0.10] hover:text-foreground",
+                    isSubmitted ? "cursor-default" : "cursor-pointer"
                   )}
                 >
                   <Check className="h-4 w-4" />
@@ -971,17 +940,17 @@ function TrueFalseCard({
                   disabled={isSubmitted}
                   onClick={() => onToggle(sub.id, false)}
                   className={cn(
-                    "flex min-h-[44px] min-w-[76px] items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-bold transition-all",
+                    "inline-flex h-9 min-w-[76px] items-center justify-center gap-1.5 rounded-xl border-0 shadow-none px-3.5 text-sm font-semibold transition-colors",
                     userVal === false
                       ? isSubmitted
                         ? !sub.isCorrect
-                          ? "bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/40"
-                          : "bg-rose-600 text-white shadow-sm ring-2 ring-rose-500/40"
-                        : "bg-rose-600 text-white shadow-sm ring-2 ring-rose-500/30"
+                          ? "bg-primary text-primary-foreground ring-2 ring-primary/50"
+                          : "bg-destructive/15 text-destructive ring-2 ring-destructive/40"
+                        : "bg-primary text-primary-foreground"
                       : isSubmitted && !sub.isCorrect
-                      ? "border border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-semibold"
-                      : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground",
-                    isSubmitted ? "cursor-default" : "cursor-pointer active:scale-95"
+                      ? "bg-primary/15 text-primary ring-2 ring-primary/50"
+                      : "bg-foreground/[0.06] text-muted-foreground hover:bg-foreground/[0.10] hover:text-foreground",
+                    isSubmitted ? "cursor-default" : "cursor-pointer"
                   )}
                 >
                   <X className="h-4 w-4" />
@@ -995,7 +964,7 @@ function TrueFalseCard({
 
       {/* Explanation Banner */}
       {(isSubmitted || isExplanationExpanded) && question.explanation && (
-        <div className="mt-5 border-t border-border/60 pt-4">
+        <div className="mt-5 pt-2">
           <button
             type="button"
             onClick={onToggleExplanation}
@@ -1013,7 +982,7 @@ function TrueFalseCard({
           </button>
 
           {isExplanationExpanded && (
-            <div className="mt-3 rounded-2xl border border-dashed border-border/80 bg-muted/30 p-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="mt-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm leading-relaxed text-muted-foreground">
               <p>{question.explanation}</p>
             </div>
           )}
@@ -1057,23 +1026,14 @@ function ShortAnswerCard({
   };
 
   return (
-    <div
-      className={cn(
-        "rounded-3xl border bg-card p-6 shadow-sm transition-all sm:p-7",
-        isSubmitted
-          ? isCorrect
-            ? "border-emerald-500/40 bg-emerald-500/[0.02]"
-            : "border-rose-500/30 bg-rose-500/[0.01]"
-          : "border-border/80 hover:border-border"
-      )}
-    >
+    <div className="rounded-2xl border border-border/70 bg-card/85 p-6 shadow-none backdrop-blur-none sm:p-7">
       {/* Question Header */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-heading font-bold text-foreground text-lg">
+          <span className="font-heading text-lg font-bold text-foreground">
             Câu {index}
           </span>
-          <Badge className="bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20 text-xs">
+          <Badge className="text-xs">
             Phần III: 0.5đ / câu - Trả lời ngắn
           </Badge>
         </div>
@@ -1081,11 +1041,11 @@ function ShortAnswerCard({
         {isSubmitted && (
           <div>
             {isCorrect ? (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-primary/15 px-2.5 py-1 text-xs font-bold text-primary">
                 <Check className="h-3.5 w-3.5" /> +0.5đ (Chính xác)
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 px-3 py-1 text-xs font-bold text-rose-700 dark:text-rose-300">
+              <span className="inline-flex items-center gap-1.5 rounded-lg bg-destructive/15 px-2.5 py-1 text-xs font-bold text-destructive">
                 <X className="h-3.5 w-3.5" /> +0.0đ (Chưa chính xác)
               </span>
             )}
@@ -1100,7 +1060,7 @@ function ShortAnswerCard({
 
       {/* Input Field */}
       <div className="mt-5">
-        <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Nhập kết quả tính toán hoặc đáp số ngắn gọn:
         </label>
         <div className="flex max-w-md items-center gap-2">
@@ -1113,28 +1073,28 @@ function ShortAnswerCard({
               onKeyDown={handleKeyDown}
               placeholder="Ví dụ: 12 hoặc 3.5..."
               className={cn(
-                "h-12 w-full min-h-[44px] rounded-2xl border px-4 text-base font-medium outline-none transition-all placeholder:text-muted-foreground/60",
+                "h-10 w-full rounded-xl border-0 shadow-none px-4 text-base font-medium outline-none transition-colors placeholder:text-muted-foreground/60",
                 isSubmitted
                   ? isCorrect
-                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 ring-2 ring-emerald-500/30"
-                    : "border-rose-500 bg-rose-500/10 text-rose-800 dark:text-rose-200 ring-2 ring-rose-500/30"
-                  : "border-border/80 bg-background text-foreground focus:border-primary focus:ring-2 focus:ring-primary/20",
+                    ? "bg-primary/15 pr-10 text-foreground ring-2 ring-primary/50"
+                    : "bg-destructive/15 pr-10 text-destructive ring-2 ring-destructive/40"
+                  : "bg-foreground/[0.04] dark:bg-foreground/[0.06] text-foreground focus:ring-2 focus:ring-primary/50",
                 isSubmitted && "cursor-default"
               )}
             />
             {isSubmitted && (
-              <div className="absolute right-3.5 top-1/2 -translate-y-1/2">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2">
                 {isCorrect ? (
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
                 ) : (
-                  <XCircle className="h-5 w-5 text-rose-600 dark:text-rose-400" />
+                  <XCircle className="h-5 w-5 text-destructive" />
                 )}
               </div>
             )}
           </div>
 
           {question.unit && (
-            <span className="flex h-12 min-h-[44px] items-center rounded-2xl border border-border/80 bg-muted/50 px-4 text-sm font-semibold text-muted-foreground">
+            <span className="flex h-10 items-center rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] px-4 text-sm font-semibold text-muted-foreground">
               {question.unit}
             </span>
           )}
@@ -1145,13 +1105,18 @@ function ShortAnswerCard({
       {isSubmitted && (
         <div
           className={cn(
-            "mt-4 rounded-2xl border p-4 text-sm",
+            "mt-4 rounded-xl border-0 shadow-none p-4 text-sm",
             isCorrect
-              ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200"
-              : "border-rose-500/30 bg-rose-500/10 text-rose-800 dark:text-rose-200"
+              ? "bg-primary/15 text-foreground"
+              : "bg-destructive/15 text-foreground"
           )}
         >
-          <div className="flex items-center gap-2 font-bold">
+          <div
+            className={cn(
+              "flex items-center gap-2 font-bold",
+              isCorrect ? "text-primary" : "text-destructive"
+            )}
+          >
             {isCorrect ? (
               <>
                 <Check className="h-4 w-4" />
@@ -1164,7 +1129,7 @@ function ShortAnswerCard({
               </>
             )}
           </div>
-          <div className="mt-1 text-xs sm:text-sm text-foreground/80">
+          <div className="mt-1 text-xs text-foreground/80 sm:text-sm">
             Đáp án chuẩn đề thi:{" "}
             <span className="font-extrabold text-foreground">
               {question.answer} {question.unit || ""}
@@ -1181,7 +1146,7 @@ function ShortAnswerCard({
 
       {/* Explanation Banner */}
       {(isSubmitted || isExplanationExpanded) && (
-        <div className="mt-5 border-t border-border/60 pt-4">
+        <div className="mt-5 pt-2">
           <button
             type="button"
             onClick={onToggleExplanation}
@@ -1199,7 +1164,7 @@ function ShortAnswerCard({
           </button>
 
           {isExplanationExpanded && (
-            <div className="mt-3 rounded-2xl border border-dashed border-border/80 bg-muted/30 p-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="mt-3 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] p-4 text-sm leading-relaxed text-muted-foreground">
               <p>{question.explanation}</p>
             </div>
           )}

@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Calendar, Clock, Sparkles } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { getAllSlugs, getPost, extractHeadings, getRelatedPosts, extractFaqs } from "@/lib/blog";
 import { buildMetadata, articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { buildAbsoluteUrl } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { RelatedPosts } from "@/components/blog/RelatedPosts";
@@ -55,7 +56,7 @@ export default async function BlogPostPage({
   const postUrl = buildAbsoluteUrl(`/blog/${slug}`);
   const faqs = extractFaqs(post.content);
 
-  const schemas: any[] = [
+  const schemas: unknown[] = [
     articleSchema({
       title: post.frontmatter.title,
       description: post.frontmatter.description,
@@ -79,28 +80,19 @@ export default async function BlogPostPage({
   return (
     <>
       <JsonLd data={schemas} />
-      <article className="py-12 sm:py-20 relative">
-
+      <article className="bg-background py-12 sm:py-20 relative">
         <Container className="relative z-10">
-          <Link
-            href="/blog"
-            className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-heading font-bold text-muted-foreground transition-all hover:border-emerald-500 hover:text-emerald-600 shadow-sm"
-          >
+          <Button href="/blog" variant="secondary" size="sm" className="mb-8">
             <ArrowLeft className="h-4 w-4" />
             Quay lại tất cả bài viết
-          </Link>
+          </Button>
 
           {/* Article Hero Header */}
-          <header className="max-w-3xl space-y-6">
+          <header className="max-w-3xl space-y-5">
             {post.frontmatter.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {post.frontmatter.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800"
-                  >
-                    {tag}
-                  </span>
+                  <Badge key={tag}>{tag}</Badge>
                 ))}
               </div>
             )}
@@ -110,14 +102,14 @@ export default async function BlogPostPage({
             </h1>
 
             {post.frontmatter.description && (
-              <p className="text-base sm:text-lg text-muted-foreground font-medium leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 {post.frontmatter.description}
               </p>
             )}
 
-            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-muted-foreground font-semibold pt-2 border-t border-border/60">
+            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-muted-foreground font-medium border-0 shadow-none">
               <span className="inline-flex items-center gap-1.5">
-                <Calendar className="h-4 w-4 text-emerald-500" />
+                <Calendar className="h-4 w-4 text-muted-foreground" />
                 <time dateTime={post.frontmatter.date}>
                   {new Date(post.frontmatter.date).toLocaleDateString("vi-VN", {
                     year: "numeric",
@@ -127,14 +119,14 @@ export default async function BlogPostPage({
                 </time>
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-amber-500" />
+                <Clock className="h-4 w-4 text-muted-foreground" />
                 {post.readingTime}
               </span>
             </div>
 
             {/* Cover Image Frame */}
             {post.frontmatter.cover && (
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border-4 border-emerald-200 dark:border-emerald-900 shadow-xl mt-6">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-card/85 border border-border/70 shadow-none backdrop-blur-none mt-6">
                 <Image
                   src={post.frontmatter.cover}
                   alt={post.frontmatter.title}
@@ -168,7 +160,7 @@ export default async function BlogPostPage({
                 <AuthorCard name={post.frontmatter.author || "QuizKen Team"} />
               </div>
 
-              <div className="flex items-center justify-between border-t border-border/60 pt-8">
+              <div className="flex items-center justify-between border-0 shadow-none pt-4">
                 <ShareButtons
                   url={postUrl}
                   title={post.frontmatter.title}

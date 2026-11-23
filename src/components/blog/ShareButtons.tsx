@@ -9,31 +9,27 @@ type ShareButtonsProps = {
   description?: string;
 };
 
-export function ShareButtons({ url, title, description }: ShareButtonsProps) {
+export function ShareButtons({ url, title, description: _description }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  const encodedDesc = encodeURIComponent(description || "");
 
   const shareLinks = [
     {
       name: "Facebook",
       icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-      color: "hover:text-[#1877F2]",
     },
     {
       name: "X (Twitter)",
       icon: Twitter,
       href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
-      color: "hover:text-[#1DA1F2]",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
-      color: "hover:text-[#0A66C2]",
     },
   ];
 
@@ -56,8 +52,8 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
   };
 
   return (
-    <div className="flex items-center gap-1">
-      <span className="mr-2 text-sm font-medium text-muted-foreground">Chia sẻ:</span>
+    <div className="flex items-center gap-1.5">
+      <span className="mr-1.5 text-sm font-medium text-muted-foreground">Chia sẻ:</span>
       {shareLinks.map((link) => (
         <a
           key={link.name}
@@ -65,18 +61,19 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Chia sẻ lên ${link.name}`}
-          className={`inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary ${link.color}`}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground"
         >
           <link.icon className="h-4 w-4" />
         </a>
       ))}
       <button
+        type="button"
         onClick={handleCopy}
         aria-label="Sao chép liên kết"
-        className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-xl border-0 shadow-none bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground cursor-pointer"
       >
         {copied ? (
-          <Check className="h-4 w-4 text-green-500" />
+          <Check className="h-4 w-4 text-primary" />
         ) : (
           <Link2 className="h-4 w-4" />
         )}

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema, breadcrumbSchema } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 import { BlogList } from "@/components/blog/BlogList";
 import { JsonLd } from "@/components/JsonLd";
-import { webPageSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog",
@@ -34,7 +33,7 @@ export default function BlogPage() {
           ]),
         ]}
       />
-      <section className="py-16 sm:py-24">
+      <section className="bg-background py-16 sm:py-24">
         <Container>
           <BlogList posts={posts} />
         </Container>
@@ -42,5 +41,3 @@ export default function BlogPage() {
     </>
   );
 }
-
-

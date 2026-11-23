@@ -31,45 +31,38 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "border-b border-border/60 bg-background/85 backdrop-blur-xl shadow-sm"
-          : "border-b border-transparent bg-transparent",
+        "sticky top-0 z-50 w-full transition-colors duration-200 bg-card/80 backdrop-blur-xl border-b shadow-none",
+        scrolled ? "border-border/70" : "border-border/50",
       )}
     >
-      <Container className="flex h-18 items-center justify-between gap-4">
+      <Container className="flex h-16 items-center justify-between gap-4">
         <Logo />
 
-        <nav className="hidden items-center gap-1.5 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex items-center rounded-full px-4 py-2 text-sm font-heading font-bold text-foreground/80 transition-colors hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-emerald-950/40 dark:hover:text-emerald-300"
+              className="h-10 inline-flex items-center rounded-xl px-3 text-sm font-semibold text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
             >
               {item.label}
-              {item.href === "/meo" && (
-                <span className="ml-1.5 inline-flex items-center rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400">
-                  Hot
-                </span>
-              )}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button
             href={appLink("/")}
             size="md"
-            className="hidden sm:inline-flex rounded-full px-6 font-heading font-extrabold shadow-md hover:shadow-lg border-2 border-white/20"
+            className="hidden sm:inline-flex h-10 rounded-xl px-4 font-heading font-bold border-0 shadow-none"
           >
-            <Zap className="h-4 w-4 mr-1.5 fill-current" />
+            <Zap className="h-4 w-4 fill-current" />
             Tạo Quiz Ngay
           </Button>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-border/70 bg-foreground/[0.04] hover:bg-foreground/[0.08] text-foreground shadow-none transition-colors lg:hidden cursor-pointer"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Đóng menu" : "Mở menu"}
             aria-expanded={open}
@@ -81,30 +74,25 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-lg lg:hidden">
-          <Container className="flex flex-col gap-2 py-4">
+        <div className="bg-card/95 backdrop-blur-xl border-b border-border/70 lg:hidden">
+          <Container className="flex flex-col gap-1.5 py-4">
             {NAV_LINKS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between rounded-2xl px-4 py-3 text-base font-heading font-bold text-foreground/90 hover:bg-emerald-50 dark:hover:bg-emerald-950/40"
+                className="flex items-center justify-between h-10 rounded-xl px-3.5 text-sm font-semibold text-foreground hover:bg-foreground/[0.06] transition-colors"
               >
                 <span>{item.label}</span>
-                {item.href === "/meo" && (
-                  <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-extrabold text-emerald-600 dark:text-emerald-400">
-                    Hot
-                  </span>
-                )}
               </Link>
             ))}
             <Button
               href={appLink("/")}
               size="md"
-              className="mt-2 w-full rounded-2xl font-heading font-bold"
+              className="mt-2 w-full h-10 rounded-xl font-heading font-bold border-0 shadow-none"
               onClick={() => setOpen(false)}
             >
-              <Zap className="h-4 w-4 mr-1.5 fill-current" />
+              <Zap className="h-4 w-4 fill-current" />
               Tạo Quiz Ngay
             </Button>
           </Container>

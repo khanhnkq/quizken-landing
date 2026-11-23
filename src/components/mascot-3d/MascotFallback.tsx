@@ -49,7 +49,7 @@ export function MascotFallback({
         width={size || 320}
         height={size || 320}
         priority
-        className="w-full h-full max-w-full max-h-full object-contain filter drop-shadow-lg transition-transform duration-300 hover:scale-105"
+        className="w-full h-full max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-105"
         onError={() => {
           if (currentSrc !== DEFAULT_IMAGE) {
             setCurrentSrc(DEFAULT_IMAGE)

@@ -5,9 +5,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  QuizKen brand tokens.
-  Primary = emerald hsl(142 71% 45%) inherited from the main app.
-  Pastel accents (pink/amber/sky/violet/rose) reused from the original Features section.
+  QuizKen Frosted Matte Glass brand tokens — synced 1:1 with main quizken app.
+  Primary = emerald hsl(142 71% 45%). Dark mode = neutral obsidian.
 */
 :root {
   --background: 0 0% 100%;
@@ -25,43 +24,49 @@
   --secondary: 45 35% 96%;
   --secondary-foreground: 0 0% 13%;
 
-  --muted: 142 20% 96%;
-  --muted-foreground: 0 0% 42%;
+  --muted: 45 20% 92%;
+  --muted-foreground: 0 0% 45%;
 
   --accent: 142 71% 45%;
   --accent-foreground: 0 0% 100%;
 
-  --border: 142 25% 90%;
-  --input: 142 25% 90%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 142 30% 85%;
+  --input: 142 30% 85%;
   --ring: 142 71% 45%;
 
   --radius: 1rem;
 }
 
 .dark {
-  --background: 150 18% 7%;
+  --background: 0 0% 10%;
   --foreground: 0 0% 98%;
 
-  --card: 150 14% 10%;
+  --card: 0 0% 13%;
   --card-foreground: 0 0% 98%;
 
-  --popover: 150 14% 10%;
+  --popover: 0 0% 13%;
   --popover-foreground: 0 0% 98%;
 
   --primary: 142 71% 45%;
-  --primary-foreground: 0 0% 8%;
+  --primary-foreground: 0 0% 13%;
 
-  --secondary: 150 10% 16%;
+  --secondary: 0 0% 20%;
   --secondary-foreground: 0 0% 98%;
 
-  --muted: 150 10% 16%;
-  --muted-foreground: 0 0% 68%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 65%;
 
   --accent: 142 71% 45%;
   --accent-foreground: 0 0% 100%;
 
-  --border: 150 10% 20%;
-  --input: 150 10% 20%;
+  --destructive: 0 62.8% 50%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 25%;
+  --input: 0 0% 25%;
   --ring: 142 71% 45%;
 }
 
@@ -80,6 +85,8 @@
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -91,58 +98,6 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 0.25rem);
   --radius-sm: calc(var(--radius) - 0.5rem);
-
-  --animate-blob: blob 9s infinite ease-in-out;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-bounce-slow: bounceSlow 4s infinite ease-in-out;
-  --animate-pulse-slow: pulseSlow 3s infinite ease-in-out;
-}
-
-@keyframes blob {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(24px, -40px) scale(1.08);
-  }
-  66% {
-    transform: translate(-18px, 18px) scale(0.94);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes bounceSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes pulseSlow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.03);
-  }
 }
 
 @layer base {
@@ -179,47 +134,16 @@
 }
 
 @layer components {
-  /* Gradient text helper for emphasis words in headings */
-  .text-gradient {
-    background-image: linear-gradient(
-      120deg,
-      hsl(var(--primary)),
-      hsl(168 80% 42%)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .frosted-card {
+    @apply rounded-2xl bg-card/85 border border-border/70 shadow-none;
   }
 
-  /* Frosted glass surface used on floating cards over gradients */
-  .glass {
-    background-color: hsl(var(--card) / 0.75);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  .frosted-well {
+    @apply rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.06] border-0 shadow-none;
   }
 
-  /* Subtle dot-grid texture for section backgrounds */
-  .bg-dot-grid {
-    background-image: radial-gradient(
-      hsl(var(--foreground) / 0.06) 1px,
-      transparent 1px
-    );
-    background-size: 22px 22px;
-  }
-
-  /* Section eyebrow chip */
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    border-radius: 9999px;
-    border: 1px solid hsl(var(--primary) / 0.2);
-    background-color: hsl(var(--primary) / 0.08);
-    padding: 0.35rem 0.85rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--primary));
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+  .frosted-chip {
+    @apply inline-flex items-center gap-1.5 rounded-lg bg-foreground/[0.06] text-foreground border-0 shadow-none px-2.5 py-1 text-xs font-semibold;
   }
 }
 

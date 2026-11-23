@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Zap, Sparkles, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 import { appLink } from "@/lib/site";
 import MascotCard from "@/components/mascot-3d/MascotCard";
 
@@ -11,66 +12,60 @@ export function FinalCta() {
   const [pokeKey, setPokeKey] = useState(0);
 
   return (
-    <section className="py-20 sm:py-28 relative">
+    <section className="py-16 sm:py-24 bg-background">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl border-4 border-emerald-300 dark:border-emerald-800 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-800 text-white p-8 sm:p-14 lg:p-20 shadow-2xl">
-          {/* Ambient Glows */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-yellow-300/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-16 -left-16 h-72 w-72 rounded-full bg-emerald-400/30 blur-3xl" />
-          <div className="pointer-events-none absolute inset-0 opacity-15 bg-dot-grid" />
-
-          <div className="relative z-10 flex flex-col items-center gap-8 text-center lg:flex-row lg:text-left lg:gap-12">
-            {/* Mascot 3D Visual */}
+        <div className="rounded-2xl bg-card/85 border border-border/70 shadow-none backdrop-blur-none p-6 sm:p-10 lg:p-12">
+          <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:text-left lg:gap-12">
+            {/* Mascot 3D Stage */}
             <div className="shrink-0">
               <div
                 onClick={() => setPokeKey((k) => k + 1)}
-                className="relative mx-auto h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64 cursor-pointer select-none group"
+                className="mx-auto h-48 w-48 sm:h-56 sm:w-56 rounded-xl border-0 shadow-none bg-foreground/[0.04] dark:bg-foreground/[0.06] overflow-hidden cursor-pointer select-none flex items-center justify-center"
                 title="Chạm vào tớ để chơi đùa!"
               >
-                <div className="absolute inset-4 rounded-full bg-white/20 blur-2xl group-hover:bg-yellow-300/30 transition-colors duration-500" />
                 <MascotCard
                   emotion="happy"
                   cameraPosition={[0, 0.05, 5.2]}
                   pokeKey={pokeKey}
-                  className="w-full h-full relative z-10"
+                  className="w-full h-full"
                 />
               </div>
             </div>
 
             {/* Text & CTAs */}
-            <div className="max-w-2xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold text-yellow-300 border border-white/30">
-                <Sparkles className="w-4 h-4 fill-yellow-300" />
-                Dùng Thử Miễn Phí 100% Không Cần Đăng Ký
-              </div>
+            <div className="max-w-2xl space-y-5">
+              <Badge className="mx-auto lg:mx-0">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Dùng Thử Miễn Phí 100% Không Cần Đăng Ký</span>
+              </Badge>
 
-              <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
                 Sẵn Sàng Tạo Bài Kiểm Tra <br className="hidden sm:block" />
                 Đầu Tiên Bằng AI Trong 3 Giây?
               </h2>
 
-              <p className="text-emerald-100 text-base sm:text-lg leading-relaxed font-medium">
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                 Tham gia cùng hơn 500+ trường học, 100.000+ đề thi đã được biên soạn bởi QuizKen. Tạo bài thi trắc nghiệm chuyên nghiệp hoàn toàn miễn phí ngay trên trình duyệt!
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-1">
                 <Button
                   href={appLink("/")}
                   size="lg"
-                  className="w-full sm:w-auto text-base sm:text-lg px-8 py-6 rounded-[2rem] shadow-2xl font-heading font-800 bg-yellow-400 text-slate-900 hover:bg-yellow-300 border-4 border-white/30 flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto h-11 rounded-xl border-0 shadow-none font-bold"
                 >
                   <span>Tạo Quiz Ngay Trực Tiếp</span>
-                  <Zap className="w-5 h-5 fill-current" />
+                  <Zap className="w-4 h-4" />
                 </Button>
 
                 <Button
                   href={appLink("/english")}
-                  variant="outline"
+                  variant="secondary"
                   size="lg"
-                  className="w-full sm:w-auto text-base sm:text-lg px-8 py-6 rounded-[2rem] border-2 border-white/40 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 font-bold flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto h-11 rounded-xl border-0 shadow-none"
                 >
                   <span>Góc Học Tiếng Anh</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
             </div>

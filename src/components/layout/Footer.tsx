@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles, Star, Music, Heart, ArrowRight, Facebook, Youtube, Github, Mail } from "lucide-react";
+import { Sparkles, ArrowRight, Facebook, Youtube, Github, Mail } from "lucide-react";
 import { SITE, appLink } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -34,104 +34,87 @@ const footerNav: { title: string; links: { label: string; href: string; external
 export function Footer() {
   const year = new Date().getFullYear();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer id="footer" className="relative pt-24 pb-12 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-background">
-      {/* Hero CTA Section in Footer */}
-      <Container className="relative z-10 mb-20">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <div className="inline-flex justify-center p-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-full shadow-lg mb-2 animate-bounce-slow border border-emerald-200 dark:border-emerald-800">
-            <Sparkles className="w-10 h-10 text-primary fill-primary" />
-          </div>
-
-          <div className="space-y-3">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight bg-gradient-to-br from-primary via-emerald-600 to-teal-700 bg-clip-text text-transparent">
+    <footer id="footer" className="relative pt-16 pb-12 bg-background border-t border-border/70">
+      <Container className="space-y-12">
+        {/* Compact Frosted CTA Card */}
+        <div className="w-full rounded-2xl bg-card/85 border border-border/70 shadow-none p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="inline-flex items-center gap-1.5 rounded-lg bg-foreground/[0.06] px-2.5 py-1 text-xs font-semibold text-foreground">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
+              <span>Miễn phí trên trình duyệt</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold tracking-tight text-foreground">
               Tạo Bài Kiểm Tra AI Miễn Phí
             </h2>
-            <p className="text-base sm:text-xl text-muted-foreground font-medium max-w-2xl mx-auto leading-relaxed">
-              Trải nghiệm sức mạnh của AI trong việc soạn đề thi và học tập. Bắt đầu ngay trên trình duyệt mà không cần cài đặt!
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Trải nghiệm sức mạnh của AI trong việc soạn đề thi và học tập. Bắt đầu ngay mà không cần cài đặt.
             </p>
           </div>
 
-          <div className="flex justify-center pt-4 relative">
-            <Button
-              href={appLink("/")}
-              size="lg"
-              className="relative z-10 px-10 py-7 text-lg sm:text-xl rounded-[2rem] shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300 border-[6px] border-white/80 dark:border-slate-800/80 ring-4 ring-primary/20 hover:ring-primary/40 font-heading font-extrabold flex items-center gap-3 bg-primary text-primary-foreground cursor-pointer"
-            >
-              <span>Tạo Quiz Ngay Bây Giờ</span>
-              <div className="bg-white/20 p-2 rounded-xl group-hover:rotate-12 transition-transform shadow-sm">
-                <ArrowRight className="w-6 h-6 text-white" />
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -top-3 -right-3 bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform rotate-12 animate-pulse">
-                Miễn phí!
-              </div>
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            <Button href={appLink("/")} size="lg" className="h-11 px-6 rounded-xl font-bold border-0 shadow-none">
+              <span>Tạo Quiz Ngay</span>
+              <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
-      </Container>
 
-      {/* Main Footer Links & Social */}
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-t-2 border-dashed border-primary/20 pt-12">
+        {/* Main Footer Links & Social */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo & Description */}
           <div className="md:col-span-2 space-y-4">
             <Logo />
-            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground font-medium">
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               Nền tảng tạo bài kiểm tra trắc nghiệm bằng AI và học tiếng Anh hàng đầu cho giáo viên và học sinh Việt Nam. Tiết kiệm thời gian, tăng cảm hứng học tập.
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2 pt-1">
               <a
                 href={SITE.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="grid h-10 w-10 place-items-center rounded-2xl border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110 shadow-sm"
+                className="grid h-10 w-10 place-items-center rounded-xl border-0 bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground shadow-none"
               >
-                <Facebook className="h-4.5 w-4.5" />
+                <Facebook className="h-4 w-4" />
               </a>
               <a
                 href={SITE.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="grid h-10 w-10 place-items-center rounded-2xl border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110 shadow-sm"
+                className="grid h-10 w-10 place-items-center rounded-xl border-0 bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground shadow-none"
               >
-                <Youtube className="h-4.5 w-4.5" />
+                <Youtube className="h-4 w-4" />
               </a>
               <a
                 href={SITE.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="grid h-10 w-10 place-items-center rounded-2xl border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110 shadow-sm"
+                className="grid h-10 w-10 place-items-center rounded-xl border-0 bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground shadow-none"
               >
-                <Github className="h-4.5 w-4.5" />
+                <Github className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${SITE.email}`}
                 aria-label="Email"
-                className="grid h-10 w-10 place-items-center rounded-2xl border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:text-primary hover:scale-110 shadow-sm"
+                className="grid h-10 w-10 place-items-center rounded-xl border-0 bg-foreground/[0.06] text-muted-foreground transition-colors hover:bg-foreground/[0.10] hover:text-foreground shadow-none"
               >
-                <Mail className="h-4.5 w-4.5" />
+                <Mail className="h-4 w-4" />
               </a>
             </div>
           </div>
 
           {/* Navigation Columns */}
           {footerNav.map((col) => (
-            <div key={col.title} className="space-y-4">
-              <h3 className="font-heading text-base font-bold text-foreground tracking-wide">
+            <div key={col.title} className="space-y-3.5">
+              <h3 className="font-heading text-sm font-bold text-foreground uppercase tracking-wider">
                 {col.title}
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     {link.external ? (
@@ -139,14 +122,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {link.label}
                       </Link>
@@ -158,16 +141,10 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Copyright & Made with Love */}
-        <div className="mt-12 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground font-medium">
-          <p className="flex items-center gap-2">
-            <span>Được làm với</span>
-            <Heart className="w-5 h-5 text-red-500 fill-red-500 animate-pulse" />
-            <span>bởi đội ngũ QuizKen</span>
-          </p>
-          <p>
-            © {year} QuizKen. Tất cả quyền được bảo lưu.
-          </p>
+        {/* Copyright */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <p>Phát triển bởi đội ngũ QuizKen</p>
+          <p>© {year} QuizKen. Tất cả quyền được bảo lưu.</p>
         </div>
       </Container>
     </footer>
