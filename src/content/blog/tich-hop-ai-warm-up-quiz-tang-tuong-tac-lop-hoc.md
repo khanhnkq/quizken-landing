@@ -39,7 +39,7 @@ Nghiên cứu của *Karl Kapp (2012 - The Gamification of Learning and Instruct
 | :--- | :--- | :--- | :--- |
 | **Speed Challenge (Chạy Đua Thời Gian)** | 3 phút | 5 câu hỏi nhanh (15s/câu) | Ôn tập từ vựng, công thức của bài học trước |
 | **Two Truths & A Lie (2 Thật 1 Giả)** | 4 phút | AI tạo 3 nhận định, học sinh tìm nhận định sai | Kích thích tư duy phản biện và suy luận logic |
-| **Boss Battle (Hợp Lực Đánh Boss)** | 5 phút | Cả lớp cùng trả lời đúng để trừ máu quái vật | Xây dựng tinh thần đoàn kết học tập tập thể |
+| **Live Leaderboard Race (Đua Top Trực Tiếp)** | 5 phút | Cả lớp quét mã QR / nhập PIN 6 số cùng trả lời và đua top thời gian thực | Khuấy động không khí và kích thích tinh thần thi đua |
 | **Mystery Clue (Giải Mã Ẩn Số)** | 3 phút | Mỗi câu trắc nghiệm đúng mở ra 1 mảnh ghép chủ đề mới | Dẫn dắt tự nhiên vào bài học của ngày hôm nay |
 
 ---

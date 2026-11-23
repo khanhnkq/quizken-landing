@@ -37,7 +37,7 @@ Năm 2026, xu hướng **Nền tảng số hóa hợp nhất (Unified Classroom 
 flowchart TD
     A["Bộ Công Cụ Số Hóa Lớp Học Hợp Nhất (QuizKen Teacher Suite 2026)"] --> B1["1. Khởi tạo: AI Tạo Đề từ PDF/Word + Hình vẽ VisualScene + Tự động mở đề"]
     A --> B2["2. In ấn & Trình chiếu: Xuất PDF A4 4 chế độ + Xuất Slide PowerPoint .pptx 16:9"]
-    A --> B3["3. Trên lớp học: Phóng to QR Máy Chiếu + Đấu Trường Live (Classic / Boss Battle)"]
+    A --> B3["3. Trên lớp học: Phóng to QR Máy Chiếu + Đấu Trường Live"]
     A --> B4["4. Khảo thí & Hậu kiểm: Phòng Thi Thử Trộn Đề + Hộp Thư Học Sinh Báo Lỗi Câu Hỏi"]
 ```
 
@@ -68,7 +68,7 @@ Với loạt nâng cấp toàn diện trong năm 2026, **QuizKen** không chỉ 
      * **`🌐 Công khai / 🔒 Riêng tư`**: Bảo mật đề kiểm tra trước giờ thi và mở công khai làm tài liệu ôn tập sau khi thi xong.
      * **`QR Lớp học`**: Bật màn hình **Chế độ Máy Chiếu Lớp Học (`ClassroomQrModal`)** nền tối chống lóa với mã QR `320×320 Level H`, chuyển đổi tức thì giữa link *Làm bài Ôn tập* và *Phòng Thi Thử*, kèm nút tải ảnh QR PNG.
      * **`Phòng Thi thử`**: Đưa học sinh vào **Sảnh Chuẩn Bị Thi (`ExamEntry`)** với 6 mốc thời gian (`Auto`, `15p`, `30p`, `45p`, `60p`, `90p`), công tắc **Trộn câu hỏi & Đảo đáp án A/B/C/D**, cảnh báo chuyển tab và bộ lọc xem lại câu gắn cờ `🚩`.
-     * **`Đấu trường Live`**: Mở ngay sảnh chờ Live Game với **Mã PIN 6 số** khổng lồ cho chế độ đua top `Classic` hoặc hợp sức `Boss Battle`.
+     * **`Đấu trường Live`**: Mở ngay sảnh chờ Live Game với **Mã PIN 6 số** khổng lồ cho cả lớp đua top trực tiếp theo thời gian thực.
      * **`Góp ý câu hỏi`**: Mở hộp thoại **`TeacherReportInboxDialog`** để xem và sửa trực tiếp các câu hỏi mà học sinh phản hồi lỗi trong quá trình làm bài.
   2. **Bộ đôi Xuất bản In ấn & Trình chiếu đẳng cấp:**
      * **Nút Split Button `PDF 4 chế độ`:** Xuất đề trắng in cho học sinh, đề kèm lưới đáp án 5 cột cuối trang, tài liệu ôn tập Study Guide có hộp lời giải, hoặc phiếu kết quả đã chấm điểm.
@@ -100,7 +100,7 @@ Với loạt nâng cấp toàn diện trong năm 2026, **QuizKen** không chỉ 
 * **Ưu điểm:**
   * Học sinh nộp ảnh chụp vở bài tập tự luận để giáo viên chấm gạch đúng/sai trực tiếp trên màn hình cảm ứng rất nhanh.
 * **Nhược điểm:**
-  * Ít tính năng trò chơi hóa (Gamification như Boss Battle, Flashcard Spaced Repetition, English Hub CEFR hay xuất Slide PowerPoint `.pptx` tự động có hình vẽ `VisualScene` như QuizKen).
+  * Ít tính năng trò chơi hóa (Gamification như Đấu trường Live, Flashcard Spaced Repetition, English Hub CEFR hay xuất Slide PowerPoint `.pptx` tự động có hình vẽ `VisualScene` như QuizKen).
 * **Chi phí:** Miễn phí cơ bản / Gói VIP trả phí.
 
 ---

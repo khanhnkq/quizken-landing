@@ -32,7 +32,7 @@ Dưới đây là **6 nền tảng giải quyết trọn vẹn bài toán kết 
 flowchart LR
     A["Một bộ câu hỏi / Bài giảng duy nhất trên QuizKen"] --> B1["Tải Slide .pptx 16:9 trình chiếu giảng giải trên lớp"]
     A --> B2["Bật Classroom Projector QR cho cả lớp quét vào làm bài 2 giây"]
-    A --> B3["Mở Đấu Trường Live (Classic / Boss Battle) bằng Mã PIN 6 số"]
+    A --> B3["Mở Đấu Trường Live bằng Mã PIN 6 số"]
 ```
 
 ---
@@ -58,7 +58,7 @@ Thay vì ép giáo viên phải lệ thuộc vào một trình chiếu web duy n
 
 1. **Kịch bản Trình chiếu Slide Offline (`.pptx`):** Nhấn nút **PPTX** để tải bộ slide Widescreen 16:9 (có sẵn hình minh họa `VisualScene`, nhãn Bloom `L1–L4`, đáp án đúng và lời giải) về mở trực tiếp trên Microsoft PowerPoint của máy tính lớp học.
 2. **Kịch bản Quét QR Làm Bài Nhanh (`ClassroomQrModal`):** Ngay từ danh sách **Đề đã tạo** trên Dashboard, nhấn nút **"QR Lớp học"** để bật màn hình máy chiếu độ tương phản cao. Giáo viên có thể chuyển đổi 1-click giữa link **Làm bài Ôn tập** và **Phòng Thi Thử nghiêm ngặt** để 40 học sinh quét camera vào làm bài trong 2 giây.
-3. **Kịch bản Đấu Trường Trực Tiếp (`Đấu trường Live`):** Nhấn nút **"Đấu trường Live"** ngay trên thẻ đề để mở sảnh chờ có **Mã QR cỡ lớn + Mã PIN 6 số** với 2 chế độ chơi: *Classic (Đua top bảng xếp hạng)* hoặc *Boss Battle (Cả lớp hợp sức đánh Boss)*.
+3. **Kịch bản Đấu Trường Trực Tiếp (`Đấu trường Live`):** Nhấn nút **"Đấu trường Live"** ngay trên thẻ đề để mở sảnh chờ có **Mã QR cỡ lớn + Mã PIN 6 số**, giúp cả lớp cùng đua top bảng xếp hạng theo thời gian thực.
 4. **Kịch bản In Phiếu Học Tập Giấy (`PDF A4 4 chế độ`):** Tải đề trắng hoặc đề cương có lời giải để phát cho những lớp không sử dụng điện thoại.
 * **Ưu điểm:** Hoàn toàn miễn phí, hỗ trợ 100% tiếng Việt và công thức Toán – Lý – Hóa, không giới hạn số câu hỏi trong một bài như Mentimeter hay Wooclap.
 * **Nhược điểm:** Chưa có dạng slide bình chọn đám mây từ khóa (Word Cloud) tự do (nhưng đã có hệ thống chat trực tiếp và đấu trường trắc nghiệm).
