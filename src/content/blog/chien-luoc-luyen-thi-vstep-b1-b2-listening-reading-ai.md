@@ -38,7 +38,7 @@ graph LR
     B --> C[Listening: 35 Câu - Luyện Bắt Từ Khóa Phản Xạ 1 Lần]
     B --> D[Reading: 40 Câu - Phân Tích Bẫy Paraphrase B1/B2]
     C & D --> E[AI Chấm Điểm & Phân Tích Lỗ Hổng Từ Vựng]
-    E --> F[Đạt Chuẩn B1 (4.0 - 5.5) & B2 (6.0 - 8.0)]
+    E --> F["Đạt Chuẩn B1 (4.0 - 5.5) & B2 (6.0 - 8.0)"]
 ```
 
 ---
