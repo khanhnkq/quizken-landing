@@ -854,6 +854,93 @@ export const TOOLS_CATALOG: ToolCatalogItem[] = [
       "tạo word bank bài tập tiếng anh cho giáo viên",
     ],
   },
+
+  // Wave 7 (5 new Informatics & Cybersecurity tools -> total 55)
+  {
+    slug: "chay-code-python-online-tin-hoc-10",
+    title: "Chạy Code Python Online & Thực hành Thuật toán Tin học 10 (Trên Trình duyệt)",
+    shortTitle: "Chạy Code Python Online (Tin 10)",
+    description:
+      "Trình chạy Python 3 an toàn 100% trên trình duyệt dành cho học sinh Tin học 10 GDPT 2018: hỗ trợ biến, vòng lặp for/while, hàm đệ quy, list comprehension, bảng theo dõi biến trực quan và 8 bài mẫu SGK.",
+    badge: "Python 3 • Tin học 10",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "chạy code python online miễn phí",
+      "thực hành python tin học 10 gdpt 2018",
+      "trình biên dịch python trên trình duyệt",
+      "học lập trình python cơ bản online",
+      "bài tập thuật toán python lớp 10",
+    ],
+  },
+  {
+    slug: "giai-ma-jwt-base64-url-online",
+    title: "Giải mã JWT Token (Header/Payload/HS256), Base64 UTF-8 & URL Encode/Decode",
+    shortTitle: "Giải mã JWT, Base64 & URL",
+    description:
+      "Phân tích tức thì JWT (JSON Web Token) tách phần Header, Payload, kiểm tra thời hạn exp/iat, xác thực chữ ký HMAC-SHA256 bằng Web Crypto và mã hóa/giải mã Base64 UTF-8 tiếng Việt, URL Percent-Encoding.",
+    badge: "JWT • Base64 • URL",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "giải mã jwt token online",
+      "kiểm tra chữ ký jwt hs256",
+      "mã hóa giải mã base64 utf8 tiếng việt",
+      "url encode decode online",
+      "jwt debugger client side",
+    ],
+  },
+  {
+    slug: "thuat-toan-ma-hoa-bam-sha256-aes-rsa",
+    title: "Thuật toán Mã hóa & Băm Mật mã học (SHA-256, MD5, AES-256, RSA & Caesar)",
+    shortTitle: "Mã hóa & Băm SHA-256 / AES / RSA",
+    description:
+      "Thực hành mật mã học và An toàn thông tin trực tiếp trên trình duyệt: tính hàm băm MD5, SHA-1, SHA-256, SHA-512, HMAC; mã hóa đối xứng AES-256-GCM; mô phỏng từng bước toán học RSA (p, q, e, d) và mật mã Caesar/Vigenère.",
+    badge: "SHA-256 • AES • RSA",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "tính mã băm sha256 md5 online",
+      "mã hóa giải mã aes 256 gcm",
+      "mô phỏng thuật toán rsa từng bước",
+      "mật mã caesar vigenere online",
+      "thực hành an toàn thông tin sinh viên it",
+    ],
+  },
+  {
+    slug: "mo-phong-thuat-toan-sap-xep-tim-kiem",
+    title: "Mô phỏng Thuật toán Sắp xếp & Tìm kiếm Trực quan (Tin học 11 — Python & C++)",
+    shortTitle: "Mô phỏng Thuật toán Sắp xếp & Tìm kiếm",
+    description:
+      "Trực quan hóa từng bước 6 thuật toán cốt lõi Tin học 11 GDPT 2018: Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Linear Search và Binary Search kèm bộ đếm so sánh/hoán đổi, độ phức tạp O(n) và code mẫu Python/C++.",
+    badge: "Thuật toán Tin 11",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "mô phỏng thuật toán sắp xếp trực quan",
+      "bubble sort selection sort insertion sort quick sort",
+      "tìm kiếm nhị phân tuần tự tin học 11",
+      "trực quan hóa thuật toán sorting visualizer",
+      "code mẫu sắp xếp python c++",
+    ],
+  },
+  {
+    slug: "tao-mat-khau-manh-kiem-tra-entropy",
+    title: "Tạo Mật khẩu Mạnh (Web Crypto) & Kiểm tra Độ An toàn Entropy (Bit)",
+    shortTitle: "Tạo Mật khẩu & Đo Entropy (Bit)",
+    description:
+      "Sinh mật khẩu ngẫu nhiên chuẩn mật mã học Web Crypto (CSPRNG) và cụm từ khóa Diceware dễ nhớ, đo chính xác số bit Entropy, phát hiện mẫu yếu và ước tính thời gian bẻ khóa brute-force theo tốc độ GPU/Bcrypt.",
+    badge: "CSPRNG • Entropy Bit",
+    category: "code-van-phong",
+    categoryLabel: "Tin học & Văn phòng",
+    keywords: [
+      "tạo mật khẩu mạnh ngẫu nhiên web crypto",
+      "kiểm tra độ mạnh mật khẩu entropy bit",
+      "tạo passphrase dễ nhớ an toàn",
+      "ước tính thời gian bẻ khóa mật khẩu",
+      "bảo mật thông tin cá nhân",
+    ],
+  },
 ];
 
 export function getToolBySlug(slug: string): ToolCatalogItem | undefined {

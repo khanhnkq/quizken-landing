@@ -1,6 +1,6 @@
 # QuizKen
 
-> Nền tảng tạo đề thi trắc nghiệm bằng AI, luyện thi trực tuyến và bộ 50+ công cụ học tập miễn phí dành cho giáo viên, học sinh và sinh viên Việt Nam & quốc tế.
+> Nền tảng tạo đề thi trắc nghiệm bằng AI, luyện thi trực tuyến và bộ 55 công cụ tiếng Việt (+ 3 công cụ tiếng Anh = 58 công cụ) học tập miễn phí dành cho giáo viên, học sinh và sinh viên Việt Nam & quốc tế.
 
 ## Tổng quan hệ sinh thái
 
@@ -28,9 +28,9 @@
 
 - [Kho Đề Thi Công Khai](https://www.quizken.com/kho-de): Hàng trăm bộ đề thi công khai từ cộng đồng giáo viên và học sinh, hỗ trợ xem trước câu hỏi SSR và chuyển tiếp vào làm full đề hoặc phòng thi đếm ngược trên `app.quizken.com`.
 
-## Bộ 50 Công Cụ Học Tập, STEM, Văn Phòng & Giáo Viên Miễn Phí (`www.quizken.com/cong-cu`)
+## Bộ 55 Công Cụ Học Tập, STEM, Tin Học, Văn Phòng & Giáo Viên Miễn Phí (`www.quizken.com/cong-cu`)
 
-- [Danh mục Công cụ QuizKen](https://www.quizken.com/cong-cu): 50 micro-tools miễn phí chạy 100% trực tiếp trên trình duyệt (client-side), không cần đăng nhập, không tải dữ liệu nhạy cảm lên máy chủ.
+- [Danh mục Công cụ QuizKen](https://www.quizken.com/cong-cu): 55 công cụ tiếng Việt (+ 3 công cụ tiếng Anh = 58 công cụ) miễn phí chạy 100% trực tiếp trên trình duyệt (client-side), không cần đăng nhập, không tải dữ liệu nhạy cảm lên máy chủ.
 
 ### Nhóm Tính & Quy đổi điểm (13 công cụ)
 1. [Tính điểm xét tốt nghiệp THPT 2027 (Công thức 50/50 mới)](https://www.quizken.com/cong-cu/tinh-diem-tot-nghiep-thpt-2027)
@@ -60,7 +60,7 @@
 23. [Đếm từ Bài luận & Kiểm tra Độ dài (IELTS, VSTEP, Ngữ văn)](https://www.quizken.com/cong-cu/dem-tu-bai-luan-ielts-ngu-van)
 24. [Tra cứu 150+ Động từ Bất quy tắc, Phiên âm IPA & Nghe phát âm](https://www.quizken.com/cong-cu/tra-cuu-dong-tu-bat-quy-tac-phat-am-ipa)
 
-### Nhóm Tin học & Văn phòng (9 công cụ)
+### Nhóm Tin học & Văn phòng (14 công cụ)
 25. [Thực hành HTML5 & CSS3 Trực tiếp Online (Chuẩn SGK Tin học 12)](https://www.quizken.com/cong-cu/thuc-hanh-html-css-tin-hoc-12)
 26. [Định dạng & Kiểm tra JSON, Xuất CSV và Làm đẹp Câu lệnh SQL Online](https://www.quizken.com/cong-cu/dinh-dang-kiem-tra-json-sql-online)
 27. [So sánh Hai Văn bản & Mã nguồn Trực tuyến (Diff Checker)](https://www.quizken.com/cong-cu/so-sanh-hai-van-ban-diff-checker)
@@ -70,27 +70,32 @@
 31. [Máy tính Phần trăm (%) Nhanh & Đọc Số Tiền Thành Chữ Tiếng Việt](https://www.quizken.com/cong-cu/tinh-phan-tram-doc-so-thanh-chu)
 32. [Chuyển Bảng Excel / Google Sheets sang Markdown, HTML & LaTeX](https://www.quizken.com/cong-cu/chuyen-bang-excel-sang-markdown-html-latex)
 33. [Trình Soạn thảo Markdown Trực tiếp (Live Preview) & In PDF A4](https://www.quizken.com/cong-cu/soan-thao-markdown-xuat-pdf-a4)
+34. [Chạy Code Python Online & Thực hành Thuật toán Tin học 10 (Trên Trình duyệt)](https://www.quizken.com/cong-cu/chay-code-python-online-tin-hoc-10)
+35. [Giải mã JWT Token (Header/Payload/HS256), Base64 UTF-8 & URL Encode/Decode](https://www.quizken.com/cong-cu/giai-ma-jwt-base64-url-online)
+36. [Thuật toán Mã hóa & Băm Mật mã học (SHA-256, MD5, AES-256, RSA & Caesar)](https://www.quizken.com/cong-cu/thuat-toan-ma-hoa-bam-sha256-aes-rsa)
+37. [Mô phỏng Thuật toán Sắp xếp & Tìm kiếm Trực quan (Tin học 11 — Python & C++)](https://www.quizken.com/cong-cu/mo-phong-thuat-toan-sap-xep-tim-kiem)
+38. [Tạo Mật khẩu Mạnh (Web Crypto) & Kiểm tra Độ An toàn Entropy (Bit)](https://www.quizken.com/cong-cu/tao-mat-khau-manh-kiem-tra-entropy)
 
 ### Nhóm Lập kế hoạch ôn thi (5 công cụ)
-34. [Đếm ngược ngày thi THPT Quốc gia, ĐGNL V-ACT & Lớp 10 năm 2027](https://www.quizken.com/cong-cu/dem-nguoc-ngay-thi-2027)
-35. [Tính Khoảng cách Ngày, Ngày làm việc & Đếm ngày đến Mục tiêu](https://www.quizken.com/cong-cu/tinh-khoang-cach-ngay-tuoi-lich-on-thi)
-36. [Tạo Thời khóa biểu & Lịch Ôn thi Tuần Tự động (In A4 / Tải PNG)](https://www.quizken.com/cong-cu/tao-thoi-khoa-bieu-lich-hoc-tuan-in-a4)
-37. [Đồng hồ Pomodoro & Âm thanh Tập trung Ôn thi Miễn phí](https://www.quizken.com/cong-cu/dong-ho-pomodoro-hoc-tap)
-38. [Kiểm tra Tốc độ Gõ phím Tiếng Việt có dấu & Tiếng Anh (WPM Test)](https://www.quizken.com/cong-cu/kiem-tra-toc-do-go-phim-tieng-viet)
+39. [Đếm ngược ngày thi THPT Quốc gia, ĐGNL V-ACT & Lớp 10 năm 2027](https://www.quizken.com/cong-cu/dem-nguoc-ngay-thi-2027)
+40. [Tính Khoảng cách Ngày, Ngày làm việc & Đếm ngày đến Mục tiêu](https://www.quizken.com/cong-cu/tinh-khoang-cach-ngay-tuoi-lich-on-thi)
+41. [Tạo Thời khóa biểu & Lịch Ôn thi Tuần Tự động (In A4 / Tải PNG)](https://www.quizken.com/cong-cu/tao-thoi-khoa-bieu-lich-hoc-tuan-in-a4)
+42. [Đồng hồ Pomodoro & Âm thanh Tập trung Ôn thi Miễn phí](https://www.quizken.com/cong-cu/dong-ho-pomodoro-hoc-tap)
+43. [Kiểm tra Tốc độ Gõ phím Tiếng Việt có dấu & Tiếng Anh (WPM Test)](https://www.quizken.com/cong-cu/kiem-tra-toc-do-go-phim-tieng-viet)
 
 ### Nhóm Công cụ Giáo viên & Lớp học (12 công cụ)
-39. [Tạo Ma trận & Bản đặc tả Đề kiểm tra chuẩn Công văn 7991 (Xuất Word .docx)](https://www.quizken.com/cong-cu/tao-ma-tran-de-thi-cong-van-7991)
-40. [Chuyển File Word (.docx) sang Đề Trắc nghiệm & Trộn 4–24 Mã đề (.docx ZIP)](https://www.quizken.com/cong-cu/chuyen-de-word-docx-sang-trac-nghiem)
-41. [Trộn đề trắc nghiệm online miễn phí (Tạo 4 mã đề 101–104)](https://www.quizken.com/cong-cu/tron-de-trac-nghiem-online)
-42. [Tạo phiếu trả lời trắc nghiệm chuẩn Bộ GD&ĐT 2026–2027 (In A4)](https://www.quizken.com/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027)
-43. [Tạo Phiếu Bài tập Toán Rèn Kỹ năng Tính toán In A4 (Kèm Đáp án)](https://www.quizken.com/cong-cu/tao-phieu-bai-tap-toan-tu-luan-in-pdf)
-44. [Tạo Bài tập Điền từ Tiếng Anh (Cloze Test / Gap-Fill) Từ Đoạn Văn](https://www.quizken.com/cong-cu/tao-bai-tap-dien-tu-cloze-test-tieng-anh)
-45. [Vòng quay Gọi tên Học sinh Ngẫu nhiên Online (Không trùng lặp)](https://www.quizken.com/cong-cu/vong-quay-goi-ten-hoc-sinh)
-46. [Chia nhóm & Chọn Nhóm trưởng Ngẫu nhiên cho Lớp học Online](https://www.quizken.com/cong-cu/chia-nhom-ngau-nhien-lop-hoc)
-47. [Đồng hồ Bấm giờ Thi thử Toàn màn hình Máy chiếu (15p / 45p / 90p)](https://www.quizken.com/cong-cu/dong-ho-bam-gio-thi-thu-may-chieu)
-48. [Tạo & In Flashcard 2 mặt Chuẩn Khổ A4 Miễn phí (Từ vựng & Công thức)](https://www.quizken.com/cong-cu/in-flashcard-2-mat-a4)
-49. [Chuẩn hóa Văn bản Soạn đề, Xóa ngắt dòng PDF & Sắp xếp Tên A–Z](https://www.quizken.com/cong-cu/chuyen-doi-chu-hoa-thuong-soat-loi-van-ban)
-50. [Tạo Mã QR Lớp học & Tài liệu Học tập Vĩnh viễn (SVG / PNG)](https://www.quizken.com/cong-cu/tao-ma-qr-lop-hoc-mien-phi)
+44. [Tạo Ma trận & Bản đặc tả Đề kiểm tra chuẩn Công văn 7991 (Xuất Word .docx)](https://www.quizken.com/cong-cu/tao-ma-tran-de-thi-cong-van-7991)
+45. [Chuyển File Word (.docx) sang Đề Trắc nghiệm & Trộn 4–24 Mã đề (.docx ZIP)](https://www.quizken.com/cong-cu/chuyen-de-word-docx-sang-trac-nghiem)
+46. [Trộn đề trắc nghiệm online miễn phí (Tạo 4 mã đề 101–104)](https://www.quizken.com/cong-cu/tron-de-trac-nghiem-online)
+47. [Tạo phiếu trả lời trắc nghiệm chuẩn Bộ GD&ĐT 2026–2027 (In A4)](https://www.quizken.com/cong-cu/tao-phieu-tra-loi-trac-nghiem-2027)
+48. [Tạo Phiếu Bài tập Toán Rèn Kỹ năng Tính toán In A4 (Kèm Đáp án)](https://www.quizken.com/cong-cu/tao-phieu-bai-tap-toan-tu-luan-in-pdf)
+49. [Tạo Bài tập Điền từ Tiếng Anh (Cloze Test / Gap-Fill) Từ Đoạn Văn](https://www.quizken.com/cong-cu/tao-bai-tap-dien-tu-cloze-test-tieng-anh)
+50. [Vòng quay Gọi tên Học sinh Ngẫu nhiên Online (Không trùng lặp)](https://www.quizken.com/cong-cu/vong-quay-goi-ten-hoc-sinh)
+51. [Chia nhóm & Chọn Nhóm trưởng Ngẫu nhiên cho Lớp học Online](https://www.quizken.com/cong-cu/chia-nhom-ngau-nhien-lop-hoc)
+52. [Đồng hồ Bấm giờ Thi thử Toàn màn hình Máy chiếu (15p / 45p / 90p)](https://www.quizken.com/cong-cu/dong-ho-bam-gio-thi-thu-may-chieu)
+53. [Tạo & In Flashcard 2 mặt Chuẩn Khổ A4 Miễn phí (Từ vựng & Công thức)](https://www.quizken.com/cong-cu/in-flashcard-2-mat-a4)
+54. [Chuẩn hóa Văn bản Soạn đề, Xóa ngắt dòng PDF & Sắp xếp Tên A–Z](https://www.quizken.com/cong-cu/chuyen-doi-chu-hoa-thuong-soat-loi-van-ban)
+55. [Tạo Mã QR Lớp học & Tài liệu Học tập Vĩnh viễn (SVG / PNG)](https://www.quizken.com/cong-cu/tao-ma-qr-lop-hoc-mien-phi)
 
 ## Global English Free Study Tools (`www.quizken.com/tools`)
 
