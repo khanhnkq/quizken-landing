@@ -45,7 +45,7 @@ export function MermaidDiagram({ chart }: { chart: string }) {
 
         mermaid.initialize({
           startOnLoad: false,
-          securityLevel: "loose",
+          securityLevel: "strict",
           theme: isDark ? "dark" : "default",
           fontFamily: "var(--font-roboto), ui-sans-serif, system-ui, sans-serif",
           flowchart: {
